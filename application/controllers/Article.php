@@ -17,4 +17,8 @@ class article extends CI_Controller {
 		$this->load->view('followup');
 		$this->load->view('footer');
 	}
+	public function detail()
+	{
+		# code...
+	}
 }
