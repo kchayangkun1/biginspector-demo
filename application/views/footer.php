@@ -29,7 +29,7 @@
     </div> 
     <div class="d-flex justify-content-center">
     <div class="row" style="background-color: #ffffff;">
-    <p class="copyright" id="Copyright" Style="text-align: center;  color: #be1e2c">Copyright © 2021 PT LIGHTING PHUKET (THAILAND) Co.,Ltd. All rights reserved.</p>
+    <p class="copyright" id="Copyright" Style="text-align: center;  color: #be1e2c">Copyright © 2021 32 Docor All rights reserved.</p>
     </div>
 </div>
 

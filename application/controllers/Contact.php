@@ -14,6 +14,7 @@ class contact extends CI_Controller {
 	{
 		$this->load->view('head');
 		$this->load->view('contact');
+		$this->load->view('followup');
 		$this->load->view('footer');
 	}
 }
