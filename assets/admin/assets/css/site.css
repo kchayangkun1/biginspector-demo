@@ -1,12 +1,12 @@
 @charset "utf-8";
 
 .site-navbar {
-  background-color: black;
+  background-color: #dad0c5;
 }
 
 .site-navbar .navbar-header {
   color: #a5783c;
-  background-color: #1b2a3e;
+  background-color: #dad0c5;
 }
 
 @media (min-width: 768px) {
@@ -20,7 +20,7 @@
 }
 
 .site-navbar .navbar-header .hamburger::before, .site-navbar .navbar-header .hamburger::after, .site-navbar .navbar-header .hamburger .hamburger-bar {
-  background-color: #1b2a3e;
+  background-color: #dad0c5;
 }
 
 .site-navbar .navbar-header .navbar-brand {
@@ -30,7 +30,7 @@
 }
 
 .site-navbar .navbar-container {
-  background-color: #1b2a3e;
+  background-color: #dad0c5;
 }
 
 @media (min-width: 768px) {
@@ -136,9 +136,9 @@ body {
   height: 76px;
   padding: 26px 0;
   font-size: 16px;
-  color: #be1e2c;
+  color: #000000;
   text-align: center;
-  background-color: #1b2a3e;
+  background-color: #dad0c5;
 }
 
 .site-menubar-footer > a:hover, .site-menubar-footer > a:focus {

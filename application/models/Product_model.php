@@ -106,11 +106,20 @@ class Product_model extends CI_Model {
     {
         date_default_timezone_set("Asia/Bangkok");
         $cur_date = date("Y-m-d H:i:s");
+        /*
+
+        $data = array(
+                'name'          => $name,
+                'short_dsc'     => $short_dsc,
+                'description'   => $description
+            );
+
+        */
     
         $data = array(
             'name'          => $arr['name'],
             'dsc'           => $arr['description'],
-            'price'         => $arr['price'],
+            'short_dsc'         => $arr['short_dsc'],
             'is_active'     => '1',
             'is_recommend'  => '0',
             'is_new'        => '0',
@@ -137,7 +146,7 @@ class Product_model extends CI_Model {
             'img_cover' => $arr['image_cover'],
             'update_date' => $cur_date
         );
-        $this->db->where('id', $arr['pd_id']);
+        $this->db->where('id', $arr['art_id']);
         $this->db->update('tbl_product', $data);
         return $this->db->affected_rows();
     }
@@ -307,12 +316,12 @@ class Product_model extends CI_Model {
         
         $data = array(
             'name'          => $arr['name'],
-            'price'         => $arr['price'],
+            'short_dsc'         => $arr['short_dsc'],
             'dsc'           => $arr['description'],
             'update_date'   => $cur_date
         );
 
-        $this->db->where('id', $arr['product_id']);
+        $this->db->where('id', $arr['art_id']);
         $this->db->update('tbl_product', $data);
         return $this->db->affected_rows(); 
     }

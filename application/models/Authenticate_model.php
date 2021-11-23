@@ -5,8 +5,6 @@ class Authenticate_model extends CI_Model {
 
     public function checkLoggedIn($usename,$passwd){
         $hash = password_hash($passwd, PASSWORD_DEFAULT);
-        // echo '$hash='.$hash;
-        // die();
 
         $this->db->select('*');
         $this->db->from('tbl_admin');

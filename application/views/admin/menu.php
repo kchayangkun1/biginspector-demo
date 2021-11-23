@@ -10,7 +10,7 @@
 			<i class="icon wb-more-horizontal" aria-hidden="true"></i>
 		</button>
 		<div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
-			<span class="navbar-brand-text hidden-xs-down"> PT LIGHTING
+			<span class="navbar-brand-text hidden-xs-down"> 32Decor
 		</div>
 	</div>
 
@@ -67,10 +67,10 @@
 							<span class="site-menu-title">Home</span>
 						</a>
 					</li>
-					<li class="site-menu-item <?=($this->uri->segment(2)=='product' || $this->uri->segment(2)=='edit_service' || $this->uri->segment(2)=='form_product' || $this->uri->segment(2)=='albums' || $this->uri->segment(2)=='service_document') ? 'active' : ''; ?>">
-								<a class="animsition-link" href="<?=base_url('Admin/product');?>">
+					<li class="site-menu-item <?=($this->uri->segment(2)=='article' || $this->uri->segment(2)=='edit_article' || $this->uri->segment(2)=='form_article' || $this->uri->segment(2)=='albums' || $this->uri->segment(2)=='service_document') ? 'active' : ''; ?>">
+								<a class="animsition-link" href="<?=base_url('Admin/article');?>">
 									<i class="site-menu-icon icon fa fa-credit-card" aria-hidden="true"></i>
-									<span class="site-menu-title">Product</span>
+									<span class="site-menu-title">Article</span>
 								</a>
 					</li>
 				</ul>

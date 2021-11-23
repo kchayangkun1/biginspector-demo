@@ -7,10 +7,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-	<meta name="description" content="PT LIGHTING">
-	<meta name="author" content="PT LIGHTING">
+	<meta name="description" content="32Decor">
+	<meta name="author" content="32Decor">
 
-	<title>Product | PT LIGHTING </title>
+	<title>Article | 32Decor </title>
 	<link rel="icon" type="image/png" href="<?=base_url('assets/img/logo/logo.png');?>" />
     <link rel="shortcut icon" type="image/ico" href="<?=base_url('assets/img/logo/logo.png');?>">
     <link rel="apple-touch-icon-precomposed" type="image/ico" sizes="114×114" href="<?=base_url('assets/img/logo/logo.png');?>">
@@ -59,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	      	<!-- Panel Other -->
 	      	<div class="panel">
 		        <div class="panel-heading">
-		          	<h3 class="panel-title">Product</h3>
+		          	<h3 class="panel-title">Article</h3>
 		        </div>
 		        <div class="panel-body">
 		          	<div class="row row-lg">
@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			                  		<div class="fixed-table-toolbar">
 			                  			<div class="bs-bars pull-left">
 			                  				<div class="btn-group hidden-sm-down" id="exampleToolbar" role="group">
-							                    <button type="button" class="btn btn-success btn-outline btn-sm" onclick="window.location.href = '<?=base_url('Admin/form_product');?>';">
+							                    <button type="button" class="btn btn-success btn-outline btn-sm" onclick="window.location.href = '<?=base_url('Admin/form_article');?>';">
 							                      	<i class="icon wb-plus" aria-hidden="true"></i> Add 
 							                    </button>
 			                  				</div>
@@ -90,7 +90,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 														</span> ปิด
 													</ol>
 													<ol>
-														สถานะ NEW PRODUCT ปรับได้ 4 รายการ
+														สถานะ NEW Article ปรับได้ 4 รายการ
 													</ol>
 													<ol>
 														สถานะ Recommend ปรับได้ 8 รายการ
@@ -107,10 +107,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			                    							<div class="th-inner ">Name</div>
 			                    							<div class="fht-cell"></div>
 			                    						</th>
-														<th style="" data-field="Price" data-align="right">
+														<!-- <th style="" data-field="Price" data-align="right">
 			                    							<div class="th-inner ">Price</div>
 			                    							<div class="fht-cell"></div>
-			                    						</th>
+			                    						</th> -->
 														</th>
 			                    						<th style="" data-field="Document" data-align="center">
 			                    							<div class="th-inner ">Album</div>
@@ -125,7 +125,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			                    							<div class="fht-cell"></div>
 			                    						</th>
 														<th style="" data-field="New" data-align="center">
-			                    							<div class="th-inner ">NEW PRODUCT</div>
+			                    							<div class="th-inner ">NEW Article</div>
 			                    							<div class="fht-cell"></div>
 			                    						</th>
 														<th style="" data-field="Status" data-align="center">
@@ -147,7 +147,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			                  						<tr> 
 			                  							<td class=""><?=$i+1; ?></td> 
 			                  							<td style=""><?=$val_item['name']; ?></td>
-														<td style=""><?=number_format($val_item['price'], 2); ?></td>
+														<!-- <td style=""><?//=number_format($val_item['price'], 2); ?></td> -->
 														<td style="">
 															<a type="button" href="<?=base_url('Admin/albums/'.$val_item['id'].'/?slug='.$val_item['name']);?>" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="top" title="File upload">
 															<i class="fa fa-picture-o" aria-hidden="true"></i>
@@ -207,7 +207,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			                  							</td>
 														
 			                  							<td>
-			                  								<button type="button" class="btn btn-round btn-warning btn-sm" onclick="window.location.href = '<?=base_url('Admin/edit_service/'.$val_item['id']);?>';" data-toggle="tooltip" data-placement="top" title="Edit"><i class="icon wb-pencil" aria-hidden="true"></i></button>
+			                  								<button type="button" class="btn btn-round btn-warning btn-sm" onclick="window.location.href = '<?=base_url('Admin/edit_article/'.$val_item['id']);?>';" data-toggle="tooltip" data-placement="top" title="Edit"><i class="icon wb-pencil" aria-hidden="true"></i></button>
 			                  								<button type="button" class="btn btn-round btn-danger btn-sm" onclick="delServ(<?=$val_item['id'];?>, <?=$val_item['is_active'];?>)" data-toggle="tooltip" data-placement="top" title="Setting"><i class="fa fa-cog" aria-hidden="true"></i></button>
 			                  							</td> 
 			                  						</tr>

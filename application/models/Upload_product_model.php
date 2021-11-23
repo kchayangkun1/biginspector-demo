@@ -27,7 +27,7 @@ class Upload_product_model extends CI_Model {
                 "type" => FileUploader::mime_content_type($filePath . $file),
                 "size" => filesize($filePath . $file),
                 "file" => $filePath . $file,
-                "file" => 'https://'. $_SERVER['HTTP_HOST'] .'/pt-lighting-demo/'.$filePath . $file,
+                "file" => 'https://'. $_SERVER['HTTP_HOST'] .'/32decor-demo/'.$filePath . $file,
                 "data" => array(
                     "url" => $url
                 )

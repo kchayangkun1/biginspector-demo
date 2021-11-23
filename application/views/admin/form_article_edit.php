@@ -1,19 +1,14 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
 <!DOCTYPE html>
 <html class="no-js css-menubar" lang="en">
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-	<meta name="description" content="PT LIGHTING">
-	<meta name="author" content="PT LIGHTING">
+	<meta name="description" content="32Decor">
+	<meta name="author" content="32Decor">
 
-	<title>Product | PT LIGHTING</title>
-
-	<link rel="apple-touch-icon" href="<?php echo base_url('./assets/img/logo2.png');?>">
+	<title>Edit Article | 32Decor </title>
 	<link rel="shortcut icon" href="<?php echo base_url('./assets/img/logo2.png');?>">
-
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="<?=base_url('./assets/admin/assets/css/bootstrap.css');?>">
     <link type="text/css" rel="stylesheet" href="<?=base_url('./assets/admin/vendor/summernote/summernote-bs4.css');?>">
@@ -29,25 +24,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" href="<?=base_url('./assets/admin/vendor/flag-icon-css/flag-icon.css');?>">
 	<link rel="stylesheet" href="<?=base_url('./assets/admin/assets/css/v2.css');?>">
 
-	<!-- Upload -->
+    <!-- Upload -->
 	<link href="<?=base_url('./assets/admin/vendor/upload/css/jquery.fileuploader.css');?>" media="all" rel="stylesheet">
 	<link rel="stylesheet" href="<?=base_url('./assets/admin/vendor/dropify/dropify.css');?>">
 
-	<!-- Fonts -->
+    <!-- Fonts -->
 	<link rel="stylesheet" href="<?=base_url('./assets/admin/assets/fonts/web-icons/web-icons.min.css');?>">
 	<link rel="stylesheet" href="<?=base_url('./assets/admin/assets/fonts/font-awesome/font-awesome.min.css');?>">
-	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
 
-	<!-- Scripts -->
+
+    <!-- Scripts -->
 	<script src="<?=base_url('./assets/admin/vendor/breakpoints/breakpoints.js');?>"></script>
 	<script>
 		Breakpoints();
 	</script>
 
+<style>
+optgroup{
+	font-weight: 700;
+}
+</style>
+<style>
+optgroup{
+	font-weight: 700;
+}
+</style>
 </head>
-<body class="animsition dashboard">
+<body class="">
+	<!-- menu -->
 	<?php $this->load->view('admin/menu'); ?>
-    <!-- Page -->
+	<!-- end -->
+	<?php 
+		// $this->load->model('Upload_product_model'); 
+		// multiple image call images product list uploaded
+		// $FileUploader=$this->Upload_product_model->fileUploaded($prod_descs[0]['id']);
+
+	?>
+	<!-- Page -->
 	<div class="page">
 		<div class="page-content container-fluid">
 			<div class="row" data-plugin="matchHeight" data-by-row="true">
@@ -55,31 +69,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<!-- Panel Static Labels -->
 		          	<div class="panel">
 			            <div class="panel-heading">
-			              <h3 class="panel-title">Add Product</h3>
+			              <h3 class="panel-title">Edit Article</h3>
 			            </div>
 			            <div class="panel-body container-fluid">
-			              	<form action="<?=base_url('Admin/create_product');?>" id="productAdd" name="productAdd" class="form-horizontal" method="post" enctype="multipart/form-data">
+			              	<form action="<?=base_url('Admin/updateArticle');?>" id="productEdit" name="productEdit" class="form-horizontal" method="post" enctype="multipart/form-data">
                               <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" 
                                     value="<?=$this->security->get_csrf_hash();?>" >
                                 <div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="title">Name</label>
-				                  	<input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+				                  	<label class="form-control-label" for="title">Title</label>
+				                  	<input type="text" class="form-control" id="name" name="name" value="<?=$prod_descs[0]['name'];?>" placeholder="Name" required>
 				                </div>
-                                <div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="price">Price</label>
-				                  	<input type="text" class="form-control" id="price" name="price" placeholder="เช่น 1200" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+								<div class="form-group form-material" data-plugin="formMaterial">
+				                  	<label class="form-control-label" for="title">Short Description</label>
+				                  	<input type="text" class="form-control" id="short_dsc" name="short_dsc" value="<?=$prod_descs[0]['short_dsc'];?>" placeholder="Name" required>
 				                </div>
 								
 								<div class="form-group form-material" data-plugin="formMaterial">
 									<label class="form-control-label" for="detail">Description</label>
-									<textarea class="form-control summernote" rows="4" placeholder="Detail" id="description" name="description"></textarea>
+									<textarea class="form-control summernote" rows="4" id="description" name="description">
+									<?=$prod_descs[0]['dsc']?>
+									</textarea>
 								</div>
 
 								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="image">Images Cover</label>
-									<div id="width"></div> 
-									  
-			                      	<input type="file" id="covImg" name="covImg" data-plugin="dropify" data-default-file="" data-allowed-file-extensions="png jpg jpeg PNG JPG JPEG" required/>
+                                      <div id="width"></div> 
+									
+			                      	<input type="file" id="covImg" name="covImg" data-plugin="dropify" data-default-file="<?=base_url('./assets/images/product/cover/'.$prod_descs[0]['id'].'/'.$prod_descs[0]['img_cover']);?>" data-allowed-file-extensions="png jpg jpeg PNG JPG JPEG"/>
 									<p class="help-block"><i>
 									รองรับไฟล์ภาพ <br>
 									ขนาดภาพแนะนำ 1280x1280px <br> 
@@ -87,22 +103,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									ไฟล์นามสกุล .png .jpg .jpeg</i>
 									</p>
 				                </div>
-
-								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="image">อัลบั้ม</label><br>
-				                  	<input type="file" id="productImg" name="productImg" accept="png jpg jpeg PNG JPG JPEG">
+								<!-- <div class="form-group form-material form-material-file" data-plugin="formMaterial">
+									<label class="form-control-label" for="image">Allbum</label>
+				                  	<?php
+										// echo $FileUploader;
+									?>
 									<p class="help-block"><i>
 									รองรับไฟล์ภาพ <br>
 									ขนาดภาพแนะนำ 1280x1280px <br> 
 									ชื่อไฟล์เป็นภาษาอังกฤษเท่านั้น <br>
 									ไฟล์นามสกุล .png .jpg .jpeg</i>
 									</p>
-				                </div>
-				                <div class="text-right">
+				                </div> -->
+                                  <div class="text-right">
+                                  <input type="hidden" name="art_id" value="<?=$prod_descs[0]['id']; ?>">
 						            <button type="submit" class="btn btn-animate btn-animate-side btn-success" id="btn_submit">
 						              	<span><i class="icon wb-check" aria-hidden="true"></i> Save</span>
 						            </button>
-						            <button type="button" class="btn btn-animate btn-animate-side btn-default btn-outline" onclick="window.location.href = '<?=base_url('Admin/product');?>';">
+						            <button type="button" class="btn btn-animate btn-animate-side btn-default btn-outline" onclick="window.location.href = '<?=base_url('Admin/article');?>';">
 						              	<span><i class="icon wb-close" aria-hidden="true"></i> Close</span>
 						            </button>
           						</div>
@@ -115,11 +133,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</div>
 	<!-- End Page -->
-
-    <!-- footer -->
-	<?php $this->load->view('admin/footer'); ?>
-
-    	<!-- Core-->
+	<!-- footer -->
+	<?php
+		$this->load->view('admin/footer');
+	?>
+	
+	<!-- Core-->
 	<script src="<?=base_url('./assets/admin/vendor/babel-external-helpers/babel-external-helpers.js');?>"></script>
 	<script src="<?=base_url('./assets/admin/vendor/jquery/jquery.js');?>"></script>
 	<script src="<?=base_url('./assets/admin/vendor/popper-js/umd/popper.min.js');?>"></script>
@@ -130,7 +149,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script src="<?=base_url('./assets/admin/vendor/asscrollable/jquery-asScrollable.js');?>"></script>
 	<script src="<?=base_url('./assets/admin/vendor/ashoverscroll/jquery-asHoverScroll.js');?>"></script>
 
-	<!-- Plugins -->
+    <!-- Plugins -->
     <script type="text/javascript" src="<?=base_url('./assets/admin/vendor/summernote/summernote-bs4.js');?>"></script>
 	<script src="<?=base_url('./assets/admin/vendor/switchery/switchery.js');?>"></script>
 	<script src="<?=base_url('./assets/admin/vendor/intro-js/intro.js');?>"></script>
@@ -143,43 +162,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script type="text/javascript">
         var uploadUrl = '<?=base_url('File_upload/upfile/');?>';
     </script>
-	
-	<!-- Scripts -->
-	<script src="<?=base_url('./assets/admin/assets/js/Component.js');?>"></script>
-	<script src="<?=base_url('./assets/admin/assets/js/Plugin.js');?>"></script>
-	<script src="<?=base_url('./assets/admin/assets/js/Base.js');?>"></script>
-	<script src="<?=base_url('./assets/admin/assets/js/Config.js');?>"></script>
-
-	<script src="<?=base_url('./assets/admin/assets/js/Section/Menubar.js');?>"></script>
-	<script src="<?=base_url('./assets/admin/assets/js/Section/GridMenu.js');?>"></script>
-	<script src="<?=base_url('./assets/admin/assets/js/Section/Sidebar.js');?>"></script>
-	<script src="<?=base_url('./assets/admin/assets/js/Section/PageAside.js');?>"></script>
-	<script src="<?=base_url('./assets/admin/assets/js/Plugin/menu.js');?>"></script>
-
-	<script src="<?=base_url('./assets/admin/assets/js/config/colors.js');?>"></script>
-	<script src="<?=base_url('./assets/admin/assets/js/config/tour.js');?>"></script>
-
-	<!-- Page -->
-	<script src="<?=base_url('./assets/admin/assets/js/Site.js');?>"></script>
-	<script src="<?=base_url('./assets/admin/assets/js/Plugin/asscrollable.js');?>"></script>
-	<script src="<?=base_url('./assets/admin/assets/js/Plugin/slidepanel.js');?>"></script>
-	<script src="<?=base_url('./assets/admin/assets/js/Plugin/switchery.js');?>"></script>
-	<script src="<?=base_url('./assets/admin/assets/js/Plugin/matchheight.js');?>"></script>
-	<script src="<?=base_url('./assets/admin/assets/js/v1.js');?>"></script>
-
-	<!-- Upload -->
-	<script src="<?=base_url('./assets/admin/vendor/upload/js/jquery.fileuploader.js');?>" type="text/javascript"></script>
-	<script src="<?=base_url('./assets/admin/vendor/upload/js/custom.js');?>" type="text/javascript"></script>
-	<script src="<?=base_url('./assets/admin/vendor/dropify/dropify.min.js');?>"></script>
-
-	<script type="text/javascript">
-        var uploadUrl = '<?=base_url('File_upload/upfile/');?>';
-    </script>
 
 	<script type="text/javascript">
 	$(document).ready(function() {
-			$('#description').summernote({ 
-				height				: 150,
+		$('#description').summernote({ 
+			height				: 150,
 				codeviewFilter: false,
                 codeviewIframeFilter: false,
                 toolbar: [
@@ -187,7 +174,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     ['font', ['bold', 'underline', 'clear']],
                     ['color', ['color']],
                     ['para', ['ul', 'ol', 'paragraph']],
-                    ['table', ['table']],
+                    // ['table', ['table']],
+					['insert', ['picture']],
                     ['view', ['codeview', 'help']]
                 ],
 				callbacks: {
@@ -203,11 +191,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						$target.remove();
 					}
 				}
-				
 			});
-			
-		});
-		function sendFile(file, url, $editor)
+	});
+	function sendFile(file, url, $editor)
 		{
 			var csrfName = '<?php echo $this->security->get_csrf_token_name();?>';
 			var csrfHash = '<?php echo $this->security->get_csrf_hash();?>';
@@ -228,7 +214,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					
 					return myXhr;
 				},
-				url		: uploadUrl + '?action=upload_image&path=product',
+				url		: uploadUrl + '?action=upload_image&path=article',
 				cache		: false,
 				contentType: false,
 				processData: false,
@@ -251,7 +237,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			if(e.lengthComputable)
 			{
 				$('progress').attr({value:e.loaded, max:e.total});
-				
 				// reset progress on complete
 				if (e.loaded == e.total) {
 					$('progress').attr('value','0.0');
@@ -271,16 +256,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$.ajax({
 				data		: data,
 				type		: 'post',
-				url			: uploadUrl + '?action=delete_image&path=product',
+				url			: uploadUrl + '?action=delete_image&path=article',
 				cache		: false,
 				contentType: false,
 				processData: false,
 				success	: function(url){
-					console.log(url);
+					
 				}
 			});
-		}
-        
+		} 
         // validate main image size
 		// $(document).ready(function(){
 		// 	// $('#btn_submit').prop('disabled', true);
@@ -315,7 +299,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		// 		}
 		// 	});
 		// });
-		// 
 	</script>
+	 <!-- Scripts -->
+	<script src="<?=base_url('./assets/admin/assets/js/Component.js');?>"></script>
+	<script src="<?=base_url('./assets/admin/assets/js/Plugin.js');?>"></script>
+	<script src="<?=base_url('./assets/admin/assets/js/Base.js');?>"></script>
+	<script src="<?=base_url('./assets/admin/assets/js/Config.js');?>"></script>
+
+	<script src="<?=base_url('./assets/admin/assets/js/Section/Menubar.js');?>"></script>
+	<script src="<?=base_url('./assets/admin/assets/js/Section/GridMenu.js');?>"></script>
+	<script src="<?=base_url('./assets/admin/assets/js/Section/Sidebar.js');?>"></script>
+	<script src="<?=base_url('./assets/admin/assets/js/Section/PageAside.js');?>"></script>
+	<script src="<?=base_url('./assets/admin/assets/js/Plugin/menu.js');?>"></script>
+
+	<script src="<?=base_url('./assets/admin/assets/js/config/colors.js');?>"></script>
+	<script src="<?=base_url('./assets/admin/assets/js/config/tour.js');?>"></script>
+
+    <!-- Page -->
+	<script src="<?=base_url('./assets/admin/assets/js/Site.js');?>"></script>
+	<script src="<?=base_url('./assets/admin/assets/js/Plugin/asscrollable.js');?>"></script>
+	<script src="<?=base_url('./assets/admin/assets/js/Plugin/slidepanel.js');?>"></script>
+	<script src="<?=base_url('./assets/admin/assets/js/Plugin/switchery.js');?>"></script>
+	<script src="<?=base_url('./assets/admin/assets/js/Plugin/matchheight.js');?>"></script>
+	<script src="<?=base_url('./assets/admin/assets/js/v1.js');?>"></script>
+
+    <!-- Upload -->
+	<script src="<?=base_url('./assets/admin/vendor/upload/js/jquery.fileuploader.js');?>" type="text/javascript"></script>
+	<script src="<?=base_url('./assets/admin/vendor/upload/js/custom.js');?>" type="text/javascript"></script>
+	<script src="<?=base_url('./assets/admin/vendor/dropify/dropify.min.js');?>"></script>
 </body>
 </html>
+

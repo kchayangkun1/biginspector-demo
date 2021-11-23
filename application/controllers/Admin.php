@@ -26,7 +26,7 @@ class Admin extends CI_Controller {
             redirect('Login','refresh');
         }
     }
-    public function product()
+    public function article()
     {
         if(!empty($this->session->userdata('user'))){
 
@@ -34,41 +34,45 @@ class Admin extends CI_Controller {
             $data['isnew'] = $this->Product_model->countIsNew();
             $data['isrecom'] = $this->Product_model->countIsRecom();
             // 
-            $this->load->view('admin/list_product', $data); //    
+            $this->load->view('admin/list_article', $data); //    
         }
         else{
             redirect('Login','refresh');
         }
     }
-    public function form_product()
+    public function form_article()
     {
         if(!empty($this->session->userdata('user'))){
             
-            $this->load->view('admin/form_product'); //  
+            $this->load->view('admin/form_article'); //  
         }
         else{
             redirect('Login','refresh');
         }
     }
     // add new product
-    public function create_product(){ 
+    public function create_article(){ 
         if(!empty($this->session->userdata('user'))){
             $this->security->get_csrf_token_name();
             $this->security->get_csrf_hash();
     
             $name = $this->security->xss_clean($this->input->post('name', TRUE));
-            $price = $this->security->xss_clean($this->input->post('price', TRUE));
+            $short_dsc = $this->security->xss_clean($this->input->post('short_dsc', TRUE));
             $description = $this->input->post('description', FALSE);
     
             $data = array(
                 'name'          => $name,
-                'price'         => $price,
+                'short_dsc'     => $short_dsc,
                 'description'   => $description
             );
+            // echo '<pre>';
+            // print_r($data);
+            // echo '</pre>';
+            // die();
             $last_pid = $this->Product_model->create($data); 
             if($last_pid > 0){
                 if(!empty($_FILES['covImg']['name'])){
-                    $folderName = './assets/images/product/cover/'.$last_pid.'/';
+                    $folderName = './assets/images/article/cover/'.$last_pid.'/';
                     if(!is_dir($folderName))
                     {
                         mkdir($folderName,0777);
@@ -102,86 +106,98 @@ class Admin extends CI_Controller {
         
                         $dataArr = array(
                             'image_cover'   => $file_upload,
-                            'pd_id'         => $last_pid
+                            'art_id'         => $last_pid
                         );
                         // update image_cover where last id
                         $resimg = $this->Product_model->updatefileUpload($dataArr);
-                        if($resimg > 0){
-                            $dataimg = array(); // Count total files
-                            $countfiles = count($_FILES['productImg']['name']);
-                            if($countfiles > 0){
-                                $folderName = './assets/images/product/'.$last_pid.'/';
-                                if(!is_dir($folderName))
-                                {
-                                    mkdir($folderName,0777);
-                                    $config['upload_path'] = $folderName; 
-                                } else{
-                                    $config['upload_path'] = $folderName;
-                                }
-                                // Looping all files 
-                                for($i=0;$i<$countfiles;$i++){
-                                    if(!empty($_FILES['productImg']['name'][$i])){
-                                        $_FILES['file']['name'] = $_FILES['productImg']['name'][$i];
-                                        $_FILES['file']['type'] = $_FILES['productImg']['type'][$i];
-                                        $_FILES['file']['tmp_name'] = $_FILES['productImg']['tmp_name'][$i];
-                                        $_FILES['file']['error'] = $_FILES['productImg']['error'][$i];
-                                        $_FILES['file']['size'] = $_FILES['productImg']['size'][$i];
+
+                        // if($resimg > 0){
+                        //     $dataimg = array(); // Count total files
+                        //     $countfiles = count($_FILES['productImg']['name']);
+                        //     if($countfiles > 0){
+                        //         $folderName = './assets/images/product/'.$last_pid.'/';
+                        //         if(!is_dir($folderName))
+                        //         {
+                        //             mkdir($folderName,0777);
+                        //             $config['upload_path'] = $folderName; 
+                        //         } else{
+                        //             $config['upload_path'] = $folderName;
+                        //         }
+                        //         // Looping all files 
+                        //         for($i=0;$i<$countfiles;$i++){
+                        //             if(!empty($_FILES['productImg']['name'][$i])){
+                        //                 $_FILES['file']['name'] = $_FILES['productImg']['name'][$i];
+                        //                 $_FILES['file']['type'] = $_FILES['productImg']['type'][$i];
+                        //                 $_FILES['file']['tmp_name'] = $_FILES['productImg']['tmp_name'][$i];
+                        //                 $_FILES['file']['error'] = $_FILES['productImg']['error'][$i];
+                        //                 $_FILES['file']['size'] = $_FILES['productImg']['size'][$i];
                         
-                                        $config['upload_path'] = $folderName;
-                                        $config['file_name'] = $_FILES['productImg']['name'][$i];
-                                        $config['allowed_types']    = 'jpg|png|jpeg|JPG|PNG|JPEG'; 
-                                        $config['file_ext_tolower'] = TRUE; 
-                                        $config['overwrite']        = TRUE; 
-                                        $config['max_size']         = '0'; 
-                                        $config['max_width']        = '0'; 
-                                        $config['max_height']       = '0'; 
-                                        $config['max_filename']     = '0'; 
-                                        $config['remove_spaces']    = TRUE; 
-                                        $config['detect_mime']      = TRUE;
-                                        $config['encrypt_name']     = FALSE;
+                        //                 $config['upload_path'] = $folderName;
+                        //                 $config['file_name'] = $_FILES['productImg']['name'][$i];
+                        //                 $config['allowed_types']    = 'jpg|png|jpeg|JPG|PNG|JPEG'; 
+                        //                 $config['file_ext_tolower'] = TRUE; 
+                        //                 $config['overwrite']        = TRUE; 
+                        //                 $config['max_size']         = '0'; 
+                        //                 $config['max_width']        = '0'; 
+                        //                 $config['max_height']       = '0'; 
+                        //                 $config['max_filename']     = '0'; 
+                        //                 $config['remove_spaces']    = TRUE; 
+                        //                 $config['detect_mime']      = TRUE;
+                        //                 $config['encrypt_name']     = FALSE;
                             
-                                        $this->upload->initialize($config);
-                                        if($this->upload->do_upload('file')){
-                                            $uploadData = $this->upload->data();
-                                            $filename1 = $uploadData['file_name'];
+                        //                 $this->upload->initialize($config);
+                        //                 if($this->upload->do_upload('file')){
+                        //                     $uploadData = $this->upload->data();
+                        //                     $filename1 = $uploadData['file_name'];
 
-                                            $dataArr2[] = array(
-                                                'image_cover'   => $filename1,
-                                            );
-                                        }
-                                    }
-                                }
-                                $response = $this->Product_model->insertProductImg($dataArr2,$last_pid);
+                        //                     $dataArr2[] = array(
+                        //                         'image_cover'   => $filename1,
+                        //                     );
+                        //                 }
+                        //             }
+                        //         }
+                        //         $response = $this->Product_model->insertProductImg($dataArr2,$last_pid);
 
-                                if($response > 0){
-                                    echo "<script>
-                                        alert('Success!');
-                                            window.location.href='".base_url("Admin/product")."';
-                                    </script>";
-                                } else {
-                                    echo "<script>
-                                        alert('failed!');
-                                        window.location.href='".base_url("Admin/product")."';
-                                    </script>";
-                                }
-                            }
-                        } else {
-                            echo "<script>
-                                alert('Product Updated, Warning! The Images Cover.');
-                                window.location.href='".base_url("Admin/product")."';
-                            </script>";
-                        }
+                        //         if($response > 0){
+                        //             echo "<script>
+                        //                 alert('Success!');
+                        //                     window.location.href='".base_url("Admin/product")."';
+                        //             </script>";
+                        //         } else {
+                        //             echo "<script>
+                        //                 alert('failed!');
+                        //                 window.location.href='".base_url("Admin/product")."';
+                        //             </script>";
+                        //         }
+                        //     }
+                        // } else {
+                        //     echo "<script>
+                        //         alert('Product Updated, Warning! The Images Cover.');
+                        //         window.location.href='".base_url("Admin/product")."';
+                        //     </script>";
+                        // }
+                    }
+                    if($resimg > 0){
+                        echo "<script>
+                            alert('Success!');
+                            window.location.href='".base_url("Admin/article")."';
+                        </script>";
+                    } else {
+                        echo "<script>
+                            alert('failed!');
+                            window.location.href='".base_url("Admin/article")."';
+                        </script>";
                     }
                 } else{
                     echo "<script>
                         alert('Please Upload image Cover');
-                        window.location.href='".base_url("Admin/product")."';
+                        window.location.href='".base_url("Admin/article")."';
                     </script>";
                 }    
             } else {
                 echo "<script>
                     alert('failed! Please try again!');
-                    window.location.href='".base_url("Admin/form_product")."';
+                    window.location.href='".base_url("Admin/form_article")."';
                 </script>";
             }   
         }
@@ -367,39 +383,42 @@ class Admin extends CI_Controller {
         }
     }
 
-    public function edit_service()
+    public function edit_article()
     {   
         if(!empty($this->session->userdata('user'))){
             $pid = $this->uri->segment(3);
             $data['prod_descs'] = $this->Product_model->getDesc($pid); 
-            $this->load->view('admin/form_product_edit', $data); //  
+
+            $this->load->view('admin/form_article_edit', $data); //  
         }
         else{
             redirect('Login','refresh');
         }
     }
     
-    public function updateProduct(){
+    public function updateArticle(){
         if(!empty($this->session->userdata('user'))){
             $this->security->get_csrf_token_name(); 
             $this->security->get_csrf_hash();
     
             $name = $this->security->xss_clean($this->input->post('name', TRUE));
-            $price = $this->security->xss_clean($this->input->post('price', TRUE));
+            $short_dsc = $this->security->xss_clean($this->input->post('short_dsc', TRUE));
             $description = $this->input->post('description', FALSE);
-            $product_id = $this->security->xss_clean($this->input->post('product_id', TRUE));
+            $art_id = $this->security->xss_clean($this->input->post('art_id', TRUE));
             
             $data = array(
                 'name'          => $name,
-                'price'         => $price,
+                'short_dsc'         => $short_dsc,
                 'description'   => $description,
-                'product_id'    => $product_id
+                'art_id'    => $art_id
             );
             // update text
             $res1 = $this->Product_model->update_product($data); 
+            // print_r($_FILES['covImg']['name']);
+            // die();
             
             if(!empty($_FILES['covImg']['name'])){
-                $folderName = './assets/images/product/cover/'.$product_id.'/';
+                $folderName = './assets/images/product/cover/'.$art_id.'/';
                 if(!is_dir($folderName))
                 {
                     mkdir($folderName,0777);
@@ -414,10 +433,10 @@ class Admin extends CI_Controller {
                 $config['max_size']         = '0';  
                 $config['max_width']        = '0';  
                 $config['max_height']       = '0'; 
-                $config['max_filename']       = '0'; 
+                $config['max_filename']     = '0'; 
                 $config['remove_spaces']    = TRUE; 
-                $config['detect_mime']    = TRUE; 
-                $config['encrypt_name'] = FALSE;
+                $config['detect_mime']      = TRUE; 
+                $config['encrypt_name']     = FALSE;
                 
                 $this->upload->initialize($config);
                 $this->upload->do_upload('covImg');
@@ -427,69 +446,69 @@ class Admin extends CI_Controller {
                 }else{      
                     @$dataArr = array(
                         'image_cover'   => $file_upload,
-                        'pd_id'         => $product_id
+                        'art_id'        => $art_id
                     );
 
                     $res2 = $this->Product_model->updatefileUpload(@$dataArr);
                 }
             } 
-            $dataimg = array(); 
-            $countfiles = count($_FILES['productImg']['name']);
-            if($countfiles > 0){
-                $folderName = './assets/images/product/'.$product_id.'/'; 
-                if(!is_dir($folderName))
-                {
-                    mkdir($folderName,0777);
-                    $config['upload_path'] = $folderName; 
-                } else{
-                    $config['upload_path'] = $folderName;
-                }
-                for($i=0;$i<$countfiles;$i++){
-                    if(!empty($_FILES['productImg']['name'][$i])){
-                        $_FILES['file']['name'] = $_FILES['productImg']['name'][$i];
-                        $_FILES['file']['type'] = $_FILES['productImg']['type'][$i];
-                        $_FILES['file']['tmp_name'] = $_FILES['productImg']['tmp_name'][$i];
-                        $_FILES['file']['error'] = $_FILES['productImg']['error'][$i];
-                        $_FILES['file']['size'] = $_FILES['productImg']['size'][$i];
+            // $dataimg = array(); 
+            // $countfiles = count($_FILES['productImg']['name']);
+            // if($countfiles > 0){
+            //     $folderName = './assets/images/product/'.$product_id.'/'; 
+            //     if(!is_dir($folderName))
+            //     {
+            //         mkdir($folderName,0777);
+            //         $config['upload_path'] = $folderName; 
+            //     } else{
+            //         $config['upload_path'] = $folderName;
+            //     }
+            //     for($i=0;$i<$countfiles;$i++){
+            //         if(!empty($_FILES['productImg']['name'][$i])){
+            //             $_FILES['file']['name'] = $_FILES['productImg']['name'][$i];
+            //             $_FILES['file']['type'] = $_FILES['productImg']['type'][$i];
+            //             $_FILES['file']['tmp_name'] = $_FILES['productImg']['tmp_name'][$i];
+            //             $_FILES['file']['error'] = $_FILES['productImg']['error'][$i];
+            //             $_FILES['file']['size'] = $_FILES['productImg']['size'][$i];
             
-                        $config['upload_path'] = $folderName;
-                        $config['file_name'] = $_FILES['productImg']['name'][$i];
-                        $config['allowed_types']    = 'jpg|png|jpeg|JPG|PNG|JPEG'; 
-                        $config['file_ext_tolower'] = TRUE; 
-                        $config['overwrite']        = TRUE; 
-                        $config['max_size']         = '0'; 
-                        $config['max_width']        = '0'; 
-                        $config['max_height']       = '0'; 
-                        $config['max_filename']       = '0';
-                        $config['remove_spaces']    = TRUE; 
-                        $config['detect_mime']    = TRUE;
-                        $config['encrypt_name'] = FALSE; 
+            //             $config['upload_path'] = $folderName;
+            //             $config['file_name'] = $_FILES['productImg']['name'][$i];
+            //             $config['allowed_types']    = 'jpg|png|jpeg|JPG|PNG|JPEG'; 
+            //             $config['file_ext_tolower'] = TRUE; 
+            //             $config['overwrite']        = TRUE; 
+            //             $config['max_size']         = '0'; 
+            //             $config['max_width']        = '0'; 
+            //             $config['max_height']       = '0'; 
+            //             $config['max_filename']       = '0';
+            //             $config['remove_spaces']    = TRUE; 
+            //             $config['detect_mime']    = TRUE;
+            //             $config['encrypt_name'] = FALSE; 
                 
-                        $this->upload->initialize($config);
+            //             $this->upload->initialize($config);
 
-                        // File upload
-                        if($this->upload->do_upload('file')){
-                            $uploadData = $this->upload->data();
-                            @$filename1 = $uploadData['file_name'];
+            //             // File upload
+            //             if($this->upload->do_upload('file')){
+            //                 $uploadData = $this->upload->data();
+            //                 @$filename1 = $uploadData['file_name'];
 
-                            @$dataArr2[] = array(
-                                'image_cover'   => $filename1,
-                            );
-                        }
-                    }
-                }
-                $res3 = $this->Product_model->insertProductImg(@$dataArr2,$product_id);
+            //                 @$dataArr2[] = array(
+            //                     'image_cover'   => $filename1,
+            //                 );
+            //             }
+            //         }
+            //     }
+            //     $res3 = $this->Product_model->insertProductImg(@$dataArr2,$product_id);
                 
-            }
-            if($res1 > 0 || $res2 > 0 || $res3 > 0){
+            // }
+            if($res1 > 0 || $res2 > 0){
                 echo "<script>
                     alert('Success!');
-                        window.location.href='".base_url("Admin/product")."';
+                        window.location.href='".base_url("Admin/article")."';
                 </script>";
             } else {
                 echo "<script>
                     alert('failed!');
-                    window.location.href='".base_url("Admin/product")."';
+                    window.location.href='".base_url("Admin/article")."';
                 </script>";
             }
         }
