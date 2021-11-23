@@ -69,7 +69,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a  class="nav-link"  href="<?=base_url('home');?>"  style="color: #be1e2c;  font-family: 'airstrikebold.ttf'; margin-left: 120%;">HOME <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a  class="nav-link" href="<?=base_url('product');?>"  style="color: #be1e2c;  font-family: 'airstrikebold.ttf';">PRODUCT</a>
+            <a  class="nav-link" href="<?=base_url('#');?>"  style="color: #be1e2c;  font-family: 'airstrikebold.ttf';">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a  class="nav-link" href="<?=base_url('#');?>"  style="color: #be1e2c;  font-family: 'airstrikebold.ttf';">ARTICLE</a>
+          </li>
+          <li class="nav-item">
+            <a  class="nav-link" href="<?=base_url('#');?>"  style="color: #be1e2c;  font-family: 'airstrikebold.ttf';">GALLERY</a>
           </li>
           <li class="nav-item">
             <a  class="nav-link" href="<?=base_url('contact');?>"  style="color: #be1e2c;  font-family: 'airstrikebold.ttf';">CONTACT</a>
