@@ -72,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a  class="nav-link" href="<?=base_url('product');?>"  style="color: #be1e2c;  font-family: 'airstrikebold.ttf';">PRODUCT</a>
           </li>
           <li class="nav-item">
-            <a  class="nav-link" href="<?=base_url('#contact');?>"  style="color: #be1e2c;  font-family: 'airstrikebold.ttf';">CONTACT</a>
+            <a  class="nav-link" href="<?=base_url('contact');?>"  style="color: #be1e2c;  font-family: 'airstrikebold.ttf';">CONTACT</a>
           </li>
         </ul>
       </div>
