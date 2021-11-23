@@ -1,4 +1,4 @@
-<section id="contact" style="background-color: #fcc851;">
+<section id="contact">
     <div class="container">
       <div data-aos="fade-up"data-aos-duration="1000">
       <div class="row" align="center">
@@ -42,7 +42,7 @@
               <div >
                 <h3  id="contact1" class="mt-3 mb-3" style="color:#be1e2c;">Send Message</h3>
                   <div class="form-floating mb-3">
-                      <input type="email" class="form-control" id="floatingInput" placeholder="Name" style=" border-radius:20px; width:100%;color:#be1e2c;">
+                      <input type="email" class="form-control" id="floatingInput" placeholder="Name" style=" border-radius:20px; width:100%;color:#dad0c5;">
                       <label for="floatingInput"></label>
                   </div>
                   <div class="form-floating mb-3">
