@@ -54,7 +54,7 @@
                   </div>
                   <textarea class="form-control mt-3 mb-3" rows="10" placeholder="MESSAGE" style="color:#be1e2c;"name="message" style=" border-radius:20px; width:100%;" required></textarea>
                       <div align="center">
-                          <button type="button" style="border-radius:18px;"  id="send-Message"  class="btn btn-danger mt-3 mb-3">Send Message</button>
+                          <button type="button" style="border-radius:10px;"  id="send-Message"  class="btn btn-danger mt-3 mb-3">Send Message</button>
                       </div>
                 </div>
                 </div>
