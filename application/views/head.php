@@ -65,8 +65,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="collapse navbar-collapse w-100" id="navbarCollapse">
         <ul class="navbar-nav mr-auto ml-auto">
           <li class="nav-item menu-active">
-          <li class="menu-active"></li>
-            <a  class="nav-link"  href="<?=base_url('home');?>"  style="color: #be1e2c;  font-family: 'airstrikebold.ttf'; margin-left: 120%;">HOME <span class="sr-only">(current)</span></a>
+          <li class="menu-active">
+            <a  class="nav-link"  href="<?=base_url('home');?>"  style="color: #be1e2c;  font-family: 'airstrikebold.ttf';">HOME <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a  class="nav-link" href="<?=base_url('#');?>"  style="color: #be1e2c;  font-family: 'airstrikebold.ttf';">ABOUT</a>
@@ -94,14 +94,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </a>
 
   </li>
-  <li class="nav-item">
-    <a id="nav-link-1" class="nav-link active" href="<?=base_url('home');?>" style="color: #be1e2c;font-family: 'airstrikebold.ttf';">HOME</a>
-  </li>
-  <li class="nav-item">
-    <a id="nav-link-1" class="nav-link" href="<?=base_url('product');?>" style="color: #be1e2c;font-family: 'airstrikebold.ttf';">PRODUCT</a>
-  </li>
-  <li class="nav-item">
-    <a id="nav-link-1" class="nav-link" href="<?=base_url('#contact');?>" style="color: #be1e2c;font-family: 'airstrikebold.ttf';">CONTACT</a>
-  </li>
+  <li class="menu-active">
+            <a  class="nav-link"  href="<?=base_url('home');?>"  style="color: #be1e2c;  font-family: 'airstrikebold.ttf';">HOME <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a  class="nav-link" href="<?=base_url('#');?>"  style="color: #be1e2c;  font-family: 'airstrikebold.ttf';">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a  class="nav-link" href="<?=base_url('#');?>"  style="color: #be1e2c;  font-family: 'airstrikebold.ttf';">ARTICLE</a>
+          </li>
+          <li class="nav-item">
+            <a  class="nav-link" href="<?=base_url('#');?>"  style="color: #be1e2c;  font-family: 'airstrikebold.ttf';">GALLERY</a>
+          </li>
+          <li class="nav-item">
+            <a  class="nav-link" href="<?=base_url('contact');?>"  style="color: #be1e2c;  font-family: 'airstrikebold.ttf';">CONTACT</a>
+          </li>
 </ul>
 </section>
