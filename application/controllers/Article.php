@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class contact extends CI_Controller {
+class article extends CI_Controller {
 
 	public function __construct()
 	{
@@ -13,7 +13,7 @@ class contact extends CI_Controller {
     public function index()
 	{
 		$this->load->view('head');
-		$this->load->view('contact');
+		$this->load->view('article');
 		$this->load->view('followup');
 		$this->load->view('footer');
 	}
