@@ -2,7 +2,7 @@
     <div class="container">
         <div class="d-flex justify-content-between mb-3">
             <div class="me-auto p-2 bd-highlight">
-            <img src="<?=base_url('assets/img/logo/logo.png');?>" id="footer-lpgo" class="img-fluid "> 
+            <img src="<?=base_url('assets/img/logo/logo1.png');?>" id="footer-lpgo" class="img-fluid "> 
             </div>
             <div class="p-2 bd-highlight">
             <div align="center">

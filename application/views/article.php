@@ -1,37 +1,175 @@
-<section>
-    <div class="container">
-        <div class="row" align="center">
+
+<style>
+    body{
+        background-color:'#eee4d9';
+    }
+    .centered {
+  position: absolute;
+  position: absolute;
+    top: 30%;
+    left: 8%;
+   
+}
+#article-h{
+    font-family: 'SukhumvitSet-Light';
+    font-weight: 800;
+    color: #ffffff;
+    font-family: 'Prompt', sans-serif;
+    font-size: larger;
+}
+.centered-1{
+    position: absolute;
+  top: 50%;
+  left: 26%;
+  transform: translate(-50%, -50%);
+}
+#article-1{
+    font-family: 'SukhumvitSet-Light';
+    color: #ffffff;
+    font-family: 'Prompt', sans-serif;
+    font-size: larger;
+}
+#button-btn{
+    position: absolute;
+    top: 67%;
+    left: 12%;
+  transform: translate(-50%, -50%);
+}
+.card-title{
+    font-family: 'Prompt', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+}
+.card-text{
+    font-family: 'Prompt', sans-serif;
+    font-size: 14px;
+}
+a{
+    color: #000;
+}
+</style>
+<section style="padding-top: 0px;padding-bottom: 0px;">
+           <div class="container-fluid" style="padding-left: 0px;padding-right: 0px;" >
             <div data-aos="fade-up"data-aos-duration="1000">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-5 mb-5">
-                    <h3 id="product" style="margin-top: 0px;">GALLERY</h3>
+               <div>
+                 <a href="#" target="_blank">
+                  <img src="<?=base_url('assets/img/banner/banner1920-test.png');?>" class="img-rounded" id="accounting2" style="width: 100%;">
+                </a>
+                <div class="centered" id="article-h">สไตล์การแต่งบ้านยอดนิยม อยู่อย่างไรก็ไม่เบื่อ</div>
+                <div class="centered-1 mt-3" id="article-1">หากคุณกำลังตัดสินใจตกแต่งหรือรีโนเวทบ้านสักหลัง <br>วันนี้ 32 Interior Design มีสไตล์การออกแบบที่อยู่อย่างไรก็ไม่เบื่อ <br> นานแค่ไหนก็ดูไม่เก่ามาให้ชมกัน</div>
+                <button type="button" id="button-btn" class="btn btn-outline-light mt-3" style="border-radius: 20px;">Read more</button>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        
+<section class=" pb-1" id="background-about" style="background-color: #eee4d9;">
+    <div class="container">
+        <div data-aos="fade-up"data-aos-duration="1000">
+            <div class="row "> <!-- row1 -->
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-3">
+                    <a href="<?=base_url('article/detailarticle');?>">
+                <div class="card" style="width: 100%;">
+                    <img src="<?=base_url('assets/img/article/1.png');?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">สไตล์การแต่งบ้านยอดนิยม อยู่อย่างไรก็ไม่เบื่อ</h5>
+                                <p class="card-text">หากคุณกำลังตัดสินใจตกแต่งหรือรีโนเวทบ้านสักหลัง แต่กลัวว่านานไปแล้วจะเบื่อ วันนี้ 32 Interior Design มีสไตล์การออกแบบที่อยู่อย่างไรก็ไม่เบื่อ นานแค่ไหนก็ดูไม่เก่ามาให้ชมกัน</p>
+
+                            <a href="#" >Read mord >></a>
+                        </div>
+                    </div>
+                    </a>
+                </div>  
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-3">
+                <div class="card" style="width: 100%;">
+                    <img src="<?=base_url('assets/img/article/2.png');?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">ส่องไอเดียห้องนอนสไตล์เกาหลี อบอุ่น เรียบง่าย สบายตา</h5>
+                                <p class="card-text">ห้องนอนถือเป็นอีกหนึ่ง space ที่ควรให้ความสำคัญในการตกแต่ง เพราะเราต้องใช้ห้องนอนในการพักผ่อนกันอยู่เป็นประจำทุกวัน พื้นที่ส่วนนี้จึงควรมีทั้งความสวยงาม</p>
+                            <a href="#" >Read mord >></a>
+                        </div>
+                    </div>    
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-3">
+                <div class="card" style="width: 100%;">
+                    <img src="<?=base_url('assets/img/article/3.png');?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">เอาใจสายถ่ายรูป มาเปลี่ยนมุมเล็ก ๆ ให้เป็นHome café สุดชิค</h5>
+                                <p class="card-text">เสาร์-อาทิตย์หากใครอยู่บ้านว่าง ๆ  วันนี้ 32 Interior Design ชวนทุกคนมาเปลี่ยนมุมเล็ก ๆ ในบ้านให้กลายเป็น home café ส่วนตัวไว้ถ่ายรูปเก๋ ๆ แถมยังอบอุ่นสบายตาและน่าอยู่</p>
+                            <a href="#" >Read mord >></a>
+                        </div>
+                    </div>    
                 </div>
             </div>
-        </div>
-    </div><!-- end container -->
-</section>
-<section style="background-color: #b8ac9f;">
-    <div class="container-fluid">
-        <div class="row">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-5 pt-5">
-                    <h3 id="gallery-product" style="margin-top: 0px; text-align: center;"><b>โครงการ Piano Comodo</b></h3>
-                    <h4 id="gallery-product" style="margin-top: 0px; text-align: center;">หากคุณกำลังตัดสินใจตกแต่งหรือรีโนเวทบ้านสักหลัง แต่กลัวว่านานไปแล้วจะเบื่อ วันนี้ 32 Interior Design มีสไตล์การออกแบบที่อยู่อย่างไรก็ไม่เบื่อ นานแค่ไหนก็ดูไม่เก่ามาให้ชมกัน(ครับ/ค่ะ)</h4>
-                    <div class="button" style="text-align: center;">
-                        <button type="button" class="btn btn-outline-light" style="border-radius: 12px;">View All</button>
+            </div>
+            <div data-aos="fade-up"data-aos-duration="1000">
+            <div class="row "> <!-- row 2 -->
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-3">
+                <div class="card" style="width: 100%;">
+                    <img src="<?=base_url('assets/img/article/1.png');?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">สไตล์การแต่งบ้านยอดนิยม อยู่อย่างไรก็ไม่เบื่อ</h5>
+                                <p class="card-text">หากคุณกำลังตัดสินใจตกแต่งหรือรีโนเวทบ้านสักหลัง แต่กลัวว่านานไปแล้วจะเบื่อ วันนี้ 32 Interior Design มีสไตล์การออกแบบที่อยู่อย่างไรก็ไม่เบื่อ นานแค่ไหนก็ดูไม่เก่ามาให้ชมกัน</p>
+                            <a href="#" >Read mord >></a>
+                        </div>
                     </div>
+                </div>  
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-3">
+                <div class="card" style="width: 100%;">
+                    <img src="<?=base_url('assets/img/article/2.png');?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">ส่องไอเดียห้องนอนสไตล์เกาหลี อบอุ่น เรียบง่าย สบายตา</h5>
+                                <p class="card-text">ห้องนอนถือเป็นอีกหนึ่ง space ที่ควรให้ความสำคัญในการตกแต่ง เพราะเราต้องใช้ห้องนอนในการพักผ่อนกันอยู่เป็นประจำทุกวัน พื้นที่ส่วนนี้จึงควรมีทั้งความสวยงาม</p>
+                            <a href="#" >Read mord >></a>
+                        </div>
+                    </div>    
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    <img src="<?=base_url('assets/img/detail/gallery-piano.png');?>" class="img-rounded" id="accounting2">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-3">
+                <div class="card" style="width: 100%;">
+                    <img src="<?=base_url('assets/img/article/3.png');?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">เอาใจสายถ่ายรูป มาเปลี่ยนมุมเล็ก ๆ ให้เป็นHome café สุดชิค</h5>
+                                <p class="card-text">เสาร์-อาทิตย์หากใครอยู่บ้านว่าง ๆ  วันนี้ 32 Interior Design ชวนทุกคนมาเปลี่ยนมุมเล็ก ๆ ในบ้านให้กลายเป็น home café ส่วนตัวไว้ถ่ายรูปเก๋ ๆ แถมยังอบอุ่นสบายตาและน่าอยู่</p>
+                            <a href="#" >Read mord >></a>
+                        </div>
+                    </div>    
                 </div>
-        </div>
-    </div><!-- end container -->
-</section>
-
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"></div>
-            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"></div>
-            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"></div>
-        </div>
+            </div>
+            </div>
+            <div data-aos="fade-up"data-aos-duration="1000">
+            <div class="row "> <!-- row1 -->
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-3">
+                <div class="card" style="width: 100%;">
+                    <img src="<?=base_url('assets/img/article/1.png');?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">สไตล์การแต่งบ้านยอดนิยม อยู่อย่างไรก็ไม่เบื่อ</h5>
+                                <p class="card-text">หากคุณกำลังตัดสินใจตกแต่งหรือรีโนเวทบ้านสักหลัง แต่กลัวว่านานไปแล้วจะเบื่อ วันนี้ 32 Interior Design มีสไตล์การออกแบบที่อยู่อย่างไรก็ไม่เบื่อ นานแค่ไหนก็ดูไม่เก่ามาให้ชมกัน</p>
+                            <a href="#" >Read mord >></a>
+                        </div>
+                    </div>
+                </div>  
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-3">
+                <div class="card" style="width: 100%;">
+                    <img src="<?=base_url('assets/img/article/2.png');?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">ส่องไอเดียห้องนอนสไตล์เกาหลี อบอุ่น เรียบง่าย สบายตา</h5>
+                                <p class="card-text">ห้องนอนถือเป็นอีกหนึ่ง space ที่ควรให้ความสำคัญในการตกแต่ง เพราะเราต้องใช้ห้องนอนในการพักผ่อนกันอยู่เป็นประจำทุกวัน พื้นที่ส่วนนี้จึงควรมีทั้งความสวยงาม</p>
+                            <a href="#" >Read mord >></a>
+                        </div>
+                    </div>    
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-3">
+                <div class="card" style="width: 100%;">
+                    <img src="<?=base_url('assets/img/article/3.png');?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">เอาใจสายถ่ายรูป มาเปลี่ยนมุมเล็ก ๆ ให้เป็นHome café สุดชิค</h5>
+                                <p class="card-text">เสาร์-อาทิตย์หากใครอยู่บ้านว่าง ๆ  วันนี้ 32 Interior Design ชวนทุกคนมาเปลี่ยนมุมเล็ก ๆ ในบ้านให้กลายเป็น home café ส่วนตัวไว้ถ่ายรูปเก๋ ๆ แถมยังอบอุ่นสบายตาและน่าอยู่</p>
+                            <a href="#" >Read mord >></a>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            </div>
     </div>
 </section>

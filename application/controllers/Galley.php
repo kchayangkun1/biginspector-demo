@@ -17,4 +17,11 @@ class galley extends CI_Controller {
 		$this->load->view('followup');
 		$this->load->view('footer');
 	}
+	public function detailgalley()
+	{
+		$this->load->view('head');
+		$this->load->view('detailgalley');
+		$this->load->view('followup');
+		$this->load->view('footer');
+	}
 }

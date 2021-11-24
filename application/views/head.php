@@ -41,6 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link href="<?=base_url('assets/lib/animate/animate.min.css');?>" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;1,100&display=swap');">
   <!-- Template Main CSS File -->
   <link href="<?=base_url('assets/css/style.css');?>" rel="stylesheet">
 
@@ -54,7 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #dad0c5; height: 12%;box-shadow: 0px 2px 15px rgb(0 0 0 / 10%);">
       <a id="brand_img" href="<?=base_url('home');?>">
-        <img src="<?=base_url('assets/img/logo/logo.png');?>" id="imglogo" class="img-logo" />
+        <img src="<?=base_url('assets/img/logo/logo1.png');?>" id="imglogo" class="img-logo" />
       </a>
       <div class="collapse navbar-collapse w-100" id="navbarCollapse">
         <ul class="navbar-nav mr-auto ml-auto">
@@ -84,7 +85,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <ul class="nav justify-content-center " style="background-color: #dad0c5; margin-top: -18%;">
   <li class="nav-item w-100" align="center">
     <a class="nav-link" href="<?=base_url('home');?>">
-    <img id="logo-head" src="<?=base_url('assets/img/logo/logo.png');?>" alt="" class="p-3" align="center">
+    <img id="logo-head" src="<?=base_url('assets/img/logo/logo1.png');?>" alt="" class="p-3" align="center">
     </a>
 
   </li>
@@ -98,7 +99,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a  class="nav-link" href="<?=base_url('#');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf';">ARTICLE</a>
           </li>
           <li class="nav-item">
-            <a  class="nav-link" href="<?=base_url('#');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf';">GALLERY</a>
+            <a  class="nav-link" href="<?=base_url('galley');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf';">GALLERY</a>
           </li>
           <li class="nav-item">
             <a  class="nav-link" href="<?=base_url('contact');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf';">CONTACT</a>
