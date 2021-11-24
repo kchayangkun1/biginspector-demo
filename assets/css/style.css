@@ -1,78 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;1,100&display=swap');
 @font-face {
-  font-family: 'Bangers-Regular';
-  src: url('../../assets/img/font/Bangers/Bangers-Regular.ttf') format('ttf2'),
-       url('../../assets/img/font/Bangers/Bangers-Regular.ttf') format('truetype');
+  font-family: 'Trap-Light.otf';
+  src: url('../../assets/img/font/Fonts/Trap-Light.otf') format('otf'),
+       url('../../assets/img/font/Fonts/Trap-Light.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'LondrinaSolid-Light';
-  src: url('../../assets/img/font/Londrina_Solid/LondrinaSolid-Light.ttf') format('ttf2'),
-       url('../../assets/img/font/Londrina_Solid/LondrinaSolid-Light.ttf') format('truetype');
+  font-family: 'Zephyr.otf';
+  src: url('../../assets/img/font/Fonts/Zephyr.otf') format('otf'),
+       url('../../assets/img/font/Fonts/Zephyr.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'LondrinaSolid-Black';
-  src: url('../../assets/img/font/Londrina_Solid/LondrinaSolid-Black.ttf') format('ttf2'),
-       url('../../assets/img/font/Londrina_Solid/LondrinaSolid-Black.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'LondrinaSolid-Regular';
-  src: url('../../assets/img/font/Londrina_Solid/LondrinaSolid-Regular.ttf') format('ttf2'),
-       url('../../assets/img/font/Londrina_Solid/LondrinaSolid-Regular.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'LondrinaSolid-Thin';
-  src: url('../../assets/img/font/Londrina_Solid/LondrinaSolid-Thin.ttf') format('ttf2'),
-       url('../../assets/img/font/Londrina_Solid/LondrinaSolid-Thin.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'SukhumvitSet-Medium';
-  src: url('../../assets/img/font/font-sukhumvit/SukhumvitSet-Medium.ttf') format('ttf2'),
-       url('../../assets/img/font/font-sukhumvit/SukhumvitSet-Medium.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'SukhumvitSet-Light';
-  src: url('../../assets/img/font/font-sukhumvit/SukhumvitSet-Light.ttf') format('ttf2'),
-       url('../../assets/img/font/font-sukhumvit/SukhumvitSet-Light.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'SukhumvitSet-Thin';
-  src: url('../../assets/img/font/font-sukhumvit/SukhumvitSet-Thin.ttf') format('ttf2'),
-       url('../../assets/img/font/font-sukhumvit/SukhumvitSet-Thin.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'SukhumvitSet-Light';
-  src: url('../../assets/img/font/font-sukhumvit/SukhumvitSet-Light.ttf') format('ttf2'),
-       url('../../assets/img/font/font-sukhumvit/SukhumvitSet-Light.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'SukhumvitSet-Bold';
-  src: url('../../assets/img/font/font-sukhumvit/SukhumvitSet-Bold.ttf') format('ttf2'),
-       url('../../assets/img/font/font-sukhumvit/SukhumvitSet-Bold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 /**
 * Template Name: Lumia - v4.5.0
 * Template URL: https://bootstrapmade.com/lumia-bootstrap-business-template/
@@ -84,19 +26,30 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: 'SukhumvitSet-Light';
+  font-family: 'Trap-Light.otf';
   /* color: #444444; */
 }
 .li{
-  font-family: 'SukhumvitSet-Light';
+  font-family: 'Zephyr.otf';
 }
-
+h1{
+  margin-top: 0px;
+  font-family: 'SukhumvitSet-Light';
+  font-weight: 800;
+  color: #a08666;
+}
+h4,h3{
+  font-family: 'Prompt', sans-serif;
+}
 a {
 
   text-decoration: none;
 }
 #text-h{
   font-weight: 700;
+}
+.centered{
+  font-family: 'Prompt', sans-serif;
 }
 
 /* h1, h2, h3, h4, h5, h6 {
@@ -1968,3 +1921,16 @@ section {
   text-decoration: none;
 }
 
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}

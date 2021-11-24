@@ -4,7 +4,7 @@
             <div data-aos="fade-up"data-aos-duration="1000">
                <div class="mt-5 mb-5">
                  <a href="#" target="_blank">
-                  <img src="<?=base_url('assets/img/banner/test1.png');?>" class="img-rounded" id="accounting2">
+                  <img src="<?=base_url('assets/img/banner/test1.png');?>" class="img-rounded" id="accounting2" style="width: 100%;">
                 </a>
                 </div>
               </div>

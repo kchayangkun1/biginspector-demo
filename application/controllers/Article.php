@@ -17,8 +17,11 @@ class article extends CI_Controller {
 		$this->load->view('followup');
 		$this->load->view('footer');
 	}
-	public function detail()
+	public function detailarticle()
 	{
-		# code...
+		$this->load->view('head');
+		$this->load->view('detailarticle');
+		$this->load->view('followup');
+		$this->load->view('footer');
 	}
 }
