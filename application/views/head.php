@@ -64,7 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a  class="nav-link"  href="<?=base_url('home');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf';">HOME <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a  class="nav-link" href="<?=base_url('#');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf';">ABOUT</a>
+            <a  class="nav-link" href="<?=base_url('about');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf';">ABOUT</a>
           </li>
           <li class="nav-item">
             <a  class="nav-link" href="<?=base_url('article');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf';">ARTICLE</a>
