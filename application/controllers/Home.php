@@ -16,8 +16,8 @@ class home extends CI_Controller {
 		$data['recom_products'] = $this->Product_model->fetchRecommend();
 
 		$this->load->view('head');
-		$this->load->view('banner');
 		$this->load->view('home',$data);
+		$this->load->view('followup');
 		$this->load->view('footer');
 	}
 }
