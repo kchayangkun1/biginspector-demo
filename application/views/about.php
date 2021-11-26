@@ -68,6 +68,19 @@ img {vertical-align: middle;}
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
 }
+
+@media only screen and (max-width: 640px) and (min-width: 360px){
+    #about-heading{
+        font-size: 24px;
+        text-align: center;
+    }
+    #about-content-h4{
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+
 </style>
 
 
@@ -84,20 +97,20 @@ img {vertical-align: middle;}
 <section>
     <div class="container" style="text-align: center;">
         <div data-aos="fade-up"data-aos-duration="1000">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-5 mb-5">
-            <h1 id="product" style="margin-top: 0px;">WHY 32 INTERIOR</h1>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3 mb-3">
+            <h1 id="about-heading" style="margin-top: 0px;">WHY 32 INTERIOR</h1>
             </div>
         </div>
         <div data-aos="fade-up"data-aos-duration="1000">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-5 mb-5">
-            <h4 style="font-weight: revert;">พวกเรา 32interior มีความเชียวชาญในงสนออกแบบตกแต่งภายในด้วยทีมงานมืออาชีพ <br> ทั้งทีมออกแบบ ทัมช่างรวมถึงผู้ควบคุมงานที่มีแระสบการณ์เป็นอย่างดี</h4>
-            <h4 class="mt-3" style="font-weight: revert;">เรามีความตั้งใจออกแบบ เนรมิต บ้าน/คอนโด ของท่านให้เป็นไปในแบบที่ท่านต้องการ <br> ด้วยรูปแบบงานที่มีความน่าสนใจเหมาะสมกับงบประมาณที่วางไว้ ภายใต้ระบะเวลาที่ท่านกำหนดไว้</h4>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3 ">
+            <h4  id="about-content-h4" style="font-weight: revert;">พวกเรา 32interior มีความเชียวชาญในงานออกแบบตกแต่งภายในด้วยทีมงานมืออาชีพ <br> ทั้งทีมออกแบบ ทีมช่างรวมถึงผู้ควบคุมงานที่มีประสบการณ์เป็นอย่างดี</h4>
+            <h4   id="about-content-h4"class="mt-3" style="font-weight: revert;">เรามีความตั้งใจออกแบบ เนรมิต บ้าน/คอนโด ของท่านให้เป็นไปในแบบที่ท่านต้องการ <br> ด้วยรูปแบบงานที่มีความน่าสนใจเหมาะสมกับงบประมาณที่วางไว้ ภายใต้ระบะเวลาที่ท่านกำหนดไว้</h4>
             </div>
         </div>
     </div>
 </section>
 
-<section>
+<section style="padding-top: 0px;padding-bottom: 0px;">
     <div class="container">
         <div class="slideshow-container">
             <div class="mySlides fade">
@@ -126,25 +139,36 @@ img {vertical-align: middle;}
             </div>
     </div>
 </section>
-<!--  -->
-<!-- <section>
-    <div class="container">
-        <div class="row">
-            <div data-aos="fade-up"data-aos-duration="1000">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
-                    <h1 id="product" style="margin-top: 0px;">Professional Interior Designer</h1>
-                        <h4 style="font-weight: revert;">ทีมดีไซน์เนอร์ มัณฑนากรที่มีประสบการณ์การตกแต่งอันหลากหลาย พร้อมแปลงไอเดียของคุณให้เป็นจริงตามพื้นที่และงบประมาณที่คุณต้องการ</h4>
-                </div> 
-                
-        </div>
-    </div>
-</section> -->
 <section>
     <div class="container">
+
+    <!-- Professional Interior Designer -->
+        <div class="row mb-3 " data-aos="fade-up"data-aos-duration="1000">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3 pb-3">
+                <h1 id="about-heading" style="margin-top: 0px;"><b>Professional Interior Designer</b></h1>
+                <h4 id="about-content-h4" style="margin-top: 0px; color: black;">ทีมดีไซน์เนอร์ มัณฑนากรที่มีประสบการณ์การตกแต่งอันหลากหลาย พร้อมแปลงไอเดียของคุณให้เป็นจริงตามพื้นที่และงบประมาณที่คุณต้องการ</h4>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <img src="<?=base_url('assets/img/about/222.PNG');?>" class="img-rounded" id="accounting2" style="width: 100%;">
+            </div>
+        </div>
+        
+    <!--end Professional Interior Designer -->
+
+        <div class="row" data-aos="fade-up"data-aos-duration="1000">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3 pt-3 ">
+                <img src="<?=base_url('assets/img/about/3.PNG');?>" class="img-rounded" id="accounting2" style="width: 100%;">
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3 pt-3">
+                <h1 id="about-heading" style="margin-top: 0px;"><b>Premium Material</b></h1>
+                <h4 id="about-content-h4" style="margin-top: 0px; color: black;">เลือกใช้วัสดุโครงไม้จริงที่มีการเคลือบน้ำยากันปลวกปิดทับด้วยไม้อัดคุณภาพสูง เกรด AAA สำหรับงานเฟอร์นิเจอร์โดยตรงเพื่อความมั่นใจในความแข็งแรง อายุการใช้งานยาวนาน</h4>
+            </div>
+        </div>
+
         <div class="row mb-5" data-aos="fade-up"data-aos-duration="1000">
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-5 pt-5">
-                <h1 id="product" style="margin-top: 0px;"><b>Professional Interior Designer</b></h1>
-                <h4 id="gallery-product" style="margin-top: 0px; text-align: center; color: black;">ทีมดีไซน์เนอร์ มัณฑนากรที่มีประสบการณ์การตกแต่งอันหลากหลาย พร้อมแปลงไอเดียของคุณให้เป็นจริงตามพื้นที่และงบประมาณที่คุณต้องการ</h4>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-5 pb-3">
+                <h1 id="about-heading" style="margin-top: 0px;"><b>Best Quality Equipment</b></h1>
+                <h4 id="about-content-h4" style="margin-top: 0px;color: black;">เลือกใช้ HAFELE เป็นอุปกรณ์ fittingมาตราฐานสากลจากเยอรมันบานพับและรางลิ้นชักเป็นระบบปิดแบบนุ่มนวล (Soft Close) ทุกชิ้น</h4>
             </div>
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                 <img src="<?=base_url('assets/img/about/222.PNG');?>" class="img-rounded" id="accounting2" style="width: 100%;">
@@ -155,73 +179,107 @@ img {vertical-align: middle;}
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
                 <img src="<?=base_url('assets/img/about/3.PNG');?>" class="img-rounded" id="accounting2" style="width: 100%;">
             </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-5 pt-5">
-                <h1 id="product" style="margin-top: 0px;"><b>Premium Material</b></h1>
-                <h4 id="gallery-product" style="margin-top: 0px; text-align: center; color: black;">เลือกใช้วัสดุโครงไม้จริงที่มีการเคลือบน้ำยากันปลวกปิดทับด้วยไม้อัดคุณภาพสูง เกรด AAA สำหรับงานเฟอร์นิเจอร์โดยตรงเพื่อความมั่นใจในความแข็งแรง อายุการใช้งานยาวนาน</h4>
-            </div>
-        </div>
-
-        <div class="row mb-5" data-aos="fade-up"data-aos-duration="1000">
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-5 pt-5">
-                <h1 id="product" style="margin-top: 0px;"><b>Best Quality Equipment</b></h1>
-                <h4 id="gallery-product" style="margin-top: 0px; text-align: center; color: black;">เลือกใช้ HAFELE เป็นอุปกรณ์ fittingมาตราฐานสากลจากเยอรมันบานพับและรางลิ้นชักเป็นระบบปิดแบบนุ่มนวล (Soft Close) ทุกชิ้น</h4>
-            </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                <img src="<?=base_url('assets/img/about/222.PNG');?>" class="img-rounded" id="accounting2" style="width: 100%;">
-            </div>
-        </div>
-
-        <div class="row" data-aos="fade-up"data-aos-duration="1000">
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
-                <img src="<?=base_url('assets/img/about/3.PNG');?>" class="img-rounded" id="accounting2" style="width: 100%;">
-            </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-5 pt-5">
-                <h1 id="product" style="margin-top: 0px;"><b>Top Brand Laminate</b></h1>
-                <h4 id="gallery-product" style="margin-top: 0px; text-align: center; color: black;">ใช้วัสดุปิดผิวลามิเนตคุณภาพสูง เกรด Hi-endระดับ Top Brand เช่น Lamitak, EDL, Wilsonart, Formica, AICA, Melatone, Virgo, Greenlam และอีกมายมาย มีคุณสมบัติป้องกันรอยขีดข่วนและมีความสวยงามคัดมาโดยตรงสำหรับงานตกแต่งภายในโดยเฉพาะ</h4>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-5 pt-3">
+                <h1 id="about-heading" style="margin-top: 0px;"><b>Top Brand Laminate</b></h1>
+                <h4 id="about-content-h4" style="margin-top: 0px;color: black;">ใช้วัสดุปิดผิวลามิเนตคุณภาพสูง เกรด Hi-endระดับ Top Brand เช่น Lamitak, EDL, Wilsonart, Formica, AICA, Melatone, Virgo, Greenlam และอีกมายมาย มีคุณสมบัติป้องกันรอยขีดข่วนและมีความสวยงามคัดมาโดยตรงสำหรับงานตกแต่งภายในโดยเฉพาะ</h4>
             </div>
         </div>
     </div><!-- end container -->
 </section>
 
-<section style="padding-top: 0px;padding-bottom: 0px;">
+
+<!-- Protect & Cleaning -->
+<section style="padding-top: 0px;padding-bottom: 0px;" class=" d-none d-md-none d-lg-block d-xl-block">
     <div class="container mt-3 mb-3" style="background-color: #dad0c6;border-bottom-right-radius: 18rem;">
         <div class="row" data-aos="fade-up"data-aos-duration="1000">
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 " style="padding-left: 0px;padding-right: 0px;">
                 <img src="<?=base_url('assets/img/about/Capturex.PNG');?>" class="img-rounded" id="accounting2" style="width: 100%;">
             </div>
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-5 pt-5">
-                <h1 id="product" style="margin-top: 0px;"><b>Protect & Cleaning</b></h1>
-                <h4 id="gallery-product" style="margin-top: 0px; text-align: center; color: black;">ปกป้องและป้องกันพื้นห้องของท่านด้วยการปูกระดาษลูกฟูกก่อนเข้าทำงานทุกครั้ง และมีการทำความสะอาดห้องให้ท่านก่อนทำการส่งมอบงานเสมอ</h4>
+                <h1 id="about-heading" style="margin-top: 5rem;"><b>Protect & Cleaning</b></h1>
+                <h4 id="about-content-h4" style="margin-top: 0px; color: black;">ปกป้องและป้องกันพื้นห้องของท่านด้วยการปูกระดาษลูกฟูกก่อนเข้าทำงานทุกครั้ง และมีการทำความสะอาดห้องให้ท่านก่อนทำการส่งมอบงานเสมอ</h4>
             </div>
         </div>
     </div>
 </section>
-<section style="padding-top: 0px;padding-bottom: 0px;">
+<!--สำหรับหน้าจอมือถือ -->
+<section style="padding-top: 0px;padding-bottom: 0px;" class=" d-block  d-md-block d-lg-none d-xl-none">
+    <div class="container mt-3 mb-3">
+        <div class="row" data-aos="fade-up"data-aos-duration="1000">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
+                <img src="<?=base_url('assets/img/about/Capturex.PNG');?>" class="img-rounded" id="accounting2" style="width: 100%; border-bottom-left-radius: 10rem;">
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3 pt-3">
+                <h1 id="about-heading" style="margin-top: 0px;"><b>Protect & Cleaning</b></h1>
+                <h4 id="about-content-h4" style="margin-top: 0px; color: black;">ปกป้องและป้องกันพื้นห้องของท่านด้วยการปูกระดาษลูกฟูกก่อนเข้าทำงานทุกครั้ง และมีการทำความสะอาดห้องให้ท่านก่อนทำการส่งมอบงานเสมอ</h4>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Protect & Cleaning -->
+
+
+
+<!-- 100% Work Completion -->
+<section style="padding-top: 0px;padding-bottom: 0px;" class=" d-none d-md-none d-lg-block d-xl-block">
     <div class="container mt-5  mb-3" style="background-color: #dad0c6;border-top-left-radius: 18rem;">
         <div class="row" data-aos="fade-up"data-aos-duration="1000">
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-5 pt-5 ">
-            <h1 id="product" style="margin-top: 0px;"><b>100% Work Completion</b></h1>
-                <h4 id="gallery-product" style="margin-top: 0px; text-align: center; color: black;">32Interior ไม่เคยมีประวัติการทิ้งงานอัตราการส่งมอบงาน 100% ไม่มีการทิ้งงานกลางคัน เพราะเราตั้งใจอย่างสุดความสามารถเพื่อส่งมอบงานคุณภาพและสวยงามตรงใจกับลูกค้าทุกท่าน</h4>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3 pt-3 ">
+            <h1 id="about-heading" style="margin-top: 10rem;"><b>100% Work Completion</b></h1>
+                <h4 id="about-content-h4" style="margin-top: 0px;color: black;">32Interior ไม่เคยมีประวัติการทิ้งงานอัตราการส่งมอบงาน 100% ไม่มีการทิ้งงานกลางคัน เพราะเราตั้งใจอย่างสุดความสามารถเพื่อส่งมอบงานคุณภาพและสวยงามตรงใจกับลูกค้าทุกท่าน</h4>
             </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="padding-left: 0px;padding-right: 0px;">
                 <img src="<?=base_url('assets/img/about/Capturex.PNG');?>" class="img-rounded" id="accounting2" style="width: 100%;">
             </div>
         </div>
     </div>
 </section>
-<section style="padding-top: 0px;padding-bottom: 0px;">
-    <div class="container mt-5 mb-3" style="background-color: #dad0c6;border-bottom-right-radius: 18rem;">
+<!--สำหรับหน้าจอมือถือ -->
+<section style="padding-top: 0px;padding-bottom: 0px;" class=" d-block  d-md-block d-lg-none d-xl-none">
+    <div class="container mt-4 mb-3">
         <div class="row" data-aos="fade-up"data-aos-duration="1000">
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
-                <img src="<?=base_url('assets/img/about/Capturex.PNG');?>" class="img-rounded" id="accounting2" style="width: 100%;">
+            <h1 id="about-heading" style="margin-top: 0px;"><b>100% Work Completion</b></h1>
+                <h4 id="about-content-h4" style="margin-top: 0px;color: black;">32Interior ไม่เคยมีประวัติการทิ้งงานอัตราการส่งมอบงาน 100% ไม่มีการทิ้งงานกลางคัน เพราะเราตั้งใจอย่างสุดความสามารถเพื่อส่งมอบงานคุณภาพและสวยงามตรงใจกับลูกค้าทุกท่าน</h4>
             </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-5 pt-5">
-                <h1 id="product" style="margin-top: 0px;"><b>Best technicial</b></h1>
-                <h4 id="gallery-product" style="margin-top: 0px; text-align: center; color: black;">มีทีมช่างที่มีประสบการณ์กว่า 20 ปี และผู้ควบคุมงานให้งานเป็นไปตามแบบและสเปคที่ถูกต้อง</h4>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <img src="<?=base_url('assets/img/about/Capturex.PNG');?>" class="img-rounded" id="accounting2" style="width: 100%; border-bottom-right-radius: 10rem;">
             </div>
         </div>
     </div>
 </section>
+<!--End 100% Work Completion -->
+
+<!-- Best technicial -->
+<section style="padding-top: 0px;padding-bottom: 0px;" class=" d-none d-md-none d-lg-block d-xl-block">
+    <div class="container mt-5 mb-3" style="background-color: #dad0c6;border-bottom-right-radius: 18rem;">
+        <div class="row" data-aos="fade-up"data-aos-duration="1000">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 " style="padding-left: 0px;padding-right: 0px;">
+                <img src="<?=base_url('assets/img/about/Capturex.PNG');?>" class="img-rounded" id="accounting2" style="width: 100%;">
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3 pt-3">
+                <h1 id="about-heading" style="margin-top: 10rem;"><b>Best technicial</b></h1>
+                <h4 id="about-content-h4" style="margin-top: 0px; color: black;">มีทีมช่างที่มีประสบการณ์กว่า 20 ปี และผู้ควบคุมงานให้งานเป็นไปตามแบบและสเปคที่ถูกต้อง</h4>
+            </div>
+        </div>
+    </div>
+</section>
+<!--สำหรับหน้าจอมือถือ -->
+<section style="padding-top: 0px;padding-bottom: 0px;" class=" d-block  d-md-block d-lg-none d-xl-none">
+    <div class="container mt-5 mb-3">
+        <div class="row" data-aos="fade-up"data-aos-duration="1000">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
+                <img src="<?=base_url('assets/img/about/Capturex.PNG');?>" class="img-rounded" id="accounting2" style="width: 100%; border-top-left-radius: 10rem;">
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-1 pt-3">
+                <h1 id="about-heading" style="margin-top: 0px;"><b>Best technicial</b></h1>
+                <h4 id="about-content-h4" style="margin-top: 0px; color: black;">มีทีมช่างที่มีประสบการณ์กว่า 20 ปี และผู้ควบคุมงานให้งานเป็นไปตามแบบและสเปคที่ถูกต้อง</h4>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Best technicial -->
+
 
 <script>
 var slideIndex = 0;

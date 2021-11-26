@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   }  
 </style>
 </head>
-<section class=" d-none  d-md-none d-lg-block d-xl-block">
+<section class=" d-none d-md-none d-lg-block d-xl-block">
   <div class="container-fluid">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #dad0c5; height: 12%;box-shadow: 0px 2px 15px rgb(0 0 0 / 10%);">
       <a id="brand_img" href="<?=base_url('home');?>">
@@ -81,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
 </section>
 
-<section class=" d-block  d-md-block d-lg-none d-xl-none">
+<section class=" d-block  d-md-block d-lg-none d-xl-none" style="padding-bottom: 0px;">
 <ul class="nav justify-content-center " style="background-color: #dad0c5; margin-top: -18%;">
   <li class="nav-item w-100" align="center">
     <a class="nav-link" href="<?=base_url('home');?>">
@@ -90,19 +90,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   </li>
   <li class="menu-active">
-            <a  class="nav-link"  href="<?=base_url('home');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf';">HOME <span class="sr-only">(current)</span></a>
+            <a  class="nav-link"  href="<?=base_url('home');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf'; font-size: 10px;">HOME <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a  class="nav-link" href="<?=base_url('#');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf';">ABOUT</a>
+            <a  class="nav-link" href="<?=base_url('about');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf'; font-size: 10px;">ABOUT</a>
           </li>
           <li class="nav-item">
-            <a  class="nav-link" href="<?=base_url('#');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf';">ARTICLE</a>
+            <a  class="nav-link" href="<?=base_url('article');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf'; font-size: 10px;">ARTICLE</a>
           </li>
           <li class="nav-item">
-            <a  class="nav-link" href="<?=base_url('galley');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf';">GALLERY</a>
+            <a  class="nav-link" href="<?=base_url('galley');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf'; font-size: 10px;">GALLERY</a>
           </li>
           <li class="nav-item">
-            <a  class="nav-link" href="<?=base_url('contact');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf';">CONTACT</a>
+            <a  class="nav-link" href="<?=base_url('contact');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf'; font-size: 10px;">CONTACT</a>
           </li>
 </ul>
 </section>

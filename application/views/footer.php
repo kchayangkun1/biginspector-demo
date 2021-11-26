@@ -1,22 +1,53 @@
-<div id="footer1" class="footer" style="background-color:#ffffff;box-shadow: 0px 2px 15px rgb(0 0 0 / 10%);">
+<section id="footer1" class="footer d-none d-md-none d-lg-block d-xl-block" style="background-color:#ffffff;box-shadow: 0px 2px 15px rgb(0 0 0 / 10%);">
     <div class="container">
         <div class="d-flex justify-content-between mb-3">
-            <div class="me-auto p-2 bd-highlight">
-            <img src="<?=base_url('assets/img/logo/logo1.png');?>" id="footer-lpgo" class="img-fluid "> 
+            <div class="me-auto p-3 bd-highlight">
+                <img src="<?=base_url('assets/img/logo/logo1.png');?>" id="footer-lpgo" class="img-fluid "> 
             </div>
-            <div class="p-2 bd-highlight">
-            <div align="center">
+            <div class="d-flex justify-content-between">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <h5 id="footer11" style=" color: #be1e2c;" class="mt-5 "><b>Sitemap</b></h5>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="padding-left: 0px;">
+                    <a href="<?=base_url('home');?>">
+                        <h5 id="footer11" style=" color: #be1e2c;">HOME</h5>
+                    </a>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="padding-left: 0px;">
+                    <a href="<?=base_url('about');?>">
+                        <h5 id="footer11" style=" color: #be1e2c;">ABOUT</h5>
+                    </a>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="padding-left: 0px;">
+                    <a href="<?=base_url('article');?>">
+                        <h5 id="footer11" style=" color: #be1e2c;">ARTICLE</h5>
+                    </a>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="padding-left: 0px;">
+                    <a href="<?=base_url('galley');?>">
+                        <h5 id="footer11" style=" color: #be1e2c;">GALLERY</h5>
+                    </a>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="padding-left: 0px;">
+                    <a href="<?=base_url('contact');?>">
+                        <h5 id="footer11" style=" color: #be1e2c;">CONTACT</h5>
+                    </a>
+                    </div>
+                </div>
+            </div>
+            <div class="p-3 bd-highlight">
+                <div align="center">
             <h5 id="footer11" style=" color: #be1e2c;" class="mt-5 ">Follow Me</h5>
-            </div>
+        </div>
             <ul style="padding-left: 0px;">
                 <div class="d-flex justify-content-between">
-                    <a href="https://www.facebook.com/ptlightingphuketthailand/" target="_blank">
+                    <div></div>
+                    <a href="https://www.facebook.com/32Decor" target="_blank">
                         <img class="ml-2" id="footer-contact" src="<?=base_url('assets/img/contact/iconpt-03.png');?>"  >
                     </a>
-                    <a href="#" target="_blank">
+                    <a href="https://line.me/R/ti/p/%4032decor?fbclid=IwAR1FcXLvuFMtxzBU_NrthHPwmwCK66hF47H4hrbpCjTeXLO56tslKi15IKU" target="_blank">
                         <img  class="ml-2" id="footer-contact" src="<?=base_url('assets/img/contact/iconpt-line.png');?>" >
                     </a>
-                    <a href="https://www.instagram.com/ptlighting.info/" target="_blank">    
+                    <a href="#" target="_blank">    
                         <img class="ml-2" id="footer-contact" src="<?=base_url('assets/img/contact/iconpt-05.png');?>" >
                     </a>
                     <a href="#" target="_blank">
@@ -24,18 +55,55 @@
                     </a> 
                 </div>
                 </ul>
-           
         </div>
     </div> 
     <div class="d-flex justify-content-center">
     <div class="row" style="background-color: #ffffff;">
-    <p class="copyright" id="Copyright" Style="text-align: center;  color: #be1e2c">Copyright © 2021 32 Docor All rights reserved.</p>
+    <p class="copyright" id="Copyright" Style="text-align: center;  color: #be1e2c">Copyright © 2021 32 Interior. All rights reserved.</p>
     </div>
-</div>
-
     </div>
-
+</section>
     
+
+<section id="footer1" class="footer d-block  d-md-block d-lg-none d-xl-none" style="background-color:#ffffff;box-shadow: 0px 2px 15px rgb(0 0 0 / 10%); padding-top: 0px;padding-bottom: 0px;">
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="me-auto p-3 bd-highlight">
+                <img src="<?=base_url('assets/img/logo/logo1.png');?>" id="footer-lpgo" class="img-fluid " style="padding-top: 0px;"> 
+            </div>
+            </div>
+            <div class="p-3 bd-highlight">
+                <div align="center">
+            <h5 id="footer11" style=" color: #be1e2c;" >Follow Me</h5>
+        </div>
+            <ul style="padding-left: 0px;">
+                <div class="d-flex justify-content-center">
+                    <div></div>
+                    <a href="https://www.facebook.com/32Decor" target="_blank">
+                        <img class="ml-2" id="footer-contact" src="<?=base_url('assets/img/contact/iconpt-03.png');?>"  >
+                    </a>
+                    <a href="https://line.me/R/ti/p/%4032decor?fbclid=IwAR1FcXLvuFMtxzBU_NrthHPwmwCK66hF47H4hrbpCjTeXLO56tslKi15IKU" target="_blank">
+                        <img  class="ml-2" id="footer-contact" src="<?=base_url('assets/img/contact/iconpt-line.png');?>" >
+                    </a>
+                    <a href="#" target="_blank">    
+                        <img class="ml-2" id="footer-contact" src="<?=base_url('assets/img/contact/iconpt-05.png');?>" >
+                    </a>
+                    <a href="#" target="_blank">
+                        <img  class="ml-2" id="footer-contact" src="<?=base_url('assets/img/contact/iconpt-yputube.png');?>" >
+                    </a> 
+                </div>
+                </ul>
+        </div>
+    </div> 
+    <div class="d-flex justify-content-center">
+    <div class="row" style="background-color: #ffffff;">
+    <p class="copyright" id="Copyright" Style="text-align: center;  color: #be1e2c">Copyright © 2021 32 Interior. All rights reserved.</p>
+    </div>
+    </div>
+</section>
+
+
+
   <!-- Vendor JS Files -->
   <script src="<?=base_url('assets/vendor/bootstrap-4.6.0-dist/bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js.map');?>"></script>
   <script src="<?=base_url('assets/vendor/glightbox/js/glightbox.min.js');?>"></script>
