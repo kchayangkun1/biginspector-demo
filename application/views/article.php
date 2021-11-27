@@ -48,20 +48,7 @@ a{
     color: #000;
 }
 </style>
-<section style="padding-top: 0px;padding-bottom: 0px;">
-           <div class="container-fluid" style="padding-left: 0px;padding-right: 0px;" >
-            <div data-aos="fade-up"data-aos-duration="1000">
-               <div>
-                 <a href="#" target="_blank">
-                  <img src="<?=base_url('assets/img/banner/banner1920-test.png');?>" class="img-rounded" id="accounting2" style="width: 100%;">
-                </a>
-                <div class="centered" id="article-h">สไตล์การแต่งบ้านยอดนิยม อยู่อย่างไรก็ไม่เบื่อ</div>
-                <div class="centered-1 mt-3" id="article-1">หากคุณกำลังตัดสินใจตกแต่งหรือรีโนเวทบ้านสักหลัง <br>วันนี้ 32 Interior Design มีสไตล์การออกแบบที่อยู่อย่างไรก็ไม่เบื่อ <br> นานแค่ไหนก็ดูไม่เก่ามาให้ชมกัน</div>
-                <button type="button" id="button-btn" class="btn btn-outline-light mt-3" style="border-radius: 20px;">Read more</button>
-                </div>
-              </div>
-            </div>
-        </section>
+
 
         
 <section class=" pb-1" id="background-about" style="background-color: #eee4d9;">

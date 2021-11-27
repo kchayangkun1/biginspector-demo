@@ -68,13 +68,14 @@ img {vertical-align: middle;}
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
+
 }
+
+
 </style>
 
 
-
 <body>
-
 <section style="padding-top: 0px;padding-bottom: 0px;">
     <div class="container-fluid" style="padding-left: 0px;padding-right: 0px;" >
       <img src="<?=base_url('assets/img/banner/banner1920-test.png');?>" class="img-rounded" id="accounting2" style="width: 100%;">
@@ -84,10 +85,10 @@ img {vertical-align: middle;}
 <section>
   <div class="container">
     <div class="row mb-5" data-aos="fade-up"data-aos-duration="1000">
-      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-5 pt-5">
-        <h1 id="product" style="margin-top: 0px;"><b>32 Interior Design</b></h1>
-          <h4 id="gallery-product" style="margin-top: 0px; text-align: center; color: black;">32Interior Design 10 ปี ในงานออกแบบตกแต่งภายในที่สร้างชื่อเสียงเป็นที่รู้จัก ด้วยความเข้าใจในงานตกแต่งบ้านและสิ่งที่เจ้าของบ้านต้องการ</h4>
-          <h4 class="mt-5" id="gallery-product" style="margin-top: 0px; text-align: center; color: black;">พวกเรา 32Interior Design ทีมนักออกแบบจากคนรุ่นใหม่แต่มากไปด้วยประสบการณ์ ทีมช่างมืออาชีพการบริการ ความซื่อสัตย์ และความรัก ความตั้งใจในงานออกแบบตกแต่งภายใน บ้านของคุณจะถูกเนรมิตเพื่อคุณอย่างแท้จริง</h4>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-2 pt-2">
+        <h1 id="h-h1" style="margin-top: 0px;"><b>32 Interior Design</b></h1>
+          <h4 id="text-h4" style="margin-top: 0px;  color: black;">32Interior Design 10 ปี ในงานออกแบบตกแต่งภายในที่สร้างชื่อเสียงเป็นที่รู้จัก ด้วยความเข้าใจในงานตกแต่งบ้านและสิ่งที่เจ้าของบ้านต้องการ</h4>
+          <h4 class="mt-5" id="text-h4" style="margin-top: 0px; color: black;">พวกเรา 32Interior Design ทีมนักออกแบบจากคนรุ่นใหม่แต่มากไปด้วยประสบการณ์ ทีมช่างมืออาชีพการบริการ ความซื่อสัตย์ และความรัก ความตั้งใจในงานออกแบบตกแต่งภายใน บ้านของคุณจะถูกเนรมิตเพื่อคุณอย่างแท้จริง</h4>
       </div>
       <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
         <img src="<?=base_url('assets/img/about/Capture qqq.PNG');?>" class="img-rounded" id="accounting2" style="width: 100%;">
@@ -102,97 +103,97 @@ img {vertical-align: middle;}
     </div>
 </section>
 
-<section id="product">
+<section  id="product">
     <div class="container" id="product">
       <div data-aos="fade-up"data-aos-duration="1000">
           <div class="row mt-5">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
               <div class="hover01 column">
                 <figure>
-                    <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px; ">
-                      <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1" >
+                    <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px; width: 100%;" >
+                      <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1" style="width: 100%;">
                     </a>
                 </figure>
             </div>
           </div>
-          <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
             <div class="hover01 column">
               <figure>
-                <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px; ">
-                  <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1" >
+                <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px; width: 100%;" >
+                  <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1"style="width: 100%;">
                 </a>
               </figure>
           </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
             <div class="hover01 column">
               <figure>
-                <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px; ">
-                  <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1" >
+                <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px; width: 100%;" >
+                  <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1" style="width: 100%;">
                 </a>
               </figure>
           </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
             <div class="hover01 column">
               <figure>
-                <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px; ">
-                  <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1" >
+                <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px;width: 100%; " >
+                  <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1" style="width: 100%;">
                 </a>
               </figure>
           </div>
         </div>
       </div>
       <div data-aos="fade-up"data-aos-duration="1000">
-          <div class="row mt-5">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+          <div class="row ">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3 ">
               <div class="hover01 column">
                 <figure>
-                    <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px; ">
-                      <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1" >
+                    <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px;width: 100%; " >
+                      <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1" style="width: 100%;">
                     </a>
                 </figure>
             </div>
           </div>
-          <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
             <div class="hover01 column">
               <figure>
-                <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px; ">
-                  <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1" >
+                <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px;width: 100%; ">
+                  <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1"style="width: 100%;" >
                 </a>
               </figure>
           </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
             <div class="hover01 column">
               <figure>
-                <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px; ">
-                  <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1" >
+                <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px; width: 100%;">
+                  <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1"style="width: 100%;" >
                 </a>
               </figure>
           </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
             <div class="hover01 column">
               <figure>
-                <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px; ">
-                  <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1" >
+                <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px;width: 100%; ">
+                  <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1"style="width: 100%;" >
                 </a>
               </figure>
           </div>
         </div>
       </div>
     </div>
-    <div class="mt-5" style="text-align: center;">
+    <div class="mt-3" style="text-align: center;">
       <button id="button-product" type="button" class="btn btn-outline-warning">View all</button>
     </div>
   </section>
 
-  <section>
-    <div class="container">
+  <section style="padding-top: 0px;padding-bottom: 0px;">
+    <div class="container" style="padding-bottom: 0px;">
       <div class="row" data-aos="fade-up"data-aos-duration="1000">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-          <h1 id="product" style="margin-top: 0px; text-align: center;"><b>Forum</b></h1>
+          <h1 id="h-h1" style="margin-top: 0px; text-align: center;"><b>Forum</b></h1>
         </div>
       </div>
     <div class="row mb-5" data-aos="fade-up"data-aos-duration="1000">
@@ -200,21 +201,18 @@ img {vertical-align: middle;}
         <img src="<?=base_url('assets/img/home/Captureqqq.PNG');?>" class="img-rounded" id="accounting2" style="width: 100%;">
       </div>
       <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-5 pt-3">
-        <h1 id="product" style="margin-top: 0px;"><b>32 Interior Design</b></h1>
-          <h4 id="gallery-product" style="margin-top: 0px; text-align: center; color: black;">32Interior Design 10 ปี ในงานออกแบบตกแต่งภายในที่สร้างชื่อเสียงเป็นที่รู้จัก ด้วยความเข้าใจในงานตกแต่งบ้านและสิ่งที่เจ้าของบ้านต้องการ</h4>
-          <h4 class="mt-5" id="gallery-product" style="margin-top: 0px; text-align: center; color: black;">พวกเรา 32Interior Design ทีมนักออกแบบจากคนรุ่นใหม่แต่มากไปด้วยประสบการณ์ ทีมช่างมืออาชีพการบริการ ความซื่อสัตย์ และความรัก ความตั้งใจในงานออกแบบตกแต่งภายใน บ้านของคุณจะถูกเนรมิตเพื่อคุณอย่างแท้จริง</h4>
+        <h1 id="h-h1" style="margin-top: 0px;"><b>32 Interior Design</b></h1>
+          <h4 id="text-h4" style="margin-top: 0px; color: black;">32Interior Design 10 ปี ในงานออกแบบตกแต่งภายในที่สร้างชื่อเสียงเป็นที่รู้จัก ด้วยความเข้าใจในงานตกแต่งบ้านและสิ่งที่เจ้าของบ้านต้องการ</h4>
+          <h4 class="mt-5" id="text-h4" style="margin-top: 0px; color: black;">พวกเรา 32Interior Design ทีมนักออกแบบจากคนรุ่นใหม่แต่มากไปด้วยประสบการณ์ ทีมช่างมืออาชีพการบริการ ความซื่อสัตย์ และความรัก ความตั้งใจในงานออกแบบตกแต่งภายใน บ้านของคุณจะถูกเนรมิตเพื่อคุณอย่างแท้จริง</h4>
                 <div class="container">
                   <div class="row">
-                    <div class=" col-4 col-sm-4 col-md-3 col-lg-3 col-xl-3 mt-5">
+                    <div class=" col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 mt-5">
                       <img src="<?=base_url('assets/img/home/Capture.PNG');?>" id="about-product1" class="img-fluid ">
                         </div>
-                          <div class=" col-4 col-sm-4 col-md-3 col-lg-3 col-xl-3 mt-5">
+                          <div class=" col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 mt-5">
                             <img src="<?=base_url('assets/img/home/Capture.PNG');?>" id="about-product1" class="img-fluid ">
                               </div>
-                                <div class=" col-4 col-sm-4 col-md-3 col-lg-3 col-xl-3 mt-5 ">
-                                <img src="<?=base_url('assets/img/home/Capture.PNG');?>" id="about-product1" class="img-fluid ">
-                            </div>
-                            <div class=" col-4 col-sm-4 col-md-3 col-lg-3 col-xl-3 mt-5 ">
+                                <div class=" col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 mt-5 ">
                                 <img src="<?=base_url('assets/img/home/Capture.PNG');?>" id="about-product1" class="img-fluid ">
                             </div>
                         </div>
@@ -226,7 +224,7 @@ img {vertical-align: middle;}
     </div>
   </div>
 </section>
-<section>
+<section style="padding-top: 0px;padding-bottom: 0px;">
     <div class="container">
         <div class="slideshow-container">
             <div class="mySlides fade">

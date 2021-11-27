@@ -1545,7 +1545,7 @@ section {
     font-size: 19px;
   }
   #footer-lpgo{
-    width: 30%;
+    width: 77%;
   }
   #footer-contact{
     width: 39px;
@@ -1685,7 +1685,6 @@ section {
   width: 23%;
     margin-top: 10%;
 }
-
 }
 
 @media only screen and (max-width: 640px) and (min-width: 360px) {
@@ -1789,6 +1788,13 @@ section {
   width: 78px;
       padding-top: 33px;
  }
+ #h-h1{
+  font-size: 24px;
+}
+#text-h4{
+  font-size: 16px;
+  text-align: inherit;
+}
 }
 /*--------------------------------------------------------------
 # Footer
