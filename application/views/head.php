@@ -3,21 +3,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>32 Decoe</title>
-<meta name="title" content="32 Decoe">
-<meta name="description" content="32 Decoe">
-<meta name="keyword" content="32 Decoe">
+  <title>32 Decor</title>
+<meta name="title" content="32 Decor">
+<meta name="description" content="32 Decor">
+<meta name="keyword" content="32 Decor">
+
+  <link rel="icon" type="image/png" href="<?=base_url('assets/img/logo/logo1.png');?>" />
+    <link rel="shortcut icon" type="image/ico" href="<?=base_url('assets/img/logo/logo1.png');?>">
+    <link rel="apple-touch-icon-precomposed" type="image/ico" sizes="114×114" href="<?=base_url('assets/img/logo/logo1.png');?>">
+    <link rel="apple-touch-icon-precomposed" type="image/ico" sizes="72×72" href="<?=base_url('assets/img/logo/logo1.png');?>">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="">
-<meta property="og:title" content="32 Decoe">
-<meta property="og:description" content="32 Decoe">
+<meta property="og:title" content="32 Decor">
+<meta property="og:description" content="32 Decor">
 <meta property="og:image" content="<?=base_url('assets/img/banner/banner.png');?>">
 
 <!-- Twitter -->
@@ -51,6 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   }  
 </style>
 </head>
+<body>
 <section class=" d-none d-md-none d-lg-block d-xl-block">
   <div class="container-fluid">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #dad0c5; height: 12%;box-shadow: 0px 2px 15px rgb(0 0 0 / 10%);">
@@ -70,7 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a  class="nav-link" href="<?=base_url('article');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf';">ARTICLE</a>
           </li>
           <li class="nav-item">
-            <a  class="nav-link" href="<?=base_url('galley');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf';">GALLERY</a>
+            <a  class="nav-link" href="<?=base_url('gallery');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf';">GALLERY</a>
           </li>
           <li class="nav-item">
             <a  class="nav-link" href="<?=base_url('contact');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf';">CONTACT</a>
@@ -99,7 +104,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a  class="nav-link" href="<?=base_url('article');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf'; font-size: 10px;">ARTICLE</a>
           </li>
           <li class="nav-item">
-            <a  class="nav-link" href="<?=base_url('galley');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf'; font-size: 10px;">GALLERY</a>
+            <a  class="nav-link" href="<?=base_url('gallery');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf'; font-size: 10px;">GALLERY</a>
           </li>
           <li class="nav-item">
             <a  class="nav-link" href="<?=base_url('contact');?>"  style="color: #000000;  font-family: 'airstrikebold.ttf'; font-size: 10px;">CONTACT</a>

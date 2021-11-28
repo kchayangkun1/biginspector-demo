@@ -11,8 +11,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<title>Article | 32Decor</title>
 
-	<link rel="apple-touch-icon" href="<?php echo base_url('./assets/img/logo2.png');?>">
-	<link rel="shortcut icon" href="<?php echo base_url('./assets/img/logo2.png');?>">
+	<link rel="icon" type="image/png" href="<?=base_url('assets/img/logo/logo1.png');?>" />
+    <link rel="shortcut icon" type="image/ico" href="<?=base_url('assets/img/logo/logo1.png');?>">
+    <link rel="apple-touch-icon-precomposed" type="image/ico" sizes="114×114" href="<?=base_url('assets/img/logo/logo1.png');?>">
+    <link rel="apple-touch-icon-precomposed" type="image/ico" sizes="72×72" href="<?=base_url('assets/img/logo/logo1.png');?>">
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="<?=base_url('./assets/admin/assets/css/bootstrap.css');?>">
@@ -189,7 +191,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     ['para', ['ul', 'ol', 'paragraph']],
                     // ['table', ['table']],
 					['insert', ['picture']],
-                    ['view', ['codeview', 'help']]
+                    ['view', ['codeview', 'help']],
+					['fontname', ['Prompt']]
                 ],
 				callbacks: {
 					onImageUpload: function(files) {

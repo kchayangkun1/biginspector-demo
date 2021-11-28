@@ -71,121 +71,57 @@ img {vertical-align: middle;}
 
 }
 
-
 </style>
-
-
 <body>
-<section style="padding-top: 0px;padding-bottom: 0px;">
+  <section style="padding-top: 0px;padding-bottom: 0px;">
     <div class="container-fluid" style="padding-left: 0px;padding-right: 0px;" >
-      <img src="<?=base_url('assets/img/banner/banner1920-test.png');?>" class="img-rounded" id="accounting2" style="width: 100%;">
+      <img src="<?=base_url('assets/images/banner/'.$banner[0]['img_cover']);?>" alt="<?=$banner[0]['name']?>" class="img-rounded" id="accounting2" style="width: 100%;">
     </div>
-</section>
+  </section>
 
-<section>
-  <div class="container">
-    <div class="row mb-5" data-aos="fade-up"data-aos-duration="1000">
-      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-2 pt-2">
-        <h1 id="h-h1" style="margin-top: 0px;"><b>32 Interior Design</b></h1>
-          <h4 id="text-h4" style="margin-top: 0px;  color: black;">32Interior Design 10 ปี ในงานออกแบบตกแต่งภายในที่สร้างชื่อเสียงเป็นที่รู้จัก ด้วยความเข้าใจในงานตกแต่งบ้านและสิ่งที่เจ้าของบ้านต้องการ</h4>
-          <h4 class="mt-5" id="text-h4" style="margin-top: 0px; color: black;">พวกเรา 32Interior Design ทีมนักออกแบบจากคนรุ่นใหม่แต่มากไปด้วยประสบการณ์ ทีมช่างมืออาชีพการบริการ ความซื่อสัตย์ และความรัก ความตั้งใจในงานออกแบบตกแต่งภายใน บ้านของคุณจะถูกเนรมิตเพื่อคุณอย่างแท้จริง</h4>
-      </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-        <img src="<?=base_url('assets/img/about/Capture qqq.PNG');?>" class="img-rounded" id="accounting2" style="width: 100%;">
+  <section>
+    <div class="container">
+      <div class="row mb-5" data-aos="fade-up"data-aos-duration="1000">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-2 pt-2">
+          <h1 id="h-h1" style="margin-top: 0px;"><b>32 Interior Design</b></h1>
+            <h4 id="text-h4" style="margin-top: 0px;  color: black;">32Interior Design 10 ปี ในงานออกแบบตกแต่งภายในที่สร้างชื่อเสียงเป็นที่รู้จัก ด้วยความเข้าใจในงานตกแต่งบ้านและสิ่งที่เจ้าของบ้านต้องการ</h4>
+            <h4 class="mt-5" id="text-h4" style="margin-top: 0px; color: black;">พวกเรา 32Interior Design ทีมนักออกแบบจากคนรุ่นใหม่แต่มากไปด้วยประสบการณ์ ทีมช่างมืออาชีพการบริการ ความซื่อสัตย์ และความรัก ความตั้งใจในงานออกแบบตกแต่งภายใน บ้านของคุณจะถูกเนรมิตเพื่อคุณอย่างแท้จริง</h4>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+          <img src="<?=base_url('assets/img/about/Capture qqq.PNG');?>" class="img-rounded" id="accounting2" style="width: 100%;">
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section style="padding-top: 0px;padding-bottom: 0px;">
+  <section style="padding-top: 0px;padding-bottom: 0px;">
     <div class="container-fluid" style="padding-left: 0px;padding-right: 0px;" >
-      <img src="<?=base_url('assets/img/banner/test1.png');?>" class="img-rounded" id="accounting2" style="width: 100%;">
+     <a href="https://www.facebook.com/32Decor" target="_blank"><img src="<?=base_url('assets/img/banner/test1.png');?>" class="img-rounded" id="accounting2" style="width: 100%;"></a>
     </div>
-</section>
+  </section>
 
-<section  id="product">
+  <section  id="product">
     <div class="container" id="product">
       <div data-aos="fade-up"data-aos-duration="1000">
-          <div class="row mt-5">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
-              <div class="hover01 column">
-                <figure>
-                    <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px; width: 100%;" >
-                      <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1" style="width: 100%;">
-                    </a>
-                </figure>
-            </div>
-          </div>
-          <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
-            <div class="hover01 column">
-              <figure>
-                <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px; width: 100%;" >
-                  <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1"style="width: 100%;">
-                </a>
-              </figure>
-          </div>
+        <div class="row mt-5">
+          <?php 
+            foreach($recom_gallery as $val) : 
+              echo '<div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">';
+                echo '<div class="hover01 column">';
+                  echo '<figure>';
+                    echo '<a href="'.base_url('assets/images/gallery/cover/'.$val['id'].'/'.$val['img_cover']).'" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px; width: 100%;" alt="'.$val['name'].'">';
+                      echo '<img src="'.base_url('assets/images/gallery/cover/'.$val['id'].'/'.$val['img_cover']).'" class="img-rounded" id="registered-1" style="width: 100%;" alt="'.$val['name'].'">';
+                    echo '</a>';
+                  echo '</figure>';
+                echo '</div>';
+              echo '</div>';
+            endforeach;
+          ?>
         </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
-            <div class="hover01 column">
-              <figure>
-                <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px; width: 100%;" >
-                  <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1" style="width: 100%;">
-                </a>
-              </figure>
-          </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
-            <div class="hover01 column">
-              <figure>
-                <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px;width: 100%; " >
-                  <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1" style="width: 100%;">
-                </a>
-              </figure>
-          </div>
+        <div class="mt-3" style="text-align: center;">
+          <a href="<?=base_url('gallery');?>" id="button-product" type="button" class="btn btn-outline-secondary pl-4 pr-4" style="border-radius: 2rem;">View all</a>
         </div>
       </div>
-      <div data-aos="fade-up"data-aos-duration="1000">
-          <div class="row ">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3 ">
-              <div class="hover01 column">
-                <figure>
-                    <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px;width: 100%; " >
-                      <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1" style="width: 100%;">
-                    </a>
-                </figure>
-            </div>
-          </div>
-          <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
-            <div class="hover01 column">
-              <figure>
-                <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px;width: 100%; ">
-                  <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1"style="width: 100%;" >
-                </a>
-              </figure>
-          </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
-            <div class="hover01 column">
-              <figure>
-                <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px; width: 100%;">
-                  <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1"style="width: 100%;" >
-                </a>
-              </figure>
-          </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
-            <div class="hover01 column">
-              <figure>
-                <a href="<?=base_url('assets/img/home/Capture.PNG');?>" data-toggle="lightbox" data-gallery="gallery" class="img-rounded" id="registered-1" style=" border-radius:20px;width: 100%; ">
-                  <img src="<?=base_url('assets/img/home/Capture.PNG');?>" class="img-rounded" id="registered-1"style="width: 100%;" >
-                </a>
-              </figure>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="mt-3" style="text-align: center;">
-      <button id="button-product" type="button" class="btn btn-outline-warning">View all</button>
     </div>
   </section>
 
@@ -274,6 +210,6 @@ function showSlides() {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
 </script>

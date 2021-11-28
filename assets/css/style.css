@@ -1366,7 +1366,7 @@ section {
   }
   #imglogo{
     width:80%;
-    margin-left: 146%;
+    /* margin-left: 146%; */
   }
   .nav-item{
     color: #fff800;

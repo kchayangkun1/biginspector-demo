@@ -11,10 +11,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta name="author" content="32Decor">
 
 	<title>Article | 32Decor </title>
-	<link rel="icon" type="image/png" href="<?=base_url('assets/img/logo/logo.png');?>" />
-    <link rel="shortcut icon" type="image/ico" href="<?=base_url('assets/img/logo/logo.png');?>">
-    <link rel="apple-touch-icon-precomposed" type="image/ico" sizes="114×114" href="<?=base_url('assets/img/logo/logo.png');?>">
-    <link rel="apple-touch-icon-precomposed" type="image/ico" sizes="72×72" href="<?=base_url('assets/img/logo/logo.png');?>">
+	<link rel="icon" type="image/png" href="<?=base_url('assets/img/logo/logo1.png');?>" />
+    <link rel="shortcut icon" type="image/ico" href="<?=base_url('assets/img/logo/logo1.png');?>">
+    <link rel="apple-touch-icon-precomposed" type="image/ico" sizes="114×114" href="<?=base_url('assets/img/logo/logo1.png');?>">
+    <link rel="apple-touch-icon-precomposed" type="image/ico" sizes="72×72" href="<?=base_url('assets/img/logo/logo1.png');?>">
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="<?=base_url('./assets/admin/assets/css/bootstrap.css');?>">
@@ -89,11 +89,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 															<i class="icon wb-close" aria-hidden="true"></i>
 														</span> ปิด
 													</ol>
-													<ol>
+													<!-- <ol>
 														สถานะ NEW Article ปรับได้ 4 รายการ
-													</ol>
+													</ol> -->
 													<ol>
-														สถานะ Recommend ปรับได้ 8 รายการ
+														สถานะ Recommend ปรับได้ 9 รายการ
 													</ol>
 											  </ul>
 			                  				<table id="exampleTableToolbar" data-mobile-responsive="true" class="table table-hover" data-pagination="true" data-search="true" style="margin-top: 0px;">
@@ -107,25 +107,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			                    							<div class="th-inner ">Name</div>
 			                    							<div class="fht-cell"></div>
 			                    						</th>
-														<!-- <th style="" data-field="Price" data-align="right">
-			                    							<div class="th-inner ">Price</div>
-			                    							<div class="fht-cell"></div>
-			                    						</th> -->
 														</th>
-			                    						<th style="" data-field="Document" data-align="center">
+			                    						<!-- <th style="" data-field="Document" data-align="center">
 			                    							<div class="th-inner ">Album</div>
 			                    							<div class="fht-cell"></div>
-			                    						</th>
+			                    						</th> -->
 			                    						<th style="" data-field="Created" data-align="center">
 			                    							<div class="th-inner ">Created</div>
 			                    							<div class="fht-cell"></div>
 			                    						</th>
 														<th style="" data-field="Recommend" data-align="center">
 			                    							<div class="th-inner ">Recommend</div>
-			                    							<div class="fht-cell"></div>
-			                    						</th>
-														<th style="" data-field="New" data-align="center">
-			                    							<div class="th-inner ">NEW Article</div>
 			                    							<div class="fht-cell"></div>
 			                    						</th>
 														<th style="" data-field="Status" data-align="center">
@@ -147,15 +139,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			                  						<tr> 
 			                  							<td class=""><?=$i+1; ?></td> 
 			                  							<td style=""><?=$val_item['name']; ?></td>
-														<!-- <td style=""><?//=number_format($val_item['price'], 2); ?></td> -->
-														<td style="">
-															<a type="button" href="<?=base_url('Admin/albums/'.$val_item['id'].'/?slug='.$val_item['name']);?>" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="top" title="File upload">
+														<!-- <td style="">
+															<a type="button" href="<?//=base_url('Admin/albums/'.$val_item['id'].'/?slug='.$val_item['name']);?>" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="top" title="File upload">
 															<i class="fa fa-picture-o" aria-hidden="true"></i>
 														  	</a>
-														</td>
+														</td> -->
 			                  							<td style=""><?=date("d/m/Y", strtotime($val_item['create_date'])); ?></td>
 														<td style="">
-															<?php if($isrecom == 8) : ?>
+															<?php if($isrecom == 9) : ?>
 																<?php if ($val_item['is_recommend'] == '1') : ?>
 			                  										<button class="btn btn-sm btn-success btn-icon btn-floating" type="button" onclick="sChange(<?=$val_item['id']; ?>, 0)"><i class="icon wb-check" aria-hidden="true"></i></button>
 			                  									<?php else : ?>
@@ -175,28 +166,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 															<?php endif; ?>
 
-			                  							</td>
-														<td style="">
-															<?php if($isnew == 4): ?>
-																<?php if ($val_item['is_new'] == '1') : ?>
-																	<button class="btn btn-sm btn-success btn-icon btn-floating" type="button" onclick="newChange(<?=$val_item['id']; ?>, 0)"  data-toggle="tooltip" data-placement="top" title="YES"><i class="icon wb-check" aria-hidden="true"></i></button>
-			                  									<?php else : ?>
-																	<button class="btn btn-sm btn-secondary btn-icon btn-floating disabled not-allowed" type="button" diabled><i class="fa fa-ban text-danger" aria-hidden="true"></i></button>
-			                  									<?php endif; ?>
-
-															<?php else : ?>
-																<?php if($val_item['is_recommend'] == '1') : ?>
-																<button class="btn btn-sm btn-secondary btn-icon btn-floating disabled not-allowed" type="button" diabled><i class="fa fa-ban text-danger" aria-hidden="true"></i></button>
-															<?php else : ?>
-																<?php if ($val_item['is_new'] == '1') : ?>
-																	<button class="btn btn-sm btn-success btn-icon btn-floating" type="button" onclick="newChange(<?=$val_item['id']; ?>, 0)"  data-toggle="tooltip" data-placement="top" title="YES"><i class="icon wb-check" aria-hidden="true"></i></button>
-			                  									<?php else : ?>
-																	<button class="btn btn-sm btn-danger btn-icon btn-floating" type="button" onclick="newChange(<?=$val_item['id']; ?>, 1)" data-toggle="tooltip" data-placement="top" title="NO"><i class="icon wb-close" aria-hidden="true"></i></button>
-			                  									<?php endif; ?>
-																 
-															<?php endif; ?>
-
-															<?php endif; ?>
 			                  							</td>
 														<td style="">
 															<?php if ($val_item['is_active'] == '1') : ?>
@@ -270,7 +239,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 				<div class="modal-body">
 					<h4>คุณต้องการเปลี่ยนสถานะ ใช่หรือไม่ ?</h4>
-					<h6>รายการที่เลือกจะไม่แสดงผลในหน้าแรก</h6>
+					<h6>สามารถเปลี่ยนแปลงได้ทุกเมื่อ</h6>
 				</div>
 				<div class="modal-footer">
 					<input type="hidden" id="p_id" name="p_id">
@@ -292,7 +261,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 				<div class="modal-body">
 					<h4>คุณต้องการเปลี่ยนสถานะ ใช่หรือไม่ ?</h4>
-					<h6>รายการที่เลือกจะไม่แสดงผลในหน้าแรก</h6>
+					<h6>สามารถเปลี่ยนแปลงได้ทุกเมื่อ</h6>
 				</div>
 				<div class="modal-footer">
 					<input type="hidden" id="p_id" name="p_id">

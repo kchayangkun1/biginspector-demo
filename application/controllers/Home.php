@@ -9,11 +9,13 @@ class home extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('form_validation'); 
 		$this->load->model('Product_model');
+		$this->load->model('Banner_model');
+		$this->load->model('Gallery_model');
 	}
     public function index()
 	{
-		$data['new_products'] = $this->Product_model->new_product();
-		$data['recom_products'] = $this->Product_model->fetchRecommend();
+		$data['banner'] = $this->Banner_model->fecthAll(); // banner
+		$data['recom_gallery'] = $this->Gallery_model->fetchRecommend();
 
 		$this->load->view('head');
 		$this->load->view('home',$data);

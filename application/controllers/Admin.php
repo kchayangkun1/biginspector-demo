@@ -11,9 +11,10 @@ class Admin extends CI_Controller {
         $this->load->library('upload'); 
         $this->load->library('session');
         $this->load->model('Product_model'); 
-        $this->load->model('About_model');
+        $this->load->model('Gallery_model');
         $this->load->model('Upload_product_model'); 
-
+        $this->load->model('Upload_gallery_model'); 
+        $this->load->model('Banner_model'); 
 	}
     
 	public function home(){
@@ -26,6 +27,7 @@ class Admin extends CI_Controller {
             redirect('Login','refresh');
         }
     }
+    
     public function article()
     {
         if(!empty($this->session->userdata('user'))){
@@ -65,10 +67,7 @@ class Admin extends CI_Controller {
                 'short_dsc'     => $short_dsc,
                 'description'   => $description
             );
-            // echo '<pre>';
-            // print_r($data);
-            // echo '</pre>';
-            // die();
+            
             $last_pid = $this->Product_model->create($data); 
             if($last_pid > 0){
                 if(!empty($_FILES['covImg']['name'])){
@@ -351,7 +350,6 @@ class Admin extends CI_Controller {
         else{
             redirect('Login','refresh');
         }
-
     }
 
     public function change_isnewpd()
@@ -517,651 +515,521 @@ class Admin extends CI_Controller {
         }   
     }
 
+    public function gallery()
+    {
+        if(!empty($this->session->userdata('user'))){
+
+            $data['galleries'] = $this->Gallery_model->fetchAll();
+
+            $data['isnew'] = $this->Gallery_model->countIsNew();
+            $data['isrecom'] = $this->Gallery_model->countIsRecom();
+            
+            $this->load->view('admin/list_gallery', $data);    
+        }
+        else{
+            redirect('Login','refresh');
+        }
+    }
+
+    public function form_gallery()
+    {
+        if(!empty($this->session->userdata('user'))){
+            
+            $this->load->view('admin/form_gallery'); //  
+        }
+        else{
+            redirect('Login','refresh');
+        }
+    }
+
+    public function create_gallery(){ 
+        if(!empty($this->session->userdata('user'))){
+            $this->security->get_csrf_token_name();
+            $this->security->get_csrf_hash();
+    
+            $name = $this->security->xss_clean($this->input->post('name', TRUE));
+            $short_dsc = $this->security->xss_clean($this->input->post('short_dsc', TRUE));
+    
+            $data = array(
+                'name'          => $name,
+                'short_dsc'     => $short_dsc,
+            );
+            echo '<pre>';
+            print_r($data);
+            echo '</pre>';
+
+            $last_gid = $this->Gallery_model->create($data); 
+            if($last_gid > 0){
+                if(!empty($_FILES['covImg']['name'])){
+                    $folderName = './assets/images/gallery/cover/'.$last_gid.'/';
+                    if(!is_dir($folderName))
+                    {
+                        mkdir($folderName,0755);
+                        $config['upload_path'] = $folderName; 
+                    } else{
+                        $config['upload_path'] = $folderName;
+                    }
+
+                    $config['file_name']        = $_FILES['covImg']['name'];
+                    $config['allowed_types']    = 'jpg|png|jpeg|JPG|PNG|JPEG';
+                    $config['file_ext_tolower'] = TRUE; 
+                    $config['overwrite']        = TRUE; 
+                    $config['max_size']         = '0';  
+                    $config['max_width']        = '0';  
+                    $config['max_height']       = '0'; 
+                    $config['max_filename']     = '0'; 
+                    $config['remove_spaces']    = TRUE; 
+                    $config['detect_mime']      = TRUE;
+                    $config['encrypt_name']     = FALSE;
         
-    // public function update_service()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
-    //         $this->security->get_csrf_token_name(); 
-    //         $this->security->get_csrf_hash();
-    //         $rw_name = $this->security->xss_clean($this->input->post('name', TRUE));
-    //         $rw_type = $this->security->xss_clean($this->input->post('type', TRUE));
-    //         // type
-    //         $rw_dsc = $this->input->post('description', FALSE);
-    //         $serv_id = $this->security->xss_clean($this->input->post('serv_id', TRUE));
-            
-    //         if(!empty($_FILES['covImg']['name'])){
-    //             $folderName = './assets/images/service/cover/'.$serv_id.'/';
-    //             if(!is_dir($folderName))
-    //             {
-    //                 mkdir($folderName,0777);
-    //                 $config['upload_path'] = $folderName; 
-    //             } else{
-    //                 $config['upload_path'] = $folderName; 
-    //             }
-                    
-    //             $config['file_name']        = $_FILES['covImg']['name'];
-    //             $config['allowed_types']    = 'jpg|png|jpeg|JPG|PNG|JPEG'; 
-    //             $config['file_ext_tolower'] = TRUE; 
-    //             $config['overwrite']        = TRUE; 
-    //             $config['max_size']         = '0';  
-    //             $config['max_width']        = '0';  
-    //             $config['max_height']       = '0'; 
-    //             $config['max_filename']     = '0'; 
-    //             $config['remove_spaces']    = TRUE; 
-    //             $config['detect_mime']      = TRUE; 
-    //             $config['encrypt_name']     = FALSE; 
-
-    //             $this->upload->initialize($config);
-    //             $this->upload->do_upload('covImg');
-                    
-    //             @$file_upload=$this->upload->data('file_name');
-    //             if($this->upload->display_errors()){ 
-    //                 echo $this->upload->display_errors();  
-    //             }else{  
-    //                 @$image_type=$this->upload->data('image_type');
-    //                 @$file_size=$this->upload->data('file_size');
-    //                 @$file_path=$this->upload->data('file_path');
-    //             }
-    //         } 
-    //         $dataArr = array(
-    //             'name'          => $rw_name,
-    //             'type_id'       => $rw_type,
-    //             'desc'          => $rw_dsc,
-    //             'image_type'    =>  @$image_type,
-    //             'file_size'     =>  @$file_size,
-    //             'file_path'     =>  @$file_path,
-    //             'image_cover'   =>  @$file_upload,
-    //             'service_id'         => @$serv_id
-    //         );  
-    //         $response = $this->Service_model->update($dataArr);
-    //         if($response > 0){
-    //             echo "<script>
-    //                 alert('Success!');
-    //                 window.location.href='".base_url("Admin/service")."';
-    //             </script>";
-    //         } else {
-    //             echo "<script>
-    //                 alert('failed!');
-    //                 window.location.href='".base_url("Admin/edit_service/".$serv_id)."';
-    //             </script>";
-    //         }
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-
-    // }
-    
-
-    
-    // public function form_service_upload()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
-
-    //         $data['service_id'] = $this->uri->segment(3);
-
-    //         $this->load->view('admin/form_service_upload',$data);
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-    // }
-    // public function upload_serv_imges()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
-    //         $this->security->get_csrf_token_name(); 
-    //         $this->security->get_csrf_hash();
-    
-    //         $serv_id = $this->security->xss_clean($this->input->post('service_id', TRUE));
-    //         // 
-    //         $dataimg = array(); 
-    //         $countfiles = count(array_filter($_FILES['productImg']['name']));
-    //         if($countfiles > 0){
-    //             $folderName = './assets/images/service/'.$serv_id.'/';
-    //             if(!is_dir($folderName))
-    //             {
-    //                 mkdir($folderName,0777);
-    //                 $config['upload_path'] = $folderName; 
-    //             } else{
-    //                 $config['upload_path'] = $folderName;
-    //             }
-    //             for($i=0;$i<$countfiles;$i++){
-    //                 if(!empty($_FILES['productImg']['name'][$i])){
-    //                     $_FILES['file']['name'] = $_FILES['productImg']['name'][$i];
-    //                     $_FILES['file']['type'] = $_FILES['productImg']['type'][$i];
-    //                     $_FILES['file']['tmp_name'] = $_FILES['productImg']['tmp_name'][$i];
-    //                     $_FILES['file']['error'] = $_FILES['productImg']['error'][$i];
-    //                     $_FILES['file']['size'] = $_FILES['productImg']['size'][$i];
+                    $this->upload->initialize($config);    
+                    $this->upload->do_upload('covImg'); 
                         
-    //                     $config['upload_path']      = $folderName;
-    //                     $config['file_name']        = $_FILES['productImg']['name'][$i];
-    //                     $config['allowed_types']    = 'jpg|png|jpeg|JPG|PNG|JPEG'; 
-    //                     $config['file_ext_tolower'] = TRUE; 
-    //                     $config['overwrite']        = TRUE; 
-    //                     $config['max_size']         = '0'; 
-    //                     $config['max_width']        = '0'; 
-    //                     $config['max_height']       = '0'; 
-    //                     $config['max_filename']     = '0'; 
-    //                     $config['remove_spaces']    = TRUE; 
-    //                     $config['detect_mime']      = TRUE;
-    //                     $config['encrypt_name']     = FALSE; 
+                    $file_upload=$this->upload->data('file_name');  
+                    if($this->upload->display_errors()){ 
+                        echo $this->upload->display_errors();  
+                    }else{  
+                        $image_type=$this->upload->data('image_type');
+                        $file_size=$this->upload->data('file_size');
+                        $file_path=$this->upload->data('file_path');
+        
+                        $dataArr = array(
+                            'image_cover'   => $file_upload,
+                            'g_id'         => $last_gid
+                        );
+                        // update image_cover where last id
+                        $resimg = $this->Gallery_model->updatefileUpload($dataArr);
+
+                        if($resimg > 0){
+                            $countfiles = count($_FILES['productImg']['name']);
+                            if($countfiles > 0){
+                                $folderName = './assets/images/gallery/'.$last_gid.'/';
+                                if(!is_dir($folderName))
+                                {
+                                    mkdir($folderName,0755);
+                                    $config['upload_path'] = $folderName; 
+                                } else{
+                                    $config['upload_path'] = $folderName;
+                                }
+                                // Looping all files 
+                                for($i=0;$i<$countfiles;$i++){
+                                    if(!empty($_FILES['productImg']['name'][$i])){
+                                        $_FILES['file']['name'] = $_FILES['productImg']['name'][$i];
+                                        $_FILES['file']['type'] = $_FILES['productImg']['type'][$i];
+                                        $_FILES['file']['tmp_name'] = $_FILES['productImg']['tmp_name'][$i];
+                                        $_FILES['file']['error'] = $_FILES['productImg']['error'][$i];
+                                        $_FILES['file']['size'] = $_FILES['productImg']['size'][$i];
+                        
+                                        $config['upload_path'] = $folderName;
+                                        $config['file_name'] = $_FILES['productImg']['name'][$i];
+                                        $config['allowed_types']    = 'jpg|png|jpeg|JPG|PNG|JPEG'; 
+                                        $config['file_ext_tolower'] = TRUE; 
+                                        $config['overwrite']        = TRUE; 
+                                        $config['max_size']         = '0'; 
+                                        $config['max_width']        = '0'; 
+                                        $config['max_height']       = '0'; 
+                                        $config['max_filename']     = '0'; 
+                                        $config['remove_spaces']    = TRUE; 
+                                        $config['detect_mime']      = TRUE;
+                                        $config['encrypt_name']     = TRUE;
                             
-    //                     $this->upload->initialize($config); 
+                                        $this->upload->initialize($config);
+                                        if($this->upload->do_upload('file')){
+                                            $uploadData = $this->upload->data();
+                                            $filename1 = $uploadData['file_name'];
 
-    //                     if($this->upload->do_upload('file')){
-    //                         $uploadData = $this->upload->data();
-    //                         $filename1 = $uploadData['file_name'];
-                                            
-    //                         $dataArr2[] = array(
-    //                             'image_cover'   => $filename1,
-    //                         );
-    //                     }
-    //                 }
-    //             }
-                            
-    //             $response = $this->Service_model->insertImg($dataArr2,$serv_id);
+                                            $dataArr2[] = array(
+                                                'image_cover'   => $filename1,
+                                            );
+                                        }
+                                    }
+                                }
+                                $response = $this->Gallery_model->insertProductImg($dataArr2,$last_gid);
 
-    //             if($response > 0){
-    //                 echo "<script>
-    //                     alert('Success!');
-    //                     window.location.href='".base_url("Admin/service_document/".$serv_id)."';
-    //                 </script>";
-    //             } else {
-    //                 echo "<script>
-    //                     alert('failed!');
-    //                     window.location.href='".base_url("Admin/form_service_upload/".$serv_id)."';
-    //                 </script>";
-    //             }
-    //         } else {
-    //             echo "<script>
-    //                 alert('Please Upload Images');
-    //                 window.location.href='".base_url("Admin/form_service_upload/".$serv_id)."';
-    //             </script>";
-    //         }
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-    // }
-    
-    
-    // public function aboutus()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
-    //         $data['aboutusies'] = $this->About_model->fetchAll();
-    //         $this->load->view('admin/list_about', $data); //    
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-    // }
-    // public function form_about()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
+                                if($response > 0){
+                                    echo "<script>
+                                        alert('Success!');
+                                            window.location.href='".base_url("Admin/gallery")."';
+                                    </script>";
+                                } else {
+                                    echo "<script>
+                                        alert('failed!');
+                                        window.location.href='".base_url("Admin/gallery")."';
+                                    </script>";
+                                }
+                            }
+                        } else {
+                            echo "<script>
+                                alert('Product Updated, Warning! The Images Cover.');
+                                window.location.href='".base_url("Admin/product")."';
+                            </script>";
+                        }
+                    }
+                    if($resimg > 0){
+                        echo "<script>
+                            alert('Success!');
+                            window.location.href='".base_url("Admin/gallery")."';
+                        </script>";
+                    } else {
+                        echo "<script>
+                            alert('failed!');
+                            window.location.href='".base_url("Admin/gallery")."';
+                        </script>";
+                    }
+                } else{
+                    echo "<script>
+                        alert('Please Upload image Cover');
+                        window.location.href='".base_url("Admin/gallery")."';
+                    </script>";
+                }    
+            } else {
+                echo "<script>
+                    alert('failed! Please try again!');
+                    window.location.href='".base_url("Admin/form_gallery")."';
+                </script>";
+            }   
+        }
+        else{
+            redirect('Login','refresh');
+        }
+    }
+
+    public function gallery_albums()
+    {
+        if(!empty($this->session->userdata('user'))){
+            $g_id = $this->uri->segment(3);
+            $data['gallery_name'] = $this->Gallery_model->getName($g_id); 
+            $data['gallery_images'] = $this->Gallery_model->getImages($g_id); 
+
+            $this->load->view('admin/gallery_album', $data); //  
+        }
+        else{
+            redirect('Login','refresh');
+        }
+    }
+    public function addTitleGallery()
+    {
+        if(!empty($this->session->userdata('user'))){
             
-    //         $this->load->view('admin/form_about'); //  
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-
-    // }
-    // public function create_about()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
-    //         $this->security->get_csrf_token_name(); // initial CSRF name
-    //         $this->security->get_csrf_hash(); // get CSRF Token generate
-    //         $s_name = $this->security->xss_clean($this->input->post('name', TRUE));
-    //         $s_dsc = $this->input->post('description', FALSE);
-
-    //         $ab_id = $this->About_model->create($s_name,$s_dsc);
-    //         if($ab_id > 0){
-    //             if(!empty($_FILES['covImg']['name'])){
-    //                 $folderName = './assets/images/about/cover/'.$ab_id.'/';
-    //                 if(!is_dir($folderName))
-    //                 {
-    //                     mkdir($folderName,0777);
-    //                     $config['upload_path'] = $folderName;
-    //                 } else{
-    //                     $config['upload_path'] = $folderName; 
-    //                 }
-                        
-    //                 $config['file_name']        = $_FILES['covImg']['name'];
-    //                 $config['allowed_types']    = 'jpg|png|jpeg|JPG|PNG|JPEG'; 
-    //                 $config['file_ext_tolower'] = TRUE;
-    //                 $config['overwrite']        = TRUE;
-    //                 $config['max_size']         = '0'; 
-    //                 $config['max_width']        = '0'; 
-    //                 $config['max_height']       = '0'; 
-    //                 $config['max_filename']     = '0';
-    //                 $config['remove_spaces']    = TRUE; 
-    //                 $config['detect_mime']      = TRUE; 
-    //                 $config['encrypt_name']     = FALSE;
-    
-    //                 $this->upload->initialize($config); 
-    //                 $this->upload->do_upload('covImg'); 
-                        
-    //                 $file_upload=$this->upload->data('file_name'); 
-    //                 if($this->upload->display_errors()){ 
-    //                     echo $this->upload->display_errors();  
-    //                 }else{  
-    //                     $image_type=$this->upload->data('image_type');
-    //                     $file_size=$this->upload->data('file_size');
-    //                     $file_path=$this->upload->data('file_path');
-    
-    //                     $dataArr = array(
-    //                         'image_type'    =>  $image_type,
-    //                         'file_size'     =>  $file_size,
-    //                         'file_path'     =>  $file_path,
-    //                         'image_cover'   =>  $file_upload,
-    //                         'about_id'      =>  $ab_id
-    //                     );
-    //                 }
-    //                 $response = $this->About_model->updatefileUpload($dataArr);
-    //                 if($response > 0){
-    //                     echo "<script>
-    //                         alert('Success!');
-    //                         window.location.href='".base_url("Admin/aboutus")."';
-    //                     </script>";
-    //                 } else {
-    //                     echo "<script>
-    //                         alert('failed!');
-    //                         window.location.href='".base_url("Admin/aboutus")."';
-    //                     </script>";
-    //                 }
-    //             }
-    //         } else{
-    //             echo "<script>
-    //                 alert('failed!');
-    //                 window.location.href='".base_url("Admin/aboutus")."';
-    //             </script>";
-    //         }  
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-    // }
-    // public function edit_about()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
-    //         $ab_id = $this->uri->segment(3);
-    //         $data['about_dscs'] = $this->About_model->getDesc($ab_id); 
-    //         $this->load->view('admin/form_about_edit', $data); //  
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-    // }
-    // public function update_about()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
-    //         $this->security->get_csrf_token_name(); 
-    //         $this->security->get_csrf_hash();
-    //         $ab_name = $this->security->xss_clean($this->input->post('name', TRUE));
-    //         $ab_dsc = $this->input->post('description', FALSE);
-    //         $ab_id = $this->security->xss_clean($this->input->post('about_id', TRUE));
+            $this->security->get_csrf_token_name(); 
+            $this->security->get_csrf_hash();
+            // id:$('#g_id').val(),title:$('#img_title').val(), action:'addTitle',
+            $g_id = $this->security->xss_clean($this->input->post('id', TRUE));
+            $action = $this->security->xss_clean($this->input->post('action', TRUE));
+            $title = $this->security->xss_clean($this->input->post('title', TRUE));
             
-    //         if(!empty($_FILES['covImg']['name'])){
-    //             $folderName = './assets/images/about/cover/'.$ab_id.'/';
-    //             if(!is_dir($folderName))
-    //             {
-    //                 mkdir($folderName,0777);
-    //                 $config['upload_path'] = $folderName; 
-    //             } else{
-    //                 $config['upload_path'] = $folderName; 
-    //             }
-                    
-    //             $config['file_name']        = $_FILES['covImg']['name'];
-    //             $config['allowed_types']    = 'jpg|png|jpeg|JPG|PNG|JPEG'; 
-    //             $config['file_ext_tolower'] = TRUE; 
-    //             $config['overwrite']        = TRUE; 
-    //             $config['max_size']         = '0';  
-    //             $config['max_width']        = '0';  
-    //             $config['max_height']       = '0'; 
-    //             $config['max_filename']     = '0'; 
-    //             $config['remove_spaces']    = TRUE; 
-    //             $config['detect_mime']      = TRUE; 
-    //             $config['encrypt_name']     = FALSE; 
-
-    //             $this->upload->initialize($config);
-    //             $this->upload->do_upload('covImg');
-                    
-    //             @$file_upload=$this->upload->data('file_name');
-    //             if($this->upload->display_errors()){ 
-    //                 echo $this->upload->display_errors();  
-    //             }else{  
-    //                 @$image_type=$this->upload->data('image_type');
-    //                 @$file_size=$this->upload->data('file_size');
-    //                 @$file_path=$this->upload->data('file_path');
-    //             }
-    //         } 
-    //         $dataArr = array(
-    //             'name'          => $ab_name,
-    //             'desc'          => $ab_dsc,
-    //             'image_type'    =>  @$image_type,
-    //             'file_size'     =>  @$file_size,
-    //             'file_path'     =>  @$file_path,
-    //             'image_cover'   =>  @$file_upload,
-    //             'about_id'      => @$ab_id
-    //         );  
-    //         $response = $this->About_model->update($dataArr);
-    //         if($response > 0){
-    //             echo "<script>
-    //                 alert('Success!');
-    //                 window.location.href='".base_url("Admin/aboutus")."';
-    //             </script>";
-    //         } else {
-    //             echo "<script>
-    //                 alert('failed!');
-    //                 window.location.href='".base_url("Admin/edit_about/".$ab_id)."';
-    //             </script>";
-    //         }
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-
-    // }
-
-    // public function personal()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
-    //         $data['personals'] = $this->Personal_model->fetchAll();
-    //         $this->load->view('admin/list_personal', $data); //    
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-    // }
-    // public function form_personaldata()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
-            
-    //         $this->load->view('admin/form_personal'); //  
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-    // }
-
-    // public function create_personal()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
-    //         $this->security->get_csrf_token_name(); // initial CSRF name
-    //         $this->security->get_csrf_hash(); // get CSRF Token generate
-    //         $s_name = $this->security->xss_clean($this->input->post('name', TRUE));
-    //         $s_dsc = $this->input->post('description', FALSE);
-
-    //         $res = $this->Personal_model->create($s_name,$s_dsc);
-    //         if($res > 0){
-    //             echo "<script>
-    //                 alert('success!');
-    //                 window.location.href='".base_url("Admin/personal")."';
-    //             </script>";
+            if(!empty($g_id) && $action =='addTitle'){
+                $response = $this->Gallery_model->update_title($g_id,$title);
                 
-    //         } else{
-    //             echo "<script>
-    //                 alert('failed!');
-    //                 window.location.href='".base_url("Admin/personal")."';
-    //             </script>";
-    //         }  
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
+                if($response == 1){
+                    echo 'true';
+                } else {
+                    echo 'false';
+                }
 
-    // }
+            } else{
+                echo 'false';
+            }
+        }
+        else{
+            redirect('Login','refresh');
+        }
+    }
 
-    // public function edit_posonaldata()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
-    //         $ps_id = $this->uri->segment(3);
-    //         $data['personal_descs'] = $this->Personal_model->getDesc($ps_id); 
-
-    //         $this->load->view('admin/form_personal_edit', $data); //  
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-    // }
-
-    // public function update_personaldata()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
-    //         $this->security->get_csrf_token_name(); // initial CSRF name
-    //         $this->security->get_csrf_hash(); // get CSRF Token generate
-    //         $pl_name = $this->security->xss_clean($this->input->post('name', TRUE));
-    //         $pl_dsc = $this->input->post('description', FALSE);
-    //         $personal_id = $this->security->xss_clean($this->input->post('personal_id', TRUE));
-    //         // 
-
-    //         $res = $this->Personal_model->update($pl_name,$pl_dsc,$personal_id);
-    //         if($res > 0){
-    //             echo "<script>
-    //                 alert('Success!');
-    //                 window.location.href='".base_url("Admin/personal")."';
-    //             </script>";
-    //         } else {
-    //             echo "<script>
-    //                 alert('failed!');
-    //                 window.location.href='".base_url("Admin/personal")."';
-    //             </script>";
-    //         }
-              
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-    // }
-
-    
-    // public function banner_home()
-    // {
-    //     $data['banners'] = $this->Banner_model->fecthAll();
-    //     $this->load->view('admin/banner', $data);
-
-    // }
-
-    // public function form_homebanner()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
+    public function gallery_img_isactive()
+    {
+        if(!empty($this->session->userdata('user'))){
+            $this->security->get_csrf_token_name(); 
+            $this->security->get_csrf_hash();
+           
+            $gimg_id = $this->security->xss_clean($this->input->post('id', TRUE));
+            $st = $this->security->xss_clean($this->input->post('st', TRUE));
+            $action = $this->security->xss_clean($this->input->post('action', TRUE));
             
-    //         $this->load->view('admin/form_homebanner'); //  
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-    // }
-    // public function create_bannerhome()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
-    //         $this->security->get_csrf_token_name(); 
-    //         $this->security->get_csrf_hash();
-    //         $ab_name = $this->security->xss_clean($this->input->post('name', TRUE));
+            if(!empty($gimg_id) && $action =='change'){
+                $response = $this->Gallery_model->update_status($gimg_id,$st);
+                if($response > 0){
+                    echo 'true';
+                } else {
+                    echo 'false';
+                }
+            } else{
+                echo 'false';
+            }
+        }
+        else{
+            redirect('Login','refresh');
+        }
+    }
 
-    //         $last_id = $this->Banner_model->create($ab_name);
-
-    //         if($last_id > 0){
-    //             if(!empty($_FILES['covImg']['name'])){
-
-    //                 $folderName = './assets/images/banner/'.$last_id.'/';
-    
-    //                 if(!is_dir($folderName))
-    //                 {
-    //                     mkdir($folderName,0777);
-    //                     $config['upload_path'] = $folderName; 
-    //                 } else{
-    //                     $config['upload_path'] = $folderName; 
-    //                 }
-                        
-    //                 $config['file_name']        = $_FILES['covImg']['name'];
-    //                 $config['allowed_types']    = 'jpg|png|jpeg|JPG|PNG|JPEG'; 
-    //                 $config['file_ext_tolower'] = TRUE; 
-    //                 $config['overwrite']        = TRUE; 
-    //                 $config['max_size']         = '0';  
-    //                 $config['max_width']        = '0';  
-    //                 $config['max_height']       = '0'; 
-    //                 $config['max_filename']     = '0'; 
-    //                 $config['remove_spaces']    = TRUE; 
-    //                 $config['detect_mime']      = TRUE; 
-    //                 $config['encrypt_name']     = FALSE; 
-    
-    //                 $this->upload->initialize($config);
-    //                 $this->upload->do_upload('covImg');
-                        
-    //                 @$file_upload=$this->upload->data('file_name');
-    
-    //                 if($this->upload->display_errors()){ 
-    //                     echo $this->upload->display_errors(); 
-    //                 }else{  
-    
-    //                     @$image_type=$this->upload->data('image_type');
-    //                     @$file_size=$this->upload->data('file_size');
-    //                     @$file_path=$this->upload->data('file_path');
-    
-    //                     $dataArr = array(
-    //                         'image_type'    => @$image_type,
-    //                         'file_size'     => @$file_size,
-    //                         'file_path'     => @$file_path,
-    //                         'image_cover'   => @$file_upload,
-    //                         'banner_id'     => @$last_id
-    //                     );  
-
-    //                     $response = $this->Banner_model->update($dataArr);
-    //                     if($response > 0){
-    //                         echo "<script>
-    //                             alert('Success!');
-    //                             window.location.href='".base_url("Admin/banner_home")."';
-    //                         </script>";
-    //                     } else {
-    //                         echo "<script>
-    //                             alert('failed!');
-    //                             window.location.href='".base_url("Admin/banner_home")."';
-    //                         </script>";
-    //                     }
-    //                 }
-    //             }
-    //         } else{
-    //             echo "<script>
-    //                 alert('failed!');
-    //                 window.location.href='".base_url("Admin/form_homebanner")."';
-    //             </script>";
-    //         }
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-
-    // }
-    // public function edit_homebanner()
-    // {
-    //     if(!empty($this->session->userdata('user'))){   
-    //         $banner_id = $this->uri->segment(3);
-    //         $data['banner_descs'] = $this->Banner_model->getDesc($banner_id); 
-    //         $this->load->view('admin/form_homebanner_edit', $data); //  
-
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-    // }
-    // public function update_bannerhome()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
-    //         $this->security->get_csrf_token_name(); 
-    //         $this->security->get_csrf_hash();
-    //         $bh_name = $this->security->xss_clean($this->input->post('name', TRUE));
-    //         $bh_id = $this->security->xss_clean($this->input->post('bannerhome_id', TRUE));
+    public function distroyGalleryThumbnail()
+    {
+        if(!empty($this->session->userdata('user'))){
             
-    //         if(!empty($_FILES['covImg']['name'])){
-    //             $folderName = './assets/images/banner/'.$bh_id.'/';
-    //             if(!is_dir($folderName))
-    //             {
-    //                 mkdir($folderName,0777);
-    //                 $config['upload_path'] = $folderName; 
-    //             } else{
-    //                 $config['upload_path'] = $folderName; 
-    //             }
+            $this->security->get_csrf_token_name(); 
+            $this->security->get_csrf_hash();
+            $gimg_id = $this->security->xss_clean($this->input->post('id', TRUE));
+            $action = $this->security->xss_clean($this->input->post('action', TRUE));
+            
+            if(!empty($gimg_id) && $action =='distroy'){
+                $response = $this->Gallery_model->distroy_image($gimg_id);
+                if($response > 0){
+                    echo 'true';
+                } else {
+                    echo 'false';
+                }
+            } else{
+                echo 'false';
+            }
+        }
+        else{
+            redirect('Login','refresh');
+        }
+    }
+
+    public function edit_gallery()
+    {   
+        if(!empty($this->session->userdata('user'))){
+            $gid = $this->uri->segment(3);
+            $data['gallery_descs'] = $this->Gallery_model->getDesc($gid); 
+            $this->load->view('admin/form_gallery_edit', $data);
+        }
+        else{
+            redirect('Login','refresh');
+        }
+    }
+
+    public function updateGallery(){
+        if(!empty($this->session->userdata('user'))){
+            $this->security->get_csrf_token_name(); 
+            $this->security->get_csrf_hash();
+    
+            $name = $this->security->xss_clean($this->input->post('name', TRUE));
+            $short_dsc = $this->security->xss_clean($this->input->post('short_dsc', TRUE));
+            $g_id = $this->security->xss_clean($this->input->post('g_id', TRUE));
+            
+            $data = array(
+                'name'          => $name,
+                'short_dsc'     => $short_dsc,
+                'g_id'          => $g_id
+            );
+            // update text
+            $res1 = $this->Gallery_model->update_product($data); 
+            
+            if(!empty($_FILES['covImg']['name'])){
+                $folderName = './assets/images/gallery/cover/'.$g_id.'/';
+                if(!is_dir($folderName))
+                {
+                    mkdir($folderName,0755);
+                    $config['upload_path'] = $folderName; 
+                } else{
+                    $config['upload_path'] = $folderName;
+                }
+                $config['file_name']        = $_FILES['covImg']['name'];
+                $config['allowed_types']    = 'jpg|png|jpeg|JPG|PNG|JPEG'; 
+                $config['file_ext_tolower'] = TRUE; 
+                $config['overwrite']        = TRUE; 
+                $config['max_size']         = '0';  
+                $config['max_width']        = '0';  
+                $config['max_height']       = '0'; 
+                $config['max_filename']     = '0'; 
+                $config['remove_spaces']    = TRUE; 
+                $config['detect_mime']      = TRUE; 
+                $config['encrypt_name']     = FALSE;
+                
+                $this->upload->initialize($config);
+                $this->upload->do_upload('covImg');
+                $file_upload=$this->upload->data('file_name'); 
+                if($this->upload->display_errors()){ 
+                    echo $this->upload->display_errors();  
+                }else{      
+                    @$dataArr = array(
+                        'image_cover'   => $file_upload,
+                        'g_id'        => $g_id
+                    );
+
+                    $res2 = $this->Gallery_model->updatefileUpload(@$dataArr);
+                }
+            } 
+            
+            $countfiles = count($_FILES['productImg']['name']);
+            if($countfiles > 0){
+                $folderName = './assets/images/gallery/'.$g_id.'/'; 
+                if(!is_dir($folderName))
+                {
+                    mkdir($folderName,0755);
+                    $config['upload_path'] = $folderName; 
+                } else{
+                    $config['upload_path'] = $folderName;
+                }
+                for($i=0;$i<$countfiles;$i++){
+                    if(!empty($_FILES['productImg']['name'][$i])){
+                        $_FILES['file']['name'] = $_FILES['productImg']['name'][$i];
+                        $_FILES['file']['type'] = $_FILES['productImg']['type'][$i];
+                        $_FILES['file']['tmp_name'] = $_FILES['productImg']['tmp_name'][$i];
+                        $_FILES['file']['error'] = $_FILES['productImg']['error'][$i];
+                        $_FILES['file']['size'] = $_FILES['productImg']['size'][$i];
+            
+                        $config['upload_path'] = $folderName;
+                        $config['file_name'] = $_FILES['productImg']['name'][$i];
+                        $config['allowed_types']    = 'jpg|png|jpeg|JPG|PNG|JPEG'; 
+                        $config['file_ext_tolower'] = TRUE; 
+                        $config['overwrite']        = TRUE; 
+                        $config['max_size']         = '0'; 
+                        $config['max_width']        = '0'; 
+                        $config['max_height']       = '0'; 
+                        $config['max_filename']       = '0';
+                        $config['remove_spaces']    = TRUE; 
+                        $config['detect_mime']    = TRUE;
+                        $config['encrypt_name'] = TRUE; 
+                
+                        $this->upload->initialize($config);
+
+                        // File upload
+                        if($this->upload->do_upload('file')){
+                            $uploadData = $this->upload->data();
+                            @$filename1 = $uploadData['file_name'];
+
+                            @$dataArr2[] = array(
+                                'image_cover'   => $filename1,
+                            );
+                        }
+                    }
+                }
+                $res3 = $this->Gallery_model->insertProductImg(@$dataArr2,$g_id);
+                
+            }
+            if($res1 > 0 || $res2 > 0){
+                echo "<script>
+                    alert('Success!');
+                        window.location.href='".base_url("Admin/gallery")."';
+                </script>";
+            } else {
+                echo "<script>
+                    alert('failed!');
+                    window.location.href='".base_url("Admin/gallery")."';
+                </script>";
+            }
+        }
+        else{
+            redirect('Login','refresh');
+        }   
+    }
+
+    public function change_GalleryIsRecommend()
+    {
+        if(!empty($this->session->userdata('user'))){
+            $this->security->get_csrf_token_name(); 
+            $this->security->get_csrf_hash();
+            $g_id = $this->security->xss_clean($this->input->post('id', TRUE));
+            $g_st = $this->security->xss_clean($this->input->post('st', TRUE));
+            $p_action = $this->security->xss_clean($this->input->post('action', TRUE));
+            
+            if(!empty($g_id) && $p_action =='change'){
+                $response = $this->Gallery_model->update_isrecommend($g_id,$g_st);
+                
+                if($response == 1){
+                    echo 'true';
+                } else {
+                    echo 'false';
+                }
+
+            } else{
+                echo 'false';
+            }
+        }
+        else{
+            redirect('Login','refresh');
+        }
+    }
+
+    public function banner()
+    {
+        $data['banner'] = $this->Banner_model->fecthAll();
+        $this->load->view('admin/form_banner', $data);
+    }
+
+    public function update_banner()
+    {
+        if(!empty($this->session->userdata('user'))){
+            $this->security->get_csrf_token_name(); 
+            $this->security->get_csrf_hash();
+            $bh_name = $this->security->xss_clean($this->input->post('name', TRUE));
+            $bh_id = $this->security->xss_clean($this->input->post('banner_id', TRUE));
+            
+            if(!empty($_FILES['covImg']['name'])){
+                  
+                $config['upload_path'] = './assets/images/banner/';
+                $config['file_name']        = $_FILES['covImg']['name'];
+                $config['allowed_types']    = 'jpg|png|jpeg|JPG|PNG|JPEG'; 
+                $config['file_ext_tolower'] = TRUE; 
+                $config['overwrite']        = TRUE; 
+                $config['max_size']         = '0';  
+                $config['max_width']        = '0';  
+                $config['max_height']       = '0'; 
+                $config['max_filename']     = '0'; 
+                $config['remove_spaces']    = TRUE; 
+                $config['detect_mime']      = TRUE; 
+                $config['encrypt_name']     = TRUE; 
+
+                $this->upload->initialize($config);
+                $this->upload->do_upload('covImg');
                     
-    //             $config['file_name']        = $_FILES['covImg']['name'];
-    //             $config['allowed_types']    = 'jpg|png|jpeg|JPG|PNG|JPEG'; 
-    //             $config['file_ext_tolower'] = TRUE; 
-    //             $config['overwrite']        = TRUE; 
-    //             $config['max_size']         = '0';  
-    //             $config['max_width']        = '0';  
-    //             $config['max_height']       = '0'; 
-    //             $config['max_filename']     = '0'; 
-    //             $config['remove_spaces']    = TRUE; 
-    //             $config['detect_mime']      = TRUE; 
-    //             $config['encrypt_name']     = FALSE; 
+                @$file_upload=$this->upload->data('file_name');
+                if($this->upload->display_errors()){ 
+                    echo $this->upload->display_errors();  
+                }else{  
+                    @$image_type=$this->upload->data('image_type');
+                    @$file_size=$this->upload->data('file_size');
+                    @$file_path=$this->upload->data('file_path');
+                }
+                $dataArr = array(
+                    'name'          => $bh_name,
+                    'image_type'    =>  @$image_type,
+                    'file_size'     =>  @$file_size,
+                    'file_path'     =>  @$file_path,
+                    'image_cover'   =>  @$file_upload,
+                    'banner_id'     => @$bh_id
+                );
+            } else {
+                $dataArr = array(
+                    'name'          => $bh_name,
+                    'image_type'    =>  '',
+                    'file_size'     =>  '',
+                    'file_path'     =>  '',
+                    'image_cover'   =>  '',
+                    'banner_id'     => @$bh_id
+                );
+            }
+  
+            $response = $this->Banner_model->update($dataArr);
+            if($response > 0){
+                echo "<script>
+                    alert('Success!');
+                    window.location.href='".base_url("Admin/banner")."';
+                </script>";
+            } else {
+                echo "<script>
+                    alert('failed!');
+                    window.location.href='".base_url("Admin/banner")."';
+                </script>";
+            }
+        }
+        else{
+            redirect('Login','refresh');
+        }
+    }
 
-    //             $this->upload->initialize($config);
-    //             $this->upload->do_upload('covImg');
-                    
-    //             @$file_upload=$this->upload->data('file_name');
-    //             if($this->upload->display_errors()){ 
-    //                 echo $this->upload->display_errors();  
-    //             }else{  
-    //                 @$image_type=$this->upload->data('image_type');
-    //                 @$file_size=$this->upload->data('file_size');
-    //                 @$file_path=$this->upload->data('file_path');
-    //             }
-    //         } 
-    //         $dataArr = array(
-    //             'name'          => $bh_name,
-    //             'image_type'    =>  @$image_type,
-    //             'file_size'     =>  @$file_size,
-    //             'file_path'     =>  @$file_path,
-    //             'image_cover'   =>  @$file_upload,
-    //             'banner_id'      => @$bh_id
-    //         );  
-    //         $response = $this->Banner_model->update2($dataArr);
-    //         if($response > 0){
-    //             echo "<script>
-    //                 alert('Success!');
-    //                 window.location.href='".base_url("Admin/banner_home")."';
-    //             </script>";
-    //         } else {
-    //             echo "<script>
-    //                 alert('failed!');
-    //                 window.location.href='".base_url("Admin/edit_homebanner/".$bh_id)."';
-    //             </script>";
-    //         }
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-
-    // }
-
-    // public function user_exp()
-    // {
-    //     $data['banner_userexps'] = $this->UserExp_model->fecthAll();
-    //     $this->load->view('admin/list_expuser', $data);
-
-    // }
-
-    // public function form_userexp()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
-            
-    //         $this->load->view('admin/form_userexp'); //  
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-    // }
-
-    // public function userManual()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
-    //         $this->load->helper('download');
-    //         $file = './assets/file/usermanual_v1.pdf';
-    //         force_download($file, NULL);
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-    // }
+    public function userManual()
+    {
+        if(!empty($this->session->userdata('user'))){
+            $this->load->helper('download');
+            $file = './assets/file/usermanual_v1.pdf';
+            force_download($file, NULL);
+        }
+        else{
+            redirect('Login','refresh');
+        }
+    }
 }
 

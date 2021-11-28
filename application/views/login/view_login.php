@@ -10,12 +10,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Login | PT LIGHTING </title>
+	<title>Login | 32Decor </title>
 	
-	<link rel="icon" type="image/png" href="<?=base_url('assets/img/logo/logo.png');?>" />
-    <link rel="shortcut icon" type="image/ico" href="<?=base_url('assets/img/logo/logo.png');?>">
-    <link rel="apple-touch-icon-precomposed" type="image/ico" sizes="114×114" href="<?=base_url('assets/img/logo/logo.png');?>">
-    <link rel="apple-touch-icon-precomposed" type="image/ico" sizes="72×72" href="<?=base_url('assets/img/logo/logo.png');?>">
+	<link rel="icon" type="image/png" href="<?=base_url('assets/img/logo/logo1.png');?>" />
+    <link rel="shortcut icon" type="image/ico" href="<?=base_url('assets/img/logo/logo1.png');?>">
+    <link rel="apple-touch-icon-precomposed" type="image/ico" sizes="114×114" href="<?=base_url('assets/img/logo/logo1.png');?>">
+    <link rel="apple-touch-icon-precomposed" type="image/ico" sizes="72×72" href="<?=base_url('assets/img/logo/logo1.png');?>">
 
 
   	<link rel="stylesheet" href="<?=base_url('./assets/admin/assets/css/bootstrap.css?v4.0.2');?>">
@@ -47,8 +47,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="page vertical-align text-center" data-animsition-in="fade-in" data-animsition-out="fade-out">
 		<div class="page-content vertical-align-middle animation-slide-top animation-duration-1">
 			<div class="brand">
-				<img class="brand-img" src="<?=base_url('assets/img/logo/logo.png');?>">
-				<h2 class="brand-text">PT LIGHTING</h2>
+				<img class="brand-img" src="<?=base_url('assets/img/logo/logo1.png');?>">
+				<h2 class="brand-text">32Decor</h2>
 			</div>
 
 			<div class="text-center">
@@ -69,7 +69,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>			
 
 			<footer class="page-copyright page-copyright-inverse">
-				<p>Copyright © 2021 - All Rights Reserved.</p>
+				<p>Copyright © 2021 32Decor. All Rights Reserved.</p>
 			</footer>
 		</div>
 	</div>
