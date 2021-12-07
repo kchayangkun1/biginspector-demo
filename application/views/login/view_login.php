@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Login | 32Decor </title>
+	<title>Login | Big Inspector </title>
 	
 	<link rel="icon" type="image/png" href="<?=base_url('assets/img/logo/logo1.png');?>" />
     <link rel="shortcut icon" type="image/ico" href="<?=base_url('assets/img/logo/logo1.png');?>">
@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="page-content vertical-align-middle animation-slide-top animation-duration-1">
 			<div class="brand">
 				<img class="brand-img" src="<?=base_url('assets/img/logo/logo1.png');?>">
-				<h2 class="brand-text">32Decor</h2>
+				<h2 class="brand-text">Big Inspector</h2>
 			</div>
 
 			<div class="text-center">

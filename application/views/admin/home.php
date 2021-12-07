@@ -7,10 +7,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-	<meta name="description" content="32Decor">
-	<meta name="author" content="32Decor">
+	<meta name="description" content="Big Inspector">
+	<meta name="author" content="Big Inspector">
 
-	<title>Home | 32Decor </title>
+	<title>Home | Big Inspector </title>
 
 	<link rel="icon" type="image/png" href="<?=base_url('assets/img/logo/logo1.png');?>" />
     <link rel="shortcut icon" type="image/ico" href="<?=base_url('assets/img/logo/logo1.png');?>">
@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="page">
 		<div class="page-header h-300 mb-30">
       		<div class="text-center blue-grey-800 m-0 mt-50">
-		        <div class="font-size-50 mb-30 blue-grey-800">- 32Decor -</div>
+		        <div class="font-size-50 mb-30 blue-grey-800">- Big Inspector -</div>
 		        <ul class="list-inline font-size-14">
 		          	<li class="list-inline-item">
 			            <i class="icon wb-settings mr-5" aria-hidden="true"></i> Back Office Management system

@@ -62,22 +62,41 @@
 					<li class="site-menu-item <?=($this->uri->segment(2)=='home') ? 'active' : ''; ?>">
 						<a class="animsition-link" href="<?=base_url('Admin/home');?>">
 							<i class="site-menu-icon icon fa fa-home" aria-hidden="true"></i>
-							<span class="site-menu-title">Home</span>
+							<span class="site-menu-title">หน้าแรก</span>
 						</a>
 					</li>
 					<li class="site-menu-item <?=($this->uri->segment(2)=='banner') ? 'active' : ''; ?>">
 						<a class="animsition-link" href="<?=base_url('Admin/banner');?>">
 						<i class="fa fa-picture-o" aria-hidden="true"></i>
-							<span class="site-menu-title">Banner</span>
+							<span class="site-menu-title">แบนเนอร์</span>
 						</a>
 					</li>
+					<li class="site-menu-item <?=($this->uri->segment(2)=='banner') ? 'active' : ''; ?>">
+						<a class="animsition-link" href="<?=base_url('Admin/banner');?>">
+						<i class="fa fa-briefcase" aria-hidden="true"></i>
+							<span class="site-menu-title">ผลงาน</span>
+						</a>
+					</li>
+					<li class="site-menu-item <?=($this->uri->segment(2)=='banner') ? 'active' : ''; ?>">
+						<a class="animsition-link" href="<?=base_url('Admin/banner');?>">
+						
+						<i class="fa fa-list-alt" aria-hidden="true"></i>
+							<span class="site-menu-title">หมวดหมู่</span>
+						</a>
+					</li>
+					<li class="site-menu-item <?=($this->uri->segment(2)=='banner') ? 'active' : ''; ?>">
+						<a class="animsition-link" href="<?=base_url('Admin/banner');?>">
+						<i class="fa fa-calculator" aria-hidden="true"></i>
+							<span class="site-menu-title">คำนวณพื้นที่</span>
+						</a>
+					</li>
+
 					<li class="site-menu-item <?=($this->uri->segment(2)=='article' || $this->uri->segment(2)=='edit_article' || $this->uri->segment(2)=='form_article' || $this->uri->segment(2)=='albums' || $this->uri->segment(2)=='service_document') ? 'active' : ''; ?>">
 						<a class="animsition-link" href="<?=base_url('Admin/article');?>">
 						<i class="fa fa-newspaper-o" aria-hidden="true"></i>
 							<span class="site-menu-title">Article</span>
 						</a>
 					</li>
-					
 					<li class="site-menu-item <?=($this->uri->segment(2)=='gallery' || $this->uri->segment(2)=='form_gallery' || $this->uri->segment(2)=='gallery_albums' || $this->uri->segment(2)=='edit_gallery') ? 'active' : ''; ?>">
 						<a class="animsition-link" href="<?=base_url('Admin/gallery');?>">
 						<i class="fa fa-picture-o" aria-hidden="true"></i>

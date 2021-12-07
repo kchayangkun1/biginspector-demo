@@ -12,14 +12,21 @@ class home extends CI_Controller {
 		$this->load->model('Banner_model');
 		$this->load->model('Gallery_model');
 	}
-    public function index()
-	{
-		$data['banner'] = $this->Banner_model->fecthAll(); // banner
-		$data['recom_gallery'] = $this->Gallery_model->fetchRecommend();
+    // public function index()
+	// {
+	// 	$data['banner'] = $this->Banner_model->fecthAll(); // banner
+	// 	$data['recom_gallery'] = $this->Gallery_model->fetchRecommend();
 
-		$this->load->view('head');
-		$this->load->view('home',$data);
-		$this->load->view('followup');
-		$this->load->view('footer');
+	// 	$this->load->view('head');
+	// 	$this->load->view('home',$data);
+	// 	$this->load->view('followup');
+	// 	$this->load->view('footer');
+	// }
+	public function index()
+	{
+		// $this->load->view('head');
+		$this->load->view('home');
+		// $this->load->view('footer');
 	}
+
 }
