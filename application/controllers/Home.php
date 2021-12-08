@@ -8,25 +8,15 @@ class home extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->library('form_validation'); 
-		$this->load->model('Product_model');
 		$this->load->model('Banner_model');
-		$this->load->model('Gallery_model');
 	}
-    // public function index()
-	// {
-	// 	$data['banner'] = $this->Banner_model->fecthAll(); // banner
-	// 	$data['recom_gallery'] = $this->Gallery_model->fetchRecommend();
-
-	// 	$this->load->view('head');
-	// 	$this->load->view('home',$data);
-	// 	$this->load->view('followup');
-	// 	$this->load->view('footer');
-	// }
 	public function index()
 	{
-		// $this->load->view('head');
-		$this->load->view('home');
-		// $this->load->view('footer');
+		$data['banners'] = $this->Banner_model->fetchActive(); // call all banners active
+
+		$this->load->view('header-script'); // load header script
+		$this->load->view('home',$data);
+		$this->load->view('footer');
 	}
 
 }

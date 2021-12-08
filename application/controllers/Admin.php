@@ -20,7 +20,7 @@ class Admin extends CI_Controller {
 	public function home(){
         if(!empty($this->session->userdata('user'))){
            
-            $this->load->view('admin/home'); // 
+            $this->load->view('admin/home');
         }
         else{
             
@@ -29,8 +29,19 @@ class Admin extends CI_Controller {
     }
     public function banner()
     {
-        $data['banner'] = $this->Banner_model->fecthAll();
-        $this->load->view('admin/form_banner', $data);
+        $data['banners'] = $this->Banner_model->fecthAll();
+        $this->load->view('admin/list_banner', $data);
+    }
+    public function edit_banner()
+    {
+        if(!empty($this->session->userdata('user'))){
+            $banner_id = $this->uri->segment(3);
+            $data['banner_dsc'] = $this->Banner_model->getDetail($banner_id); 
+            $this->load->view('admin/form_banner_edit', $data);
+        }else{
+            redirect('Login','refresh');
+        }
+
     }
 
     public function update_banner()
@@ -42,7 +53,6 @@ class Admin extends CI_Controller {
             $bh_id = $this->security->xss_clean($this->input->post('banner_id', TRUE));
             
             if(!empty($_FILES['covImg']['name'])){
-                  
                 $config['upload_path'] = './assets/images/banner/';
                 $config['file_name']        = $_FILES['covImg']['name'];
                 $config['allowed_types']    = 'jpg|png|jpeg|JPG|PNG|JPEG'; 
@@ -66,27 +76,22 @@ class Admin extends CI_Controller {
                     @$image_type=$this->upload->data('image_type');
                     @$file_size=$this->upload->data('file_size');
                     @$file_path=$this->upload->data('file_path');
+
+                    $data = array(
+                        'name'          => @$bh_name,
+                        'image_cover'   =>  @$file_upload,
+                        'banner_id'     => @$bh_id
+                    );
                 }
-                $dataArr = array(
-                    'name'          => $bh_name,
-                    'image_type'    =>  @$image_type,
-                    'file_size'     =>  @$file_size,
-                    'file_path'     =>  @$file_path,
-                    'image_cover'   =>  @$file_upload,
-                    'banner_id'     => @$bh_id
-                );
             } else {
-                $dataArr = array(
+                $data = array(
                     'name'          => $bh_name,
-                    'image_type'    =>  '',
-                    'file_size'     =>  '',
-                    'file_path'     =>  '',
                     'image_cover'   =>  '',
                     'banner_id'     => @$bh_id
                 );
             }
   
-            $response = $this->Banner_model->update($dataArr);
+            $response = $this->Banner_model->update($data);
             if($response > 0){
                 echo "<script>
                     alert('Success!');
@@ -97,6 +102,31 @@ class Admin extends CI_Controller {
                     alert('failed!');
                     window.location.href='".base_url("Admin/banner")."';
                 </script>";
+            }
+        }
+        else{
+            redirect('Login','refresh');
+        }
+    }
+    
+    public function distroy_banner()
+    {
+        if(!empty($this->session->userdata('user'))){
+            $this->security->get_csrf_token_name(); 
+            $this->security->get_csrf_hash();
+            $b_id = $this->security->xss_clean($this->input->post('sid', TRUE));
+            $sts = $this->security->xss_clean($this->input->post('sts', TRUE));
+            $action = $this->security->xss_clean($this->input->post('action', TRUE));
+            
+            if(!empty($b_id) && $action =='delSlide'){
+                $response = $this->Banner_model->distroy($b_id,$sts);
+                if($response > 0){
+                    echo 'true';
+                } else {
+                    echo 'false';
+                }
+            } else{
+                echo 'false';
             }
         }
         else{
@@ -348,30 +378,7 @@ class Admin extends CI_Controller {
     //     }
     // }
 
-    // public function distroyServImage()
-    // {
-    //     if(!empty($this->session->userdata('user'))){
-            
-    //         $this->security->get_csrf_token_name(); 
-    //         $this->security->get_csrf_hash();
-    //         $simg_id = $this->security->xss_clean($this->input->post('id', TRUE));
-    //         $action = $this->security->xss_clean($this->input->post('action', TRUE));
-            
-    //         if(!empty($simg_id) && $action =='distroy'){
-    //             $response = $this->Product_model->distroy_image($simg_id);
-    //             if($response > 0){
-    //                 echo 'true';
-    //             } else {
-    //                 echo 'false';
-    //             }
-    //         } else{
-    //             echo 'false';
-    //         }
-    //     }
-    //     else{
-    //         redirect('Login','refresh');
-    //     }
-    // }
+
     // public function changeProductStatus()
     // {
     //     if(!empty($this->session->userdata('user'))){
