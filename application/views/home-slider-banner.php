@@ -31,7 +31,8 @@
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="col-xl-6 col-lg-7 col-sm-10">
-                                            <h2 class="carousel-title">Refreshing Design & Easy to Customize</h2>
+                                            <h2 class="carousel-title">INSPECT YOUR HOUSE </h2>
+                                            <h2 class="carousel-title">FOR YOUR LIFE </h2>
                                             <ul class="carousel-btn rounded-buttons">
                                                 <li><a class="main-btn rounded-three" href="#">GET STARTED</a></li>
                                                 <li><a class="main-btn rounded-one" href="#">DOWNLOAD</a></li>
@@ -48,7 +49,8 @@
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="col-xl-6 col-lg-7 col-sm-10">
-                                            <h2 class="carousel-title">Refreshing Design & Easy to Customize</h2>
+                                        <h2 class="carousel-title">INSPECT YOUR HOUSE </h2>
+                                            <h2 class="carousel-title">FOR YOUR LIFE </h2>
                                             <ul class="carousel-btn rounded-buttons">
                                                 <li><a class="main-btn rounded-three" href="#">GET STARTED</a></li>
                                                 <li><a class="main-btn rounded-one" href="#">DOWNLOAD</a></li>
