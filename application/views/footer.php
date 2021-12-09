@@ -1,6 +1,6 @@
 <!--====== FOOTER FOUR PART START ======-->
-<footer id="footer" class="footer-area">
-        <div class="footer-widget" style="padding-bottom: 0px;">
+<footer id="footer" class="footer-area mt-5">
+        <div class="footer-widget" style="padding-bottom: 0px;background-color: #dedede;">
             <div class="container">
                 <div class="row" style="justify-content: center;">
                     <h4>ติดต่อเรา</h4>
@@ -22,8 +22,7 @@
                     </div>
                 </div> <!-- row -->
             </div> <!-- container -->
-        </div> <!-- footer widget -->
-        <div class="footer-copyright">
+            <div class="footer-copyright">
             <div class="container">
                 <div class="row "style="justify-content: center;">
                     <div class="col-lg-5">
@@ -34,6 +33,8 @@
                 </div> <!-- row -->
             </div> <!-- container -->
         </div> <!-- footer copyright -->
+        </div> <!-- footer widget -->
+        
     </footer>
     <!--====== FOOTER FOUR PART ENDS ======-->
     
