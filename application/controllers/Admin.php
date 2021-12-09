@@ -11,7 +11,6 @@ class Admin extends CI_Controller {
         $this->load->library('upload'); 
         $this->load->library('session');
         $this->load->model('Product_model'); 
-        $this->load->model('Gallery_model');
         $this->load->model('Upload_product_model'); 
         $this->load->model('Upload_gallery_model'); 
         $this->load->model('Banner_model'); 

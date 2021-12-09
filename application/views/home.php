@@ -1,3 +1,53 @@
+
+   <style>
+       @media only screen and (max-width: 640px) and (min-width: 360px){
+  
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 13px;
+    color: #000;
+    font-weight: 700;
+    border-radius: 7px;
+
+}
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: #000;
+    font-weight: 700;
+  }
+}
+@media only screen and (max-width: 1920px) and (min-width: 1080px){
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: #000;
+    font-weight: 700;
+  }
+}
+@media only screen and (max-width: 2360px) and (min-width: 1640px){
+  .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #000;
+  font-weight: 700;
+}
+}
+   </style> 
     <!--====== PRELOADER PART START ======-->
     <div class="preloader">
         <div class="loader">
@@ -33,509 +83,231 @@
     <!--====== SAIDEBAR PART ENDS ======-->
     
     <!--====== ABOUT PART START ======-->
-    <section id="about" class="about-area">
-        <div class="container">
+
+
+    <!-- section service -->
+    <section id="service" class="service-area">
+        <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-8">
-                    <div class="about-image text-center wow fadeInUp" data-wow-duration="1.5s" data-wow-offset="100">
-                        <img src="assets/images/services.png" alt="services">
+                <div class="section-title text-center mt-30 pb-40">
+                    <h4 class="title wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.6s">คำนวนค่าบริการ</h4>
+                </div>
+            </div> <!-- end row Tag titel service -->
+            <div class="row justify-content-center">
+                        <div class="col-md-6 my-3">
+                            <div class="card-outline-secondary">
+                                <div class="card-body">
+                                    <form class="form" role="form" autocomplete="off">
+                                        <div class="form-group row mt-3">
+                                            <label class="col-md-3 col-form-label form-control-label">ประเภทที่อยู่อาศัย</label>
+                                            <div class="col-md-9">
+                                                <input class="form-control" type="text" value="" readonly style="border-radius: 8rem;">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mt-3">
+                                            <label class="col-lg-3 col-form-label form-control-label">จำนวนชั้น</label>
+                                            <div class="col-lg-9">
+                                                <input class="form-control" type="text" value="" readonly style="border-radius: 8rem;">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mt-3">
+                                            <label class="col-lg-3 col-form-label form-control-label">ขนาดพื้นที่ใช้สอย</label>
+                                            <div class="col-lg-9">
+                                                <input class="form-control" type="text" value="" readonly style="border-radius: 8rem;">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mt-3">
+                                            <label class="col-lg-3 col-form-label form-control-label">ที่อยู่</label>
+                                            <div class="col-lg-9">
+                                                <input class="form-control" type="text" value="" readonly style="border-radius: 8rem;">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mt-3">
+                                            <label class="col-lg-3 col-form-label form-control-label"></label>
+                                            <div class="col-lg-9">
+                                            
+                                                <input type="button" class="btn btn-primary mt-3" value="คลิกคำนวน" style="border-radius: 9px;"> 
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div><!-- card body -->
+                            </div> <!-- card-outline -->
+                        </div>
                     </div>
-                    <div class="section-title text-center mt-30 pb-40">
-                        <h4 class="title wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.6s">The future of designing starts here</h4>
-                        <p class="text wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1s">An open platform for presentations and content collaboration. Sign up to get early access.</p>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-            
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="single-about d-sm-flex mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
-                        <div class="about-icon">
-                            <img src="assets/images/icon-1.png" alt="Icon">
-                        </div>
-                        <div class="about-content media-body">
-                            <h4 class="about-title">Powerful templates</h4>
-                            <p class="text">Poorly designed presentations are a thing of the past. Create beautiful and high-quality content that is aligned.</p>
-                        </div>
-                    </div> <!-- single about -->
-                </div>
-                <div class="col-lg-6">
-                    <div class="single-about d-sm-flex mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.4s">
-                        <div class="about-icon">
-                            <img src="assets/images/icon-2.png" alt="Icon">
-                        </div>
-                        <div class="about-content media-body">
-                            <h4 class="about-title">Designed for everyone</h4>
-                            <p class="text">Poorly designed presentations are a thing of the past. Create beautiful and high-quality content that is aligned.</p>
-                        </div>
-                    </div> <!-- single about -->
-                </div>
-                <div class="col-lg-6">
-                    <div class="single-about d-sm-flex mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.6s">
-                        <div class="about-icon">
-                            <img src="assets/images/icon-3.png" alt="Icon">
-                        </div>
-                        <div class="about-content media-body">
-                            <h4 class="about-title">Work anywhere</h4>
-                            <p class="text">Poorly designed presentations are a thing of the past. Create beautiful and high-quality content that is aligned.</p>
-                        </div>
-                    </div> <!-- single about -->
-                </div>
-                <div class="col-lg-6">
-                    <div class="single-about d-sm-flex mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.8s">
-                        <div class="about-icon">
-                            <img src="assets/images/icon-4.png" alt="Icon">
-                        </div>
-                        <div class="about-content media-body">
-                            <h4 class="about-title">Updated in real time</h4>
-                            <p class="text">Poorly designed presentations are a thing of the past. Create beautiful and high-quality content that is aligned.</p>
-                        </div>
-                    </div> <!-- single about -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
+        </div>
     </section>
 
-    <!--====== ABOUT PART ENDS ======-->
-    
-    <!--====== portfolio PART START ======-->
-    <section id="portfolio" class="portfolio-area">
+    <section>
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section-title text-center pb-20">
-                        <h3 class="title">Our Portfolio</h3>
-                        <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
-                    </div> <!-- row -->
+            <div class="row" data-wow-duration="1.5s" data-wow-offset="100">
+                <div class="row" data-aos="fade-up"data-aos-duration="1000">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 " style="padding-left: 0px;padding-right: 0px;">
+                        <img src="<?=base_url('assets/img/about/Besttechnicial.png');?>" class="img-rounded" id="accounting2" style="width: 100%;padding: -6px;">
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3 pt-3">
+                        <h1>เกี่ยวกับเรา</h1>
+                        <h4 >BIG Inspector บริการตรวจรับบ้านและคอนโดแบบครบวงจร ครอบคลุมทุกระบบงาน ด้วยเครื่องมือที่ทันสมัย และระบบรายงานผลการตรวจแบบออนไลน์อัตโนมัติ (Real time) เราเข้าใจและใส่ใจทุกตารางนิ้ว เพื่อให้คุณสบายใจหมดกังวนทุกครั้งที่อยู่บ้าน </h4>
+                        <h4>"เพื่อช่วงเวลาที่ดีที่สุดของคุณ"</h4>
+                        <h4>เพราะบ้านอยู่กับคุณไปอีกนาน</h4>
+                    </div>
                 </div>
-            </div> <!-- row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="portfolio-menu pt-30 text-center">
-                        <ul>
-                            <li data-filter="*" class="active">ALL WORK</li>
-                            <li data-filter=".branding-3">BRANDING</li>
-                            <li data-filter=".marketing-3">MARKETING</li>
-                            <li data-filter=".planning-3">PLANNING</li>
-                            <li data-filter=".research-3">RESEARCH</li>
-                        </ul>
-                    </div> <!-- portfolio menu -->
-                </div>
-            </div> <!-- row -->
-            <div class="row grid">
-                <div class="col-lg-4 col-sm-6 branding-3 planning-3">
-                    <div class="single-portfolio mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                        <div class="portfolio-image">
-                            <img src="assets/images/portfolio-1.png" alt="">
-                            <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                                <div class="portfolio-content">
-                                    <div class="portfolio-icon">
-                                        <a class="image-popup" href="assets/images/portfolio-1.png"><i class="lni-zoom-in"></i></a>
-                                    </div>
-                                    <div class="portfolio-icon">
-                                        <a href="#"><i class="lni-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-text">
-                            <h4 class="portfolio-title"><a href="#">Graphics Design</a></h4>
-                            <p class="text">Short description for the ones who look for something new. Awesome!</p>
-                        </div>
-                    </div> <!-- single portfolio -->
-                </div>
-                <div class="col-lg-4 col-sm-6 marketing-3 research-3">
-                    <div class="single-portfolio mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
-                        <div class="portfolio-image">
-                            <img src="assets/images/portfolio-2.png" alt="">
-                            <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                                <div class="portfolio-content">
-                                    <div class="portfolio-icon">
-                                        <a class="image-popup" href="assets/images/portfolio-2.png"><i class="lni-zoom-in"></i></a>
-                                    </div>
-                                    <div class="portfolio-icon">
-                                        <a href="#"><i class="lni-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-text">
-                            <h4 class="portfolio-title"><a href="#">Graphics Design</a></h4>
-                            <p class="text">Short description for the ones who look for something new. Awesome!</p>
-                        </div>
-                    </div> <!-- single portfolio -->
-                </div>
-                <div class="col-lg-4 col-sm-6 branding-3 marketing-3">
-                    <div class="single-portfolio mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.7s">
-                        <div class="portfolio-image">
-                            <img src="assets/images/portfolio-3.png" alt="">
-                            <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                                <div class="portfolio-content">
-                                    <div class="portfolio-icon">
-                                        <a class="image-popup" href="assets/images/portfolio-3.png"><i class="lni-zoom-in"></i></a>
-                                    </div>
-                                    <div class="portfolio-icon">
-                                        <a href="#"><i class="lni-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-text">
-                            <h4 class="portfolio-title"><a href="#">Graphics Design</a></h4>
-                            <p class="text">Short description for the ones who look for something new. Awesome!</p>
-                        </div>
-                    </div> <!-- single portfolio -->
-                </div>
-                <div class="col-lg-4 col-sm-6 planning-3 research-3">
-                    <div class="single-portfolio mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                        <div class="portfolio-image">
-                            <img src="assets/images/portfolio-4.png" alt="">
-                            <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                                <div class="portfolio-content">
-                                    <div class="portfolio-icon">
-                                        <a class="image-popup" href="assets/images/portfolio-4.png"><i class="lni-zoom-in"></i></a>
-                                    </div>
-                                    <div class="portfolio-icon">
-                                        <a href="#"><i class="lni-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-text">
-                            <h4 class="portfolio-title"><a href="#">Graphics Design</a></h4>
-                            <p class="text">Short description for the ones who look for something new. Awesome!</p>
-                        </div>
-                    </div> <!-- single portfolio -->
-                </div>
-                <div class="col-lg-4 col-sm-6 marketing-3">
-                    <div class="single-portfolio mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
-                        <div class="portfolio-image">
-                            <img src="assets/images/portfolio-5.png" alt="">
-                            <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                                <div class="portfolio-content">
-                                    <div class="portfolio-icon">
-                                        <a class="image-popup" href="assets/images/portfolio-5.png"><i class="lni-zoom-in"></i></a>
-                                    </div>
-                                    <div class="portfolio-icon">
-                                        <a href="#"><i class="lni-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-text">
-                            <h4 class="portfolio-title"><a href="#">Graphics Design</a></h4>
-                            <p class="text">Short description for the ones who look for something new. Awesome!</p>
-                        </div>
-                    </div> <!-- single portfolio -->
-                </div>
-                <div class="col-lg-4 col-sm-6 planning-3">
-                    <div class="single-portfolio mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.7s">
-                        <div class="portfolio-image">
-                            <img src="assets/images/portfolio-6.png" alt="">
-                            <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                                <div class="portfolio-content">
-                                    <div class="portfolio-icon">
-                                        <a class="image-popup" href="assets/images/portfolio-6.png"><i class="lni-zoom-in"></i></a>
-                                    </div>
-                                    <div class="portfolio-icon">
-                                        <a href="#"><i class="lni-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-text">
-                            <h4 class="portfolio-title"><a href="#">Graphics Design</a></h4>
-                            <p class="text">Short description for the ones who look for something new. Awesome!</p>
-                        </div>
-                    </div> <!-- single portfolio -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
+            </div>
+        </div>
     </section>
-    <!--====== portfolio PART ENDS ======-->
-    
-    <!--====== PRINICNG STYLE EIGHT START ======-->
-    <section id="pricing" class="pricing-area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section-title text-center pb-20">
-                        <h3 class="title">Pricing Plan</h3>
-                        <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
-                    </div> <!-- section title -->
+    <section>
+        <div class="container mt-5">
+            <div class="row justify-content-center" data-wow-duration="1.5s" data-wow-offset="100">
+                <div class="row" data-aos="fade-up"data-aos-duration="1000">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+                    <img src="<?=base_url('assets/images/bigbanner+icon/iconabout1.png');?>" class="img-responsive" style="width:100%;">
+                        <p class="mt-3" style="text-align: center;">เช็คค่าบริการ </p>
+                        <p style="text-align: center;">ก่อนตรวจ</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+                        <img src="<?=base_url('assets/images/bigbanner+icon/iconabout2.png');?>" class="img-responsive" style="width:100%;">
+                        <p class=" mt-3"style="text-align: center;">รายงานผล</p>
+                        <p style="text-align: center;">ออนไลน์ทันที</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+                    <img src="<?=base_url('assets/images/bigbanner+icon/iconabout3.png');?>" class="img-responsive" style="width:100%;">
+                        <p class="mt-3" style="text-align: center;">จองฟรี</p>
+                        <p style="text-align: center;"> ไม่มีค่ามัดจำ</p>
+                    </div>
                 </div>
-            </div> <!-- row -->
-            <div class="row justify-content-center">                
-                <div class="col-lg-4 col-md-7 col-sm-9">
-                    <div class="pricing-style-one mt-40 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                        <div class="pricing-icon text-center">
-                            <img src="assets/images/wman.svg" alt="">
-                        </div>
-                        <div class="pricing-header text-center">
-                            <h5 class="sub-title">Basic</h5>
-                            <p class="month"><span class="price">$ 199</span>/month</p>
-                        </div>
-                        <div class="pricing-list">
-                            <ul>
-                                <li><i class="lni-check-mark-circle"></i> Carefully crafted components</li>
-                                <li><i class="lni-check-mark-circle"></i> Amazing page examples</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-btn rounded-buttons text-center">
-                            <a class="main-btn rounded-three" href="#">GET STARTED</a>
-                        </div>
-                    </div> <!-- pricing style one -->
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-5">
+                    <div class="justify-content-center">
+                        <h4 class="" style="text-align: center;">บริการของเรา</h4>
+                    </div>
                 </div>
-                
-                <div class="col-lg-4 col-md-7 col-sm-9">
-                    <div class="pricing-style-one mt-40 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
-                        <div class="pricing-icon text-center">
-                            <img src="assets/images/wman.svg" alt="">
+            </div>
+            <div class="row justify-content-center" data-wow-duration="1.5s" data-wow-offset="100">
+                <div class="row" data-aos="fade-up"data-aos-duration="1000">
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <div class="card" style="width:100%;">
+                        <div class="content-overlay"></div>
+                            <img src="assets/images/portfolio/bbaf472f4671eb81.jpg" class="card-img-top" alt="...">
+                                <div class="centered">
+                                    <h4>คอนโด</h4>
+                                            <button type="button" class="btn btn-primary">คลิกดูผลงาน</button>
+                                </div>
                         </div>
-                        <div class="pricing-header text-center">
-                            <h5 class="sub-title">Pro</h5>
-                            <p class="month"><span class="price">$ 399</span>/month</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <div class="card" style="width:100%;">
+                        <div class="content-overlay"></div>
+                            <img src="assets/images/portfolio/Townhouse-VS-Townhome.jpg" class="card-img-top" alt="...">
+                                <div class="centered">
+                                    <h4>ทาวน์โฮม</h4>
+                                        <button type="button" class="btn btn-primary">คลิกดูผลงาน</button>
+                                </div>
                         </div>
-                        <div class="pricing-list">
-                            <ul>
-                                <li><i class="lni-check-mark-circle"></i> Carefully crafted components</li>
-                                <li><i class="lni-check-mark-circle"></i> Amazing page examples</li>
-                            </ul>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <div class="card" style="width:100%;">
+                        <div class="content-overlay"></div>
+                            <img src="assets/images/portfolio/Lalin-Town-Lanceo-CRIB-ลำลูกกา-คลอง-2-แบบบ้าน-monaco.jpg" class="card-img-top" alt="...">
+                                <div class="centered">
+                                    <h4>บ้านเดี่ยว</h4>
+                                        <button type="button" class="btn btn-primary">คลิกดูผลงาน</button>
+                                </div>
                         </div>
-                        <div class="pricing-btn rounded-buttons text-center">
-                            <a class="main-btn rounded-three" href="#">GET STARTED</a>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <div class="card" style="width:100%;">
+                        <div class="content-overlay"></div>
+                            <img src="assets/images/portfolio/sansiri-investor-content-อัพเดต5โครงการบ้านแฝด-anasiri-krungthep-pathumthani-01.jpg" class="card-img-top" alt="...">
+                                <div class="centered">
+                                    <h4>บ้านแฝด</h4>
+                                        <button type="button" class="btn btn-primary">คลิกดูผลงาน</button>
+                                </div>
                         </div>
-                    </div> <!-- pricing style one -->
+                    </div>
                 </div>
-                
-                <div class="col-lg-4 col-md-7 col-sm-9">
-                    <div class="pricing-style-one mt-40 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.8s">
-                        <div class="pricing-icon text-center">
-                            <img src="assets/images/wman.svg" alt="">
-                        </div>
-                        <div class="pricing-header text-center">
-                            <h5 class="sub-title">Enterprise</h5>
-                            <p class="month"><span class="price">$ 699</span>/month</p>
-                        </div>
-                        <div class="pricing-list">
-                            <ul>
-                                <li><i class="lni-check-mark-circle"></i> Carefully crafted components</li>
-                                <li><i class="lni-check-mark-circle"></i> Amazing page examples</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-btn rounded-buttons text-center">
-                            <a class="main-btn rounded-three" href="#">GET STARTED</a>
-                        </div>
-                    </div> <!-- pricing style one -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
+            </div>
+        </div>
     </section>
 
-    <!--====== PRINICNG STYLE EIGHT ENDS ======-->
-    
-    <!--====== CALL TO ACTION TWO PART START ======-->
+    <section>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-5">
+                    <div class="justify-content-center">
+                        <h4 class="" style="text-align: center;">โครงการ / ผลงาน</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center" data-wow-duration="1.5s" data-wow-offset="100">
+                <div class="row" data-aos="fade-up"data-aos-duration="1000">
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <div class="card" style="width:100%;">
+                        <!-- <div class="content-overlay"></div> -->
+                            <img src="assets/images/reviewBig/1.png" class="card-img-top" alt="...">       
+                        </div>
+                        <h4 class="mt-3" style="text-align: center;">NAME PRODUCT</h4>    
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <div class="card" style="width:100%;">
+                            <img src="assets/images/reviewBig/2.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <h4 class="mt-3" style="text-align: center;">NAME PRODUCT</h4>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <div class="card" style="width:100%;">
+                            <img src="assets/images/reviewBig/3.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <h4 class="mt-3" style="text-align: center;">NAME PRODUCT</h4>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <div class="card" style="width:100%;">
+                            <img src="assets/images/reviewBig/4.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <h4 class="mt-3" style="text-align: center;">NAME PRODUCT</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-3" data-wow-duration="1.5s" data-wow-offset="100">
+                <div class="row" data-aos="fade-up"data-aos-duration="1000">
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <div class="card" style="width:100%;">
+                        <!-- <div class="content-overlay"></div> -->
+                            <img src="assets/images/reviewBig/5.jpg" class="card-img-top" alt="...">       
+                        </div>
+                        <h4 class="mt-3" style="text-align: center;">NAME PRODUCT</h4>    
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <div class="card" style="width:100%;">
+                            <img src="assets/images/reviewBig/6.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <h4 class="mt-3" style="text-align: center;">NAME PRODUCT</h4>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <div class="card" style="width:100%;">
+                            <img src="assets/images/reviewBig/7.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <h4 class="mt-3" style="text-align: center;">NAME PRODUCT</h4>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <div class="card" style="width:100%;">
+                            <img src="assets/images/reviewBig/8.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <h4 class="mt-3" style="text-align: center;">NAME PRODUCT</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
 
-    <section id="call-action" class="call-action-area">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <div class="call-action-content mt-45">
-                        <h3 class="action-title">Get latest updates!</h3>
-                        <p class="text">We never spam your email</p>
-                    </div> <!-- call action content -->
-                </div>
-                <div class="col-lg-7">
-                    <div class="call-action-form mt-50">
-                        <form action="#">
-                            <input type="text" placeholder="Enter your email">
-                            <div class="action-btn rounded-buttons">
-                                <button class="main-btn rounded-three">subscribe</button>
-                            </div>
-                        </form>
-                    </div> <!-- call action form -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section>
-    <!--====== CALL TO ACTION TWO PART ENDS ======-->
+
+
+ 
     
-    <!--====== TESTIMONIAL THREE PART START ======-->
-    <section id="testimonial" class="testimonial-area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section-title text-center pb-20">
-                        <h3 class="title">Testimonial</h3>
-                        <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-            
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row testimonial-active">
-                        <div class="col-lg-4">
-                            <div class="single-testimonial mt-30 mb-30 text-center">
-                                <div class="testimonial-image">
-                                    <img src="assets/images/author-3.jpg" alt="Author">
-                                </div>
-                                <div class="testimonial-content">
-                                    <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed! Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
-                                    <h6 class="author-name">Isabela Moreira</h6>
-                                    <span class="sub-title">CEO, GrayGrids</span>
-                                </div>
-                            </div> <!-- single testimonial -->
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="single-testimonial mt-30 mb-30 text-center">
-                                <div class="testimonial-image">
-                                    <img src="assets/images/author-1.jpg" alt="Author">
-                                </div>
-                                <div class="testimonial-content">
-                                    <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed! Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
-                                    <h6 class="author-name">Fiona</h6>
-                                    <span class="sub-title">Lead Designer, UIdeck</span>
-                                </div>
-                            </div> <!-- single testimonial -->
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="single-testimonial mt-30 mb-30 text-center">
-                                <div class="testimonial-image">
-                                    <img src="assets/images/author-2.jpg" alt="Author">
-                                </div>
-                                <div class="testimonial-content">
-                                    <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed! Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
-                                    <h6 class="author-name">Elon Musk</h6>
-                                    <span class="sub-title">CEO, SpaceX</span>
-                                </div>
-                            </div> <!-- single testimonial -->
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="single-testimonial mt-30 mb-30 text-center">
-                                <div class="testimonial-image">
-                                    <img src="assets/images/author-4.jpg" alt="Author">
-                                </div>
-                                <div class="testimonial-content">
-                                    <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed! Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
-                                    <h6 class="author-name">Fajar Siddiq</h6>
-                                    <span class="sub-title">CEO, MakerFlix</span>
-                                </div>
-                            </div> <!-- single testimonial -->
-                        </div>
-                    </div> <!-- row -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section>
-    <!--====== TESTIMONIAL THREE PART ENDS ======-->
-    
-    <!--====== CLIENT LOGO PART START ======-->
-    <section id="client" class="client-logo-area">
-        <div class="container">
-            <div class="row client-active">
-                <div class="col-lg-3">
-                    <div class="single-client text-center">
-                        <img src="assets/images/client_logo_01.png" alt="Logo">
-                    </div> <!-- single client -->
-                </div>
-                <div class="col-lg-3">
-                    <div class="single-client text-center">
-                        <img src="assets/images/client_logo_02.png" alt="Logo">
-                    </div> <!-- single client -->
-                </div>
-                <div class="col-lg-3">
-                    <div class="single-client text-center">
-                        <img src="assets/images/client_logo_03.png" alt="Logo">
-                    </div> <!-- single client -->
-                </div>
-                <div class="col-lg-3">
-                    <div class="single-client text-center">
-                        <img src="assets/images/client_logo_04.png" alt="Logo">
-                    </div> <!-- single client -->
-                </div>
-                <div class="col-lg-3">
-                    <div class="single-client text-center">
-                        <img src="assets/images/client_logo_05.png" alt="Logo">
-                    </div> <!-- single client -->
-                </div>
-                <div class="col-lg-3">
-                    <div class="single-client text-center">
-                        <img src="assets/images/client_logo_06.png" alt="Logo">
-                    </div> <!-- single client -->
-                </div>
-                <div class="col-lg-3">
-                    <div class="single-client text-center">
-                        <img src="assets/images/client_logo_07.png" alt="Logo">
-                    </div> <!-- single client -->
-                </div>
-                <div class="col-lg-3">
-                    <div class="single-client text-center">
-                        <img src="assets/images/client_logo_08.png" alt="Logo">
-                    </div> <!-- single client -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section>
-    <!--====== CLIENT LOGO PART ENDS ======-->
-    
-    <!--====== CONTACT TWO PART START ======-->
-    <section id="contact" class="contact-area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section-title text-center pb-20">
-                        <h3 class="title">Get in touch</h3>
-                        <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="contact-two mt-50 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                        <h4 class="contact-title">Lets talk about the project</h4>
-                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam unde repellendus delectus facilis quia consequatur maxime perferendis! Sequi, modi consequatur.</p>
-                        <ul class="contact-info">
-                            <li><i class="lni-money-location"></i> 71 LadPrao, LadPrao, Bangkok</li>
-                            <li><i class="lni-phone-handset"></i> +123456789</li>
-                            <li><i class="lni-envelope"></i> hello@gmail.com</li>
-                        </ul>
-                    </div> <!-- contact two -->
-                </div>
-                <div class="col-lg-6">
-                    <div class="contact-form form-style-one mt-35 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
-                        <form  id="contact-form" action="assets/contact.php" method="post">
-                            <div class="form-input mt-15">
-                                <label>Name</label>
-                                <div class="input-items default">
-                                    <input type="text" placeholder="Name" name="name">
-                                    <i class="lni-user"></i>
-                                </div>
-                            </div> <!-- form input -->
-                            <div class="form-input mt-15">
-                                <label>Email</label>
-                                <div class="input-items default">
-                                    <input type="email" placeholder="Email" name="email">
-                                    <i class="lni-envelope"></i>
-                                </div>
-                            </div> <!-- form input -->
-                            <div class="form-input mt-15">
-                                <label>Massage</label>
-                                <div class="input-items default">
-                                    <textarea placeholder="Massage" name="massage"></textarea>
-                                    <i class="lni-pencil-alt"></i>
-                                </div>
-                            </div> <!-- form input -->
-                            <p class="form-message"></p>
-                            <div class="form-input rounded-buttons mt-20">
-                                <button type="submit" class="main-btn rounded-three">Submit</button>
-                            </div> <!-- form input -->
-                        </form>
-                    </div> <!-- contact form -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section>
-    <!--====== CONTACT TWO PART ENDS ======-->
     
     <!-- footer -->
