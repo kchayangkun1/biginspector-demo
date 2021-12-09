@@ -72,19 +72,20 @@
 							<span class="site-menu-title">แบนเนอร์</span>
 						</a>
 					</li>
+					<li class="site-menu-item <?=($this->uri->segment(2)=='categories' || $this->uri->segment(2)=='form_category' || $this->uri->segment(2)=='edit_category') ? 'active' : ''; ?>">
+						<a class="animsition-link" href="<?=base_url('Admin/categories');?>">
+						
+						<i class="fa fa-list-alt" aria-hidden="true"></i>
+							<span class="site-menu-title">หมวดหมู่</span>
+						</a>
+					</li>
 					<li class="site-menu-item ">
 						<a class="animsition-link" href="<?=base_url('Admin/banner');?>">
 						<i class="fa fa-briefcase" aria-hidden="true"></i>
 							<span class="site-menu-title">ผลงาน</span>
 						</a>
 					</li>
-					<li class="site-menu-item ">
-						<a class="animsition-link" href="<?=base_url('Admin/banner');?>">
-						
-						<i class="fa fa-list-alt" aria-hidden="true"></i>
-							<span class="site-menu-title">หมวดหมู่</span>
-						</a>
-					</li>
+					
 					<li class="site-menu-item ">
 						<a class="animsition-link" href="<?=base_url('Admin/banner');?>">
 						<i class="fa fa-calculator" aria-hidden="true"></i>
