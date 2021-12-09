@@ -11,10 +11,10 @@ class Admin extends CI_Controller {
         $this->load->library('upload'); 
         $this->load->library('session');
         $this->load->model('Product_model'); 
-        $this->load->model('Gallery_model');
         $this->load->model('Upload_product_model'); 
         $this->load->model('Upload_gallery_model'); 
         $this->load->model('Banner_model'); 
+        $this->load->model('Category_model'); 
 	}
     
 	public function home(){
@@ -127,6 +127,105 @@ class Admin extends CI_Controller {
                 }
             } else{
                 echo 'false';
+            }
+        }
+        else{
+            redirect('Login','refresh');
+        }
+    }
+    public function categories()
+    {
+        if(!empty($this->session->userdata('user'))){
+            $data['categories'] = $this->Category_model->fetchAll(); 
+            $this->load->view('admin/list_category', $data);
+        }else{
+            redirect('Login','refresh');
+        }
+    }
+    public function form_category()
+    {
+        if(!empty($this->session->userdata('user'))){
+            $this->load->view('admin/form_category');
+        }else{
+            redirect('Login','refresh');
+        }
+    }
+    public function create_category()
+    {
+        if(!empty($this->session->userdata('user'))){
+            $this->security->get_csrf_token_name(); 
+            $this->security->get_csrf_hash();
+            $name = $this->security->xss_clean($this->input->post('name', TRUE));
+            $response = $this->Category_model->create($name); 
+            if($response > 0){
+                echo "<script>
+                    alert('Success!');
+                    window.location.href='".base_url("Admin/categories")."';
+                </script>";
+            } else {
+                echo "<script>
+                    alert('Success!');
+                    window.location.href='".base_url("Admin/categories")."';
+                </script>";
+            }
+        }
+        else{
+            redirect('Login','refresh');
+        }
+    }
+    public function distroy_categoty()
+    {
+        if(!empty($this->session->userdata('user'))){
+            $this->security->get_csrf_token_name(); 
+            $this->security->get_csrf_hash();
+            $c_id = $this->security->xss_clean($this->input->post('id', TRUE));
+            $st = $this->security->xss_clean($this->input->post('st', TRUE));
+            $action = $this->security->xss_clean($this->input->post('action', TRUE));
+            
+            if(!empty($c_id) && $action =='changeStatus'){
+                $response = $this->Category_model->update_status($c_id,$st);
+                if($response > 0){
+                    echo 'true';
+                } else {
+                    echo 'false';
+                }
+            } else{
+                echo 'false';
+            }
+        }
+        else{
+            redirect('Login','refresh');
+        }
+    }
+    public function edit_category()
+    {
+        if(!empty($this->session->userdata('user'))){
+            $cate_id = $this->uri->segment(3);
+            $data['cate_dsc'] = $this->Category_model->getDesc($cate_id); 
+            $this->load->view('admin/form_category_edit', $data); 
+        }
+        else{
+            redirect('Login','refresh');
+        }
+    }
+    public function update_categpry()
+    {
+        if(!empty($this->session->userdata('user'))){
+            $this->security->get_csrf_token_name(); 
+            $this->security->get_csrf_hash();
+            $name = $this->security->xss_clean($this->input->post('name', TRUE));
+            $cate_id = $this->security->xss_clean($this->input->post('cate_id', TRUE));
+            $response = $this->Category_model->update($name,$cate_id); 
+            if($response > 0){
+                echo "<script>
+                    alert('Success!');
+                    window.location.href='".base_url("Admin/categories")."';
+                </script>";
+            } else {
+                echo "<script>
+                    alert('Success!');
+                    window.location.href='".base_url("Admin/categories")."';
+                </script>";
             }
         }
         else{
