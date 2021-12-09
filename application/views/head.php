@@ -23,7 +23,7 @@
                 <a class="page-scroll" href="service" style="color: black;">บริการของเรา</a>
               </li>
               <li class="nav-item">
-                <a class="page-scroll" href="#pricing" style="color: black;">ผลงาน</a>
+                <a class="page-scroll" href="portfolio" style="color: black;">ผลงาน</a>
               </li>
             </ul>
           </div>
@@ -36,3 +36,5 @@
   </div> <!-- container -->
 </div> 
 <!-- navbar area -->
+
+

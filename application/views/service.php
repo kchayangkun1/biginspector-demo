@@ -48,7 +48,24 @@
 }
 }
  </style>
+  <!--====== PRELOADER PART ENDS ======-->
 
+    <!--====== NAVBAR PART START ======-->
+    <section class="header-area">
+        <!-- navbar menu -->
+        <?php $this->load->view('head'); // load header ?>
+        <!-- end -->
+        <!-- sliders banner -->
+        <?php $this->load->view('home-slider-banner'); // load banners ?>
+        <!-- end -->
+    </section>
+    <!--====== NAVBAR PART ENDS ======-->
+
+    <!--====== SAIDEBAR PART START ======-->
+    <?php $this->load->view('sidebar-menu'); // load sider menu ?>
+    <!--====== SAIDEBAR PART ENDS ======-->
+    
+    <!--====== ABOUT PART START ======-->
 <section>
         <div class="container mt-5">
             <div class="row">
