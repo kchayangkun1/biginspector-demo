@@ -32,7 +32,9 @@
                         <!-- <div class="content-overlay"></div> -->
                             <img src="assets/images/reviewBig/1.png" class="card-img-top" alt="...">       
                         </div>
+                        <a href="portfolio/detail">
                         <h4 class="mt-3" style="text-align: center;">NAME PRODUCT</h4>    
+                        </a>
                     </div>
                     <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
                         <div class="card" style="width:100%;">

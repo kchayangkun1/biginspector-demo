@@ -23,7 +23,7 @@
                 <a class="page-scroll" href="service" style="color: black;">บริการของเรา</a>
               </li>
               <li class="nav-item">
-                <a class="page-scroll" href="portfolio" style="color: black;">ผลงาน</a>
+                <a class="page-scroll" href="<?=base_url('portfolio');?>" style="color: black;">ผลงาน</a>
               </li>
             </ul>
           </div>

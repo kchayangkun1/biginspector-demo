@@ -20,12 +20,12 @@ class portfolio extends CI_Controller {
 		$this->load->view('portfolio/portfolio',$data);
 		$this->load->view('footer');
 	}
-	public function index()
+	public function detail()
 	{
 		$data['banners'] = $this->Banner_model->fetchActive(); // call all banners active
 
 		$this->load->view('header-script'); // load header script
-		$this->load->view('portfolio/portfolio',$data);
+		$this->load->view('portfolio/detail',$data);
 		$this->load->view('footer');
 	}
 
