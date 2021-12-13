@@ -7,10 +7,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-	<meta name="description" content="32Decor">
-	<meta name="author" content="32Decor">
+	<meta name="description" content="Big Inspector">
+	<meta name="author" content="Big Inspector">
 
-	<title>Article | 32Decor </title>
+	<title>Categories | Big Inspector </title>
 	<link rel="icon" type="image/png" href="<?=base_url('assets/img/logo/logo1.png');?>" />
     <link rel="shortcut icon" type="image/ico" href="<?=base_url('assets/img/logo/logo1.png');?>">
     <link rel="apple-touch-icon-precomposed" type="image/ico" sizes="114×114" href="<?=base_url('assets/img/logo/logo1.png');?>">

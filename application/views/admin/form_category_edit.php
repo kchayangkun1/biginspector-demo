@@ -57,15 +57,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<!-- Panel Static Labels -->
 		          	<div class="panel">
 			            <div class="panel-heading">
-			              <h3 class="panel-title">Add Category</h3>
+			              <h3 class="panel-title">Edit Category</h3>
 			            </div>
 			            <div class="panel-body container-fluid">
-			              	<form action="<?=base_url('Admin/update_categpry');?>" id="productAdd" name="productAdd" class="form-horizontal" method="post" enctype="multipart/form-data">
+			              	<form action="<?=base_url('Admin/update_category');?>" id="productAdd" name="productAdd" class="form-horizontal" method="post" enctype="multipart/form-data">
                               <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" 
                                     value="<?=$this->security->get_csrf_hash();?>" >
                                 <div class="form-group form-material" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="title">Name</label>
 				                  	<input type="text" class="form-control" id="name" name="name" value="<?=$cate_dsc[0]['name'];?>" placeholder="Name" required>
+				                </div>
+								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
+				                  	<label class="form-control-label" for="image">Cover Image</label>
+									<div id="width"></div>
+			                      	<input type="file" id="covImg" name="covImg" data-plugin="dropify" 
+									  data-default-file="<?=base_url('./assets/images/category/'. $cate_dsc[0]['img_cover']);?>" data-allowed-file-extensions="png jpg jpeg PNG JPG JPEG"/>
+									  <p class="help-block"><i>
+									รองรับไฟล์ภาพ <br>
+									ขนาดภาพแนะนำ 1200x800px <br> 
+									ชื่อไฟล์เป็นภาษาอังกฤษเท่านั้น <br>
+									ไฟล์นามสกุล .png .jpg .jpeg</i>
+									</p>
 				                </div>
 				                <div class="text-right">
 									<input type="hidden" name="cate_id" id="" value="<?=$cate_dsc[0]['id'];?>">

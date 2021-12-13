@@ -13,23 +13,29 @@
           </button>
           <div class="collapse navbar-collapse sub-menu-bar" id="navbarEight">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="page-scroll" href="#home" style="color: black;">หน้าแรก</a>
+              <li class="nav-item <?=($this->uri->segment(1)=='home') ? 'active' : ''; ?>">
+                <a class="page-scroll" href="<?=base_url('home');?>" style="color: black;">หน้าแรก</a>
               </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="about" style="color: black;">เกี่ยวกับเรา</a>
+              <li class="nav-item <?=($this->uri->segment(1)=='about') ? 'active' : ''; ?>">
+                <a class="page-scroll" href="<?=base_url('about');?>" style="color: black;">เกี่ยวกับเรา</a>
               </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="service" style="color: black;">บริการของเรา</a>
+              <li class="nav-item <?=($this->uri->segment(1)=='service') ? 'active' : ''; ?>">
+                <a class="page-scroll" href="<?=base_url('service');?>" style="color: black;">บริการของเรา</a>
               </li>
-              <li class="nav-item">
-                <a class="page-scroll" href="<?=base_url('portfolio');?>" style="color: black;">ผลงาน</a>
+              <li class="nav-item dropdown text-dark <?=($this->uri->segment(1)=='portfolio' || $this->uri->segment(1)=='portfolio-detail') ? 'active' : ''; ?>">
+                <a class="nav-link dropdown-toggle text-dark" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">โครงการ/ผลงาน</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                  <?php foreach($categories as $cate_val) : ?>
+                    <a class="dropdown-item page-scroll text-dark" href="<?=base_url('portfolio/'.$cate_val['id'].'/?slug='.$cate_val['name']);?>"><?=$cate_val['name'];?></a>
+                  <?php endforeach; ?>
+                  <div class="dropdown-divider"></div>
+                </div>
               </li>
             </ul>
           </div>
-          <div class="navbar-btn d-none mt-15 d-lg-inline-block">
+          <!-- <div class="navbar-btn d-none mt-15 d-lg-inline-block">
             <a class="menu-bar" href="#side-menu-right"><i class="lni-menu"></i></a>
-          </div>
+          </div> -->
         </nav> <!-- navbar -->
       </div>
     </div> <!-- row -->

@@ -26,7 +26,7 @@
                 foreach($banners as $val) : 
                     if($i==0) : 
                         $active='active';?>
-                        <div class="carousel-item bg_cover <?=$active;?>" style="background-image: url(assets/images/banner/<?=$val['img_cover'];?>)">
+                        <div class="carousel-item bg_cover <?=$active;?>" style="background-image: url(<?=base_url('assets/images/banner/'.$val['img_cover']);?>)">
                             <div class="carousel-caption">
                                 <div class="container">
                                     <div class="row justify-content-center">
@@ -44,7 +44,7 @@
                         </div> <!-- carousel-item -->
                     <?php else : 
                         $active='';?>
-                        <div class="carousel-item bg_cover <?=$active;?>" style="background-image: url(assets/images/banner/<?=$val['img_cover'];?>)">
+                        <div class="carousel-item bg_cover <?=$active;?>" style="background-image: url(<?=base_url('assets/images/banner/'.$val['img_cover']);?>)">
                             <div class="carousel-caption">
                                 <div class="container">
                                     <div class="row justify-content-center">

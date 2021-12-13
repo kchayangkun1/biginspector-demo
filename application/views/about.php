@@ -1,5 +1,24 @@
- <!--====== NAVBAR PART START ======-->
- <section class="header-area">
+    <!--====== PRELOADER PART START ======-->
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== PRELOADER PART ENDS ======-->
+
+    <!--====== NAVBAR PART START ======-->
+    <section class="header-area">
         <!-- navbar menu -->
         <?php $this->load->view('head'); // load header ?>
         <!-- end -->
@@ -10,8 +29,13 @@
     <!--====== NAVBAR PART ENDS ======-->
 
     <!--====== SAIDEBAR PART START ======-->
-    <?php $this->load->view('sidebar-menu'); // load sider menu ?>
+    <?php //$this->load->view('sidebar-menu'); // load sider menu ?>
     <!--====== SAIDEBAR PART ENDS ======-->
+    
+    <!--====== ABOUT PART START ======-->
+
+<!--====== SAIDEBAR PART ENDS ======-->
+ 
 <section>
     <div class="container">
         <div class="row justify-content-center">

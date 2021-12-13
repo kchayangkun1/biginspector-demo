@@ -79,32 +79,36 @@
 							<span class="site-menu-title">หมวดหมู่</span>
 						</a>
 					</li>
-					<li class="site-menu-item ">
-						<a class="animsition-link" href="<?=base_url('Admin/banner');?>">
+					<li class="site-menu-item <?=($this->uri->segment(2)=='portfolio' || $this->uri->segment(2)=='form_portfolio' || $this->uri->segment(2)=='edit_portfolio' || $this->uri->segment(2)=='albums') ? 'active' : ''; ?>">
+						<a class="animsition-link" href="<?=base_url('Admin/portfolio');?>">
 						<i class="fa fa-briefcase" aria-hidden="true"></i>
 							<span class="site-menu-title">ผลงาน</span>
 						</a>
 					</li>
-					
-					<li class="site-menu-item ">
-						<a class="animsition-link" href="<?=base_url('Admin/banner');?>">
-						<i class="fa fa-calculator" aria-hidden="true"></i>
-							<span class="site-menu-title">คำนวณพื้นที่</span>
-						</a>
+					<!-- test -->
+					<li class="site-menu-item has-sub <?=($this->uri->segment(2)=='service' || $this->uri->segment(2)=='travel_expenses' || $this->uri->segment(2)=='form_service' || $this->uri->segment(2)=='form_expenses') ? 'active open' : ''; ?>">
+						<a href="javascript:void(0)">
+							<i class="site-menu-icon icon fa fa-list-alt" aria-hidden="true"></i>
+							<span class="site-menu-title">คำนวณค่าบริการ</span>
+							<span class="site-menu-arrow"></span>
+						</a> 
+						<ul class="site-menu-sub">
+							<li class="site-menu-item <?=($this->uri->segment(2)=='service' || $this->uri->segment(2)=='form_service') ? 'active' : ''; ?>">
+								<a class="animsition-link" href="<?=base_url('Admin/service');?>">
+									<i class="site-menu-icon icon fa fa-pie-chart" aria-hidden="true"></i>
+									<span class="site-menu-title">คำนวณค่าบริการ</span>
+								</a>
+							</li>
+							<li class="site-menu-item <?=($this->uri->segment(2)=='travel_expenses' || $this->uri->segment(2)=='form_expenses') ? 'active' : ''; ?>">
+								<a class="animsition-link" href="<?=base_url('Admin/travel_expenses');?>">
+								<i class="site-menu-icon icon fa-sitemap" aria-hidden="true"></i>
+									<span class="site-menu-title">ค่าเดินทาง</span>
+								</a>
+							</li>
+						</ul>
 					</li>
+					<!-- end -->
 
-					<li class="site-menu-item ">
-						<a class="animsition-link" href="<?=base_url('Admin/article');?>">
-						<i class="fa fa-newspaper-o" aria-hidden="true"></i>
-							<span class="site-menu-title">Article</span>
-						</a>
-					</li>
-					<li class="site-menu-item ">
-						<a class="animsition-link" href="<?=base_url('Admin/gallery');?>">
-						<i class="fa fa-picture-o" aria-hidden="true"></i>
-							<span class="site-menu-title">Gallery</span>
-						</a>
-					</li>
 				</ul>
 			</div>
 		</div>

@@ -67,6 +67,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				                  	<label class="form-control-label" for="title">Name</label>
 				                  	<input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
 				                </div>
+								
+								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
+				                  	<label class="form-control-label" for="image">Images Cover</label>
+									<div id="width"></div> 
+									  
+			                      	<input type="file" id="covImg" name="covImg" data-plugin="dropify" data-default-file="" data-allowed-file-extensions="png jpg jpeg PNG JPG JPEG" required/>
+									<p class="help-block"><i>
+									รองรับไฟล์ภาพ <br>
+									ขนาดภาพแนะนำ 1200x800px <br> 
+									ชื่อไฟล์เป็นภาษาอังกฤษเท่านั้น <br>
+									ไฟล์นามสกุล .png .jpg .jpeg</i>
+									</p>
+				                </div>
 				                <div class="text-right">
 						            <button type="submit" class="btn btn-animate btn-animate-side btn-success" id="btn_submit">
 						              	<span><i class="icon wb-check" aria-hidden="true"></i> Save</span>
